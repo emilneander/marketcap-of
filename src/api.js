@@ -6,10 +6,14 @@ export const apiUrl =
 export const getCoinById = (id) => {
   return axios
     .get(
-      `https://api.coingecko.com/api/v3/coins/${id}?localization=false&tickers=false&market_data=true&community_data=false&developer_data=false&sparkline=false`
+      `https://api.coingecko.com/api/v3/coins/${id}?localization=false&tickers=true&market_data=true&community_data=false&developer_data=false&sparkline=false`
     )
     .then((res) => {
       return [res.data].map((item) => {
+        const tickers = [...item.tickers];
+        const identifiers = tickers.map((obj) => {
+          return obj.market.identifier;
+        });
         return {
           id: item.id,
           name: item.name,
@@ -18,6 +22,7 @@ export const getCoinById = (id) => {
           current_price: item.market_data.current_price.usd,
           circulating_supply: item.market_data.circulating_supply,
           symbol: item.symbol,
+          exhange: identifiers,
         };
       });
     })

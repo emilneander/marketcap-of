@@ -52,7 +52,45 @@ h1 {
   opacity: 50%;
   color: white;
 }
-
+.extend-search {
+  margin: 0.5rem 0 0.5rem 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: wrap;
+  background-color: #171825;
+}
+.extend-search > p {
+  flex-basis: 100%;
+  margin-bottom: 0.25rem;
+  z-index: 1;
+  background-color: #171825;
+}
+.extend-search > button {
+  background-color: #26283d;
+  color: #cbd0dd;
+  font-size: 1rem;
+  outline: none;
+  border: none;
+  border-radius: 7px;
+  width: 9rem;
+  height: 2.25rem;
+  cursor: pointer;
+  z-index: 1;
+}
+.extend-search > button:hover {
+  background-color: #363957;
+}
+.fa-search {
+  background-color: transparent;
+  margin-left: 0.25rem;
+}
+.delay-ptag {
+  margin-top: 0.25rem;
+  font-size: 0.75rem;
+  color: #b3b8c4;
+  z-index: 1;
+}
 @media (max-width: 800px) {
   .coins-container {
     width: 250px;

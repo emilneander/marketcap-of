@@ -14,7 +14,7 @@
     {
         "name": "Binance Coin",
         "symbol": "BNB",
-        "id": "binance-coin",
+        "id": "binancecoin",
         "image": "https://assets.coingecko.com/coins/images/825/thumb/binance-coin-logo.png?1547034615"
     },
     {
@@ -26,7 +26,7 @@
     {
         "name": "XRP",
         "symbol": "XRP",
-        "id": "xrp",
+        "id": "ripple",
         "image": "https://assets.coingecko.com/coins/images/44/thumb/xrp-symbol-white-128.png?1605778731"
     },
     {
@@ -3644,7 +3644,7 @@
     {
         "name": "HUNT",
         "symbol": "HUNT",
-        "id": "hunt",
+        "id": "hunt-token",
         "image": "https://assets.coingecko.com/coins/images/7989/thumb/HUNT.png?1571024256"
     },
     {
@@ -6176,7 +6176,7 @@
     {
         "name": "Hiveterminal token",
         "symbol": "HVN",
-        "id": "hiveterminal-token",
+        "id": "hiveterminal",
         "image": "https://assets.coingecko.com/coins/images/899/thumb/Hiveterminal_token.jpg?1547034726"
     },
     {
@@ -6302,7 +6302,7 @@
     {
         "name": "Ambrosus",
         "symbol": "AMB",
-        "id": "ambrosus",
+        "id": "amber",
         "image": "https://assets.coingecko.com/coins/images/1041/thumb/_nSEjidJ_400x400.jpg?1593158410"
     },
     {
@@ -6980,7 +6980,7 @@
     {
         "name": "SafeCoin",
         "symbol": "SAFE",
-        "id": "safecoin",
+        "id": "safe-coin-2",
         "image": "https://assets.coingecko.com/coins/images/5011/thumb/Safecoin_Logo.png?1547040436"
     },
     {

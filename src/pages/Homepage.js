@@ -1,11 +1,13 @@
+import React, { useEffect, useState, useRef } from "react";
+import { addDonationToData, addExchangeToData } from "../addPropsToData";
 //fetch
 import axios from "axios";
-import React, { useEffect, useState } from "react";
-import { addDonationToData, addExchangeToData } from "../addPropsToData";
 //api
 import { apiUrl, getCoinById } from "../api";
 import CoinsList from "../components/CoinsList";
 import Footer from "../components/Footer";
+//coins from json
+import unhandledCoins from "../coins.json";
 //components
 import Search from "../components/Search";
 import SelectedCoin from "../components/SelectedCoin";
@@ -31,6 +33,7 @@ const Homepage = () => {
   const [mouseMove, setMouseMove] = useState(false);
   const [donateCoins, setDonateCoins] = useState([]);
   const [selectDonationCoin, setSelectDonationCoin] = useState({});
+  const [extendSearch, setExtendSearch] = useState(false);
 
   //fetch all coins
   useEffect(() => {
@@ -42,19 +45,18 @@ const Homepage = () => {
         addDonationToData(res.data);
         //add exchange props to data
         addExchangeToData(res.data);
-        getCoinById("safe-haven").then((result) => {
-          data.push(result[0]);
-        });
-        getCoinById("oceanex-token").then((result) => {
-          data.push(result[0]);
-        });
         const data = res.data.filter(
           (coin) =>
             //quickfix to get away the common stable coins
             !coin.name.toLowerCase().includes("usd") &&
             !coin.symbol.toLowerCase().includes("usd")
         );
-        setCoins(data);
+        //setting default coins if extendSearch is false
+        if (!extendSearch) {
+          setCoins(data);
+        } else if (extendSearch) {
+          setCoins(unhandledCoins);
+        }
         //setting the donation coins
         const canDonateTo = res.data.filter((coin) => {
           return coin.donation.active === true;
@@ -64,13 +66,18 @@ const Homepage = () => {
       })
       .catch((error) => console.log(error));
     // }, 4000);
-  }, [api]);
+  }, [api, extendSearch]);
+
+  //refs
   const aRef = useClickOutside(() => {
     setDisplayAList(false);
   });
   const bRef = useClickOutside(() => {
     setDisplayBList(false);
   });
+  //ref for input search
+  const inputRefA = useRef(null);
+  const inputRefB = useRef(null);
   //handler
   const handleMouseMove = () => {
     setMouseMove(true);
@@ -86,6 +93,7 @@ const Homepage = () => {
           </h1>
         </div>
         <div className="search-list-container" ref={aRef}>
+          {/* A - SEARCH/LIST */}
           <Search
             setSearch={setSearchA}
             search={searchA}
@@ -100,6 +108,8 @@ const Homepage = () => {
             setNr={setSelectNr}
             setKeyPress={setKeyPress}
             setMouseMove={setMouseMove}
+            inputRef={inputRefA}
+            extendSearch={extendSearch}
           />
           {displayAList ? (
             <CoinsList
@@ -115,6 +125,10 @@ const Homepage = () => {
               keyPress={keyPress}
               setKeyPress={setKeyPress}
               mouseMove={mouseMove}
+              setExtendSearch={setExtendSearch}
+              extendSearch={extendSearch}
+              inputRef={inputRefA}
+              setMouseMove={setMouseMove}
             />
           ) : (
             ""
@@ -127,6 +141,7 @@ const Homepage = () => {
           selectACoin={selectACoin}
           selectBCoin={selectBCoin}
         />
+        {/* B - SEARCH/LIST */}
         <div className="search-list-container" ref={bRef}>
           <Search
             setSearch={setSearchB}
@@ -142,6 +157,8 @@ const Homepage = () => {
             nr={selectNr}
             setKeyPress={setKeyPress}
             setMouseMove={setMouseMove}
+            inputRef={inputRefB}
+            extendSearch={extendSearch}
           />
           {displayBList ? (
             <CoinsList
@@ -157,18 +174,27 @@ const Homepage = () => {
               keyPress={keyPress}
               setKeyPress={setKeyPress}
               mouseMove={mouseMove}
+              setExtendSearch={setExtendSearch}
+              extendSearch={extendSearch}
+              inputRef={inputRefB}
+              setMouseMove={setMouseMove}
             />
           ) : (
             ""
           )}
         </div>
         <div className="selectedCoin-div">
-          <SelectedCoin
-            selectACoin={selectACoin}
-            selectBCoin={selectBCoin}
-            displayAList={displayAList}
-            displayBList={displayBList}
-          />
+          {Object.keys(selectACoin).length &&
+          Object.keys(selectBCoin).length ? (
+            <SelectedCoin
+              selectACoin={selectACoin}
+              selectBCoin={selectBCoin}
+              displayAList={displayAList}
+              displayBList={displayBList}
+            />
+          ) : (
+            ""
+          )}
         </div>
       </div>
       <Footer

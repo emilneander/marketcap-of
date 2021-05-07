@@ -1,6 +1,7 @@
 import React, { useRef, useEffect } from "react";
 import SelectedCoinInSearch from "./SelectedCoinInSearch";
 import "../styles/Search.css";
+import { getCoinById } from "../api";
 const Search = ({
   setSearch,
   search,
@@ -16,10 +17,9 @@ const Search = ({
   setKeyPress,
   setMouseMove,
   donationInput,
+  inputRef,
+  extendSearch,
 }) => {
-  //ref
-  const ref = useRef();
-
   //handlers
   const handleChange = (e) => {
     setSearch(e.target.value);
@@ -31,12 +31,31 @@ const Search = ({
   };
   const handleSubmit = (e) => {
     e.preventDefault();
-    if (filteredCoins[nr]) {
-      setSelectCoin(filteredCoins[nr]);
-      setSearch("");
-      setDisplay(false);
-      // e.target.querySelector("input").blur(); would do the same.
-      ref.current.blur();
+    if (Object.keys(filteredCoins[nr]).length) {
+      //if not extended search, do the default,
+      if (!extendSearch) {
+        setSelectCoin(filteredCoins[nr]);
+        setSearch("");
+        setDisplay(false);
+        inputRef.current.blur();
+        //else fetch specific coin
+      } else if (extendSearch) {
+        getCoinById(filteredCoins[nr].id).then((result) => {
+          //if we get a result from fetch
+          if (result) {
+            setSelectCoin(result[0]);
+            setSearch("");
+            setDisplay(false);
+            inputRef.current.blur();
+          } else {
+            alert(
+              "Sorry " +
+                filteredCoins[nr].name +
+                " got some issues loading from coingecko. Tag me on Twitter and tell me what coin, I will fix it within 24h"
+            );
+          }
+        });
+      }
     }
   };
   //when input is blurred we set the selected drop down number to 0
@@ -87,7 +106,7 @@ const Search = ({
           onKeyDown={handleKeyDown}
           onKeyUp={handleKeyUp}
           onBlur={handleBlur}
-          ref={ref}
+          ref={inputRef}
           //show placeholder if there isnt a selected coin or display is shown
           {...(Object.keys(selectCoin).length === 0 || display
             ? (placeholder = { placeholder })

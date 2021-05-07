@@ -73,12 +73,13 @@ hr {
 .btn:hover {
   background: #363957;
 }
+
 .btn-hand {
   display: grid;
   grid-template-columns: 40% 60%;
   grid-template-rows: 50% 50%;
   border: none;
-  width: 7.5rem;
+  width: 8rem;
   border-radius: 10px;
   padding: 0;
   cursor: pointer;

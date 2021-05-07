@@ -22,6 +22,7 @@ const Footer = ({
   donateCoins,
   selectDonationCoin,
   setSelectDonationCoin,
+  coins,
 }) => {
   return (
     <Router>
@@ -40,7 +41,7 @@ const Footer = ({
               </a>
             </li>
             <li>
-              <BuyCoinButton selectACoin={selectACoin} />
+              <BuyCoinButton selectACoin={selectACoin} coins={coins} />
             </li>
 
             <li>

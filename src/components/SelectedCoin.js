@@ -42,13 +42,9 @@ const SelectedCoin = ({ selectACoin, selectBCoin }) => {
               <InfoBox selectACoin={selectACoin} />
             </h2>
             {/* <h2 className="first-text">{a.symbol.toUpperCase()}: </h2> */}
-            <h2 className="first-text first-mcap">
-              ${a.market_cap.toLocaleString()}
-            </h2>
+            <h2 className="first-text first-mcap">${a.market_cap}</h2>
             {/* <h2 className="second-text">{b.symbol.toUpperCase()}: </h2> */}
-            <h2 className="second-text second-mcap">
-              ${b.market_cap.toLocaleString()}
-            </h2>
+            <h2 className="second-text second-mcap">${b.market_cap}</h2>
             <img //imgages to grid
               className="b-img first-text-img"
               src={a.image}

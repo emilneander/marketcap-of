@@ -25,25 +25,9 @@ const BuyCoinButton = ({ selectACoin }) => {
         setMarkets(identifiers);
         //could use case instead later
         if (identifiers.includes("binance" || "kraken")) {
-          // selectACoin.exchange.push({
-          //   identifier: "binance",
-          //   name: "Binance",
-          //   reflink: "https://www.binance.com/en/register?ref=18525617",
-          // });
-          //to save what last coin was when removing selectACoin
           setLastCoin(selectACoin);
-          // setCurrentRefLink(selectACoin.exchange[0].reflink);
           setExchangeAvailable(true);
-        }
-        // if (identifiers.includes("kraken")) {
-        //   selectACoin.exchange.push({
-        //     identifier: "kraken",
-        //     name: "Kraken",
-        //     reflink: "https://r.kraken.com/7mad9O",
-        //   });
-        //   console.log(selectACoin);
-        // }
-        else {
+        } else {
           setExchangeAvailable(false);
         }
       });

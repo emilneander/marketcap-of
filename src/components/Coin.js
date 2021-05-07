@@ -1,5 +1,6 @@
 import React from "react";
 import "../styles/Coin.css";
+import { getCoinById } from "../api";
 
 const Coin = ({
   coinElement,
@@ -16,14 +17,34 @@ const Coin = ({
   mouseMove,
   donationCoinStyle,
   selectedDonationCoinStyle,
+  extendSearch,
 }) => {
   //when clicking on a coin in the list
   const clickHandler = () => {
     //if coinElement is defined
     if (coinElement) {
-      setSelectCoin(coinElement);
-      setSearch("");
-      setDisplay(false);
+      //if not extended search, do the default,
+      if (!extendSearch) {
+        setSelectCoin(coinElement);
+        setSearch("");
+        setDisplay(false);
+        //else fetch specific coin
+      } else if (extendSearch) {
+        getCoinById(coinElement.id).then((result) => {
+          //if we get a result from fetch
+          if (result) {
+            setSelectCoin(result[0]);
+            setSearch("");
+            setDisplay(false);
+          } else {
+            alert(
+              "Sorry " +
+                coinElement.name +
+                " got some issues loading from coingecko. Tag me on Twitter and tell me what coin, I will fix it within 24h"
+            );
+          }
+        });
+      }
     }
   };
   //to change position of dropdown selector
