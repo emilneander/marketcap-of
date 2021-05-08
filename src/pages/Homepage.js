@@ -129,6 +129,7 @@ const Homepage = () => {
               extendSearch={extendSearch}
               inputRef={inputRefA}
               setMouseMove={setMouseMove}
+              showExtend={true}
             />
           ) : (
             ""
@@ -178,6 +179,7 @@ const Homepage = () => {
               extendSearch={extendSearch}
               inputRef={inputRefB}
               setMouseMove={setMouseMove}
+              showExtend={true}
             />
           ) : (
             ""

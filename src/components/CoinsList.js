@@ -26,13 +26,14 @@ const CoinsList = ({
   setExtendSearch,
   extendSearch,
   inputRef,
+  showExtend,
 }) => {
   //filter coins to what the current search value is
 
   const filteredCoins = coins.filter((coin) => {
     if (
       coin.name.toString().toLowerCase().includes(search.toLocaleLowerCase()) ||
-      coin.symbol.toString().includes(search.toLocaleLowerCase())
+      coin.symbol.toString().toLowerCase().includes(search.toLocaleLowerCase())
     )
       return coin;
   });
@@ -58,7 +59,9 @@ const CoinsList = ({
 
   //useEffect for fetching default coins (turn extendSearch to false)
   useEffect(() => {
-    setExtendSearch(false);
+    if (extendSearch) {
+      setExtendSearch(false);
+    }
   }, [display]);
 
   //ref for current coin in list
@@ -109,7 +112,7 @@ const CoinsList = ({
         <p>Loading...</p>
       )}
       {/* extending search - only show when not extended yet*/}
-      {!extendSearch ? (
+      {!extendSearch && showExtend ? (
         <div className="extend-search">
           <p>Can't find your coin?</p>
           <button

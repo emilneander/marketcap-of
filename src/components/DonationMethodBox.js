@@ -52,6 +52,7 @@ const DonationMethodBox = ({
             selectedDonationCoinStyle="selected-donation-coin"
             setSearch={setSearch}
             search={search}
+            showExtend={false}
           />
         ) : (
           ""

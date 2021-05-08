@@ -17,6 +17,7 @@ import trx from "./img/Tron-qr.PNG";
 import xmr from "./img/Monero-qr.PNG";
 import neo from "./img/NEO-qr.PNG";
 import storj from "./img/StorJ-qr.PNG";
+import algorand from "./img/Algorand-qr.PNG";
 
 const supportedCoins = [
   {
@@ -135,6 +136,12 @@ const supportedCoins = [
     address: "0x09f508d9594b77eb24B78485C90bcf8E06152D4E",
     network: "Mainnet",
     qraddress: storj,
+  },
+  {
+    name: "Algorand",
+    address: "ADZIS5PEMPTKYVLVRUHIZYXPFNVPYMWLQ3N6RHW7P4FG7CJ4QXPZQWFVZI",
+    network: "Mainnet",
+    qraddress: algorand,
   },
 ];
 export default supportedCoins;

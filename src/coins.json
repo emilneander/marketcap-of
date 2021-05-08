@@ -3062,7 +3062,7 @@
     {
         "name": "BEPRO Network",
         "symbol": "BEPRO",
-        "id": "bepro-network",
+        "id": "bet-protocol",
         "image": "https://assets.coingecko.com/coins/images/10251/thumb/logo.png?1610592699"
     },
     {
@@ -8999,5 +8999,17 @@
         "symbol": "PIRATE",
         "id": "piratecash",
         "image": "https://assets.coingecko.com/coins/images/7155/thumb/logo_%2834%29.png?1547043668"
+    },
+    {
+        "name": "Dogelon Mars",
+        "symbol": "ELON",
+        "id": "dogelon-mars",
+        "image": "https://assets.coingecko.com/coins/images/14962/small/6GxcPRo3_400x400.jpg?1619157413"
+    },
+    {
+        "name": "r/CryptoCurrency Moons",
+        "symbol": "MOON",
+        "id": "moon",
+        "image": "https://assets.coingecko.com/coins/images/11222/small/Moons.png?1589620193"
     }
 ]
