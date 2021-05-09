@@ -42,15 +42,24 @@ const CoinsList = ({
   //set filtered coins when input is changed
   useEffect(() => {
     setFilteredCoins(filteredCoins);
-    if (!filteredCoins.length) {
+    if (filteredCoins.length === 0 && extendSearch) {
       setCoinsFound(false);
-    } else if (filteredCoins.length) {
+    } else {
       setCoinsFound(true);
     }
   }, [search]);
+
+  //when changing coin fetch
+  //set filtered coins and and also if there are any found
   useEffect(() => {
     setFilteredCoins(filteredCoins);
+    if (filteredCoins.length === 0 && extendSearch) {
+      setCoinsFound(false);
+    } else {
+      setCoinsFound(true);
+    }
   }, [coins]);
+
   //when keyPress is changed - scroll to html element selected
   useEffect(() => {
     //only try scroll if coins in list exists
@@ -76,10 +85,6 @@ const CoinsList = ({
   const handleMouseDown = (e) => {
     //to not get focus on scroller
     e.preventDefault();
-    //go to last coin in list - 1 because first is 0 and last is 249
-    //setNr(filteredCoins.length - 1);
-    //to refresh and scroll to it
-    //  setKeyPress(true);
   };
 
   return (
@@ -136,7 +141,7 @@ const CoinsList = ({
       ) : (
         ""
       )}
-      {!coinsFound && extendSearch ? (
+      {!coinsFound ? (
         <div className="no-result">
           <p>
             Sorry, no result...
