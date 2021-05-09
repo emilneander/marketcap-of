@@ -13,6 +13,7 @@
   align-items: flex-start;
   padding-top: 2rem;
   flex-wrap: wrap;
+  position: relative;
 }
 
 .search-list-container {

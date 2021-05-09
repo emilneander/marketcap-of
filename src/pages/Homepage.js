@@ -3,9 +3,11 @@ import { addDonationToData, addExchangeToData } from "../addPropsToData";
 //fetch
 import axios from "axios";
 //api
-import { apiUrl, getCoinById } from "../api";
+import { apiUrl } from "../api";
 import CoinsList from "../components/CoinsList";
 import Footer from "../components/Footer";
+//filter stablecoins
+import filterStableCoins from "../filterStableCoins";
 //coins from json
 import unhandledCoins from "../coins.json";
 //components
@@ -45,17 +47,18 @@ const Homepage = () => {
         addDonationToData(res.data);
         //add exchange props to data
         addExchangeToData(res.data);
-        const data = res.data.filter(
-          (coin) =>
-            //quickfix to get away the common stable coins
-            !coin.name.toLowerCase().includes("usd") &&
-            !coin.symbol.toLowerCase().includes("usd")
-        );
+        const data = res.data;
         //setting default coins if extendSearch is false
         if (!extendSearch) {
-          setCoins(data);
+          //filter away stable coins and set coins if NOT extend search
+          filterStableCoins(data).then((filteredData) => {
+            setCoins(filteredData);
+          });
         } else if (extendSearch) {
-          setCoins(unhandledCoins);
+          //filter away stable coins and set coins if extend search
+          filterStableCoins(unhandledCoins).then((filteredData) => {
+            setCoins(filteredData);
+          });
         }
         //setting the donation coins
         const canDonateTo = res.data.filter((coin) => {

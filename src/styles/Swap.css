@@ -1,4 +1,5 @@
 .swap {
+  background-color: transparent;
   position: absolute;
   top: 13.2rem;
   cursor: pointer;
@@ -12,6 +13,7 @@
   -webkit-tap-highlight-color: transparent; /*android chrome*/
 }
 .icon {
+  background-color: transparent;
   font-size: 2rem;
   color: #cfc3ff;
 }
@@ -38,14 +40,20 @@
     transform: scaleX(0.8);
   }
   .swap {
-    position: absolute;
-    margin-left: 16rem;
+    right: 0rem;
+    margin-right: 7rem;
     top: 12.9rem;
     transform: rotate(90deg);
+  }
+}
+@media (max-width: 480px) {
+  .swap {
+    margin-right: 4rem;
   }
 }
 @media (max-width: 360px) {
   .swap {
     top: 10.85rem;
+    margin-right: 2rem;
   }
 }

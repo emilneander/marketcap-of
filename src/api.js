@@ -3,6 +3,20 @@ import axios from "axios";
 export const apiUrl =
   "https://api.coingecko.com/api/v3/coins/markets?vs_currency=usd&order=market_cap_desc&per_page=250&page=1&sparkline=false";
 
+export const apiStableCoinsId = () => {
+  return axios
+    .get(
+      "https://api.coingecko.com/api/v3/coins/markets?vs_currency=usd&category=stablecoins&order=market_cap_desc&per_page=250&page=1&sparkline=false"
+    )
+    .then((response) => {
+      const data = response.data;
+      const id = data.map((coin) => {
+        return coin.id;
+      });
+      return id;
+    });
+};
+
 export const getCoinById = (id) => {
   return axios
     .get(

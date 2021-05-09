@@ -1,4 +1,4 @@
-import React, { useEffect, useRef } from "react";
+import React, { useState, useEffect, useRef } from "react";
 import Coin from "./Coin";
 import "../styles/CoinsList.css";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
@@ -28,8 +28,8 @@ const CoinsList = ({
   inputRef,
   showExtend,
 }) => {
+  const [coinsFound, setCoinsFound] = useState(true);
   //filter coins to what the current search value is
-
   const filteredCoins = coins.filter((coin) => {
     if (
       coin.name.toString().toLowerCase().includes(search.toLocaleLowerCase()) ||
@@ -42,6 +42,11 @@ const CoinsList = ({
   //set filtered coins when input is changed
   useEffect(() => {
     setFilteredCoins(filteredCoins);
+    if (!filteredCoins.length) {
+      setCoinsFound(false);
+    } else if (filteredCoins.length) {
+      setCoinsFound(true);
+    }
   }, [search]);
   useEffect(() => {
     setFilteredCoins(filteredCoins);
@@ -82,7 +87,7 @@ const CoinsList = ({
       {/* if we get any coins we start to map them out (therefore "coins.length ?") */}
       {coins.length ? (
         filteredCoins.map((coin, index) => {
-          if (index < 250) {
+          if (index < 250 && index >= 0) {
             return (
               <Coin
                 coins={coins}
@@ -112,7 +117,7 @@ const CoinsList = ({
         <p>Loading...</p>
       )}
       {/* extending search - only show when not extended yet*/}
-      {!extendSearch && showExtend ? (
+      {!extendSearch && showExtend && Object.keys(coins).length ? (
         <div className="extend-search">
           <p>Can't find your coin?</p>
           <button
@@ -131,10 +136,24 @@ const CoinsList = ({
       ) : (
         ""
       )}
+      {!coinsFound && extendSearch ? (
+        <div className="no-result">
+          <p>
+            Sorry, no result...
+            <br /> Tag me on Twitter and I will try to add it
+          </p>
+        </div>
+      ) : (
+        ""
+      )}
       {/* The sticky down arrows */}
-      <div className="icon-div" onMouseDown={handleMouseDown}>
-        <FontAwesomeIcon className="down" icon={faAngleDoubleDown} />
-      </div>
+      {coinsFound ? (
+        <div className="icon-div" onMouseDown={handleMouseDown}>
+          <FontAwesomeIcon className="down" icon={faAngleDoubleDown} />
+        </div>
+      ) : (
+        ""
+      )}
     </div>
   );
 };

@@ -91,6 +91,10 @@ h1 {
   color: #b3b8c4;
   z-index: 1;
 }
+.no-result > p {
+  font-size: 0.9rem;
+  margin: 0.5rem;
+}
 @media (max-width: 800px) {
   .coins-container {
     width: 250px;
