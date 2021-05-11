@@ -1,0 +1,321 @@
+[
+    {
+        "code": "USD",
+        "name": "US Dollar",
+        "symbol": "$",
+        "position": "before",
+        "icon": " "
+    },
+    {
+        "code": "EUR",
+        "name": "Euro",
+        "symbol": "€",
+        "position": "before",
+        "icon": " "
+    },
+    {
+        "code": "GBP",
+        "name": "British Pound Sterling",
+        "symbol": "£",
+        "position": "before",
+        "icon": " "
+    },
+    {
+        "code": "TWD",
+        "name": "New Taiwan Dollar",
+        "symbol": "NT$",
+        "position": "before",
+        "icon": " "
+    },
+    {
+        "code": "IDR",
+        "name": "Indonesian Rupiah",
+        "symbol": "Rp",
+        "position": "before",
+        "icon": " "
+    },
+    {
+        "code": "KRW",
+        "name": "South Korean Won",
+        "symbol": "₩",
+        "position": "before",
+        "icon": " "
+    },
+    {
+        "code": "JPY",
+        "name": "Japanese Yen",
+        "symbol": "¥",
+        "position": "before",
+        "icon": " "
+    },
+    {
+        "code": "RUB",
+        "name": "Russian Ruble",
+        "symbol": "₽",
+        "position": "before",
+        "icon": " "
+    },
+    {
+        "code": "CNY",
+        "name": "Chinese Yuan",
+        "symbol": "¥",
+        "position": "before",
+        "icon": " "
+    },
+
+    {
+        "code": "ARS",
+        "name": "Argentine Peso",
+        "symbol": "$",
+        "position": "before",
+        "icon": " "
+    },
+    {
+        "code": "AUD",
+        "name": "Australian Dollar",
+        "symbol": "$",
+        "position": "before",
+        "icon": " "
+    },
+    {
+        "code": "BDT",
+        "name": "Bangladeshi Taka",
+        "symbol": "Tk",
+        "position": "before",
+        "icon": " "
+    },
+    {
+        "code": "BHD",
+        "name": "Bahraini Dinar",
+        "symbol": "BD",
+        "position": "before",
+        "icon": " "
+    },
+    {
+        "code": "BMD",
+        "name": "Bermudian Dollar",
+        "symbol": "BD$",
+        "position": "before",
+        "icon": " "
+    },
+    {
+        "code": "BRL",
+        "name": "Brazil Real",
+        "symbol": "R$",
+        "position": "before",
+        "icon": " "
+    },
+    {
+        "code": "MMK",
+        "name": "Burmese Kyat",
+        "symbol": "K",
+        "position": "before",
+        "icon": " "
+    },
+    {
+        "code": "CAD",
+        "name": "Canadian Dollar",
+        "symbol": "$",
+        "position": "before",
+        "icon": " "
+    },
+
+    {
+        "code": "CLP",
+        "name": "Chilean Peso",
+        "symbol": "$",
+        "position": "before",
+        "icon": " "
+    },
+    {
+        "code": "CZK",
+        "name": "Czech Koruna",
+        "symbol": "Kč",
+        "position": "after",
+        "icon": " "
+    },
+    {
+        "code": "DKK",
+        "name": "Danish Krone",
+        "symbol": "kr.",
+        "position": "after",
+        "icon": " "
+    },
+
+    {
+        "code": "HKD",
+        "name": "Hong Kong Dollar",
+        "symbol": "HK$",
+        "position": "before",
+        "icon": " "
+    },
+    {
+        "code": "HUF",
+        "name": "Hungarian Forint",
+        "symbol": "Ft",
+        "position": "after",
+        "icon": " "
+    },
+    {
+        "code": "ILS",
+        "name": "Israeli New Shekel",
+        "symbol": "₪",
+        "position": "before",
+        "icon": " "
+    },
+    {
+        "code": "INR",
+        "name": "Indian Rupee",
+        "symbol": "₹",
+        "position": "before",
+        "icon": " "
+    },
+    {
+        "code": "KWD",
+        "name": "Kuwaiti Dinar",
+        "symbol": "KD",
+        "position": "after",
+        "icon": " "
+    },
+    {
+        "code": "LKR",
+        "name": "Sri Lankan Rupee",
+        "symbol": "Rs",
+        "position": "after",
+        "icon": " "
+    },
+    {
+        "code": "MXN",
+        "name": "Mexican Peso",
+        "symbol": "$",
+        "position": "before",
+        "icon": " "
+    },
+    {
+        "code": "MYR",
+        "name": "Malaysian Ringgit",
+        "symbol": "RM",
+        "position": "before",
+        "icon": " "
+    },
+    {
+        "code": "NGN",
+        "name": "Nigerian Naira",
+        "symbol": "₦",
+        "position": "before",
+        "icon": " "
+    },
+    {
+        "code": "NOK",
+        "name": "Norwegian Krone",
+        "symbol": "kr",
+        "position": "after",
+        "icon": " "
+    },
+    {
+        "code": "NZD",
+        "name": "New Zealand Dollar",
+        "symbol": "$",
+        "position": "before",
+        "icon": " "
+    },
+    {
+        "code": "PHP",
+        "name": "Philippine Peso",
+        "symbol": "₱",
+        "position": "before",
+        "icon": " "
+    },
+    {
+        "code": "PKR",
+        "name": "Pakistani Rupee",
+        "symbol": "₨",
+        "position": "after",
+        "icon": " "
+    },
+    {
+        "code": "PLN",
+        "name": "Polish Zloty",
+        "symbol": "zł",
+        "position": "after",
+        "icon": " "
+    },
+    {
+        "code": "SAR",
+        "name": "Saudi Riyal",
+        "symbol": "SAR",
+        "position": "after",
+        "icon": " "
+    },
+    {
+        "code": "SEK",
+        "name": "Swedish Krona",
+        "symbol": "kr",
+        "position": "after",
+        "icon": " "
+    },
+    {
+        "code": "CHF",
+        "name": "Swiss Franc",
+        "symbol": "CHF",
+        "position": "before",
+        "icon": " "
+    },
+    {
+        "code": "SGD",
+        "name": "Singapore Dollar",
+        "symbol": "S$",
+        "position": "before",
+        "icon": " "
+    },
+    {
+        "code": "ZAR",
+        "name": "South African Rand",
+        "symbol": "R ",
+        "position": "before",
+        "icon": " "
+    },
+    {
+        "code": "THB",
+        "name": "Thai Baht",
+        "symbol": "฿",
+        "position": "before",
+        "icon": " "
+    },
+    {
+        "code": "TRY",
+        "name": "Turkish Lira",
+        "symbol": "₺",
+        "position": "before",
+        "icon": " "
+    },
+    {
+        "code": "AED",
+        "name": "United Arab Emirates Dirham",
+        "symbol": "د.إ",
+        "position": "after",
+        "icon": " "
+    },
+    {
+        "code": "UAH",
+        "name": "Ukrainian hryvnia",
+        "symbol": "₴",
+        "position": "before",
+        "icon": " "
+    },
+    {
+        "code": "VEF",
+        "name": "Venezuelan bolívar fuerte",
+        "symbol": "Bs.S",
+        "position": "before",
+        "icon": " "
+    },
+    {
+        "code": "VND",
+        "name": "Vietnamese đồng",
+        "symbol": "₫",
+        "position": "after",
+        "icon": " "
+    }
+ 
+]

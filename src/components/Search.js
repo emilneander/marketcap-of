@@ -19,6 +19,7 @@ const Search = ({
   donationInput,
   inputRef,
   extendSearch,
+  selectCurrency,
 }) => {
   //handlers
   const handleChange = (e) => {
@@ -107,6 +108,8 @@ const Search = ({
           onKeyUp={handleKeyUp}
           onBlur={handleBlur}
           ref={inputRef}
+          autoComplete="off"
+          spellCheck="false"
           //show placeholder if there isnt a selected coin or display is shown
           {...(Object.keys(selectCoin).length === 0 || display
             ? (placeholder = { placeholder })
@@ -119,6 +122,7 @@ const Search = ({
               <SelectedCoinInSearch
                 setSelectCoin={setSelectCoin}
                 selectCoin={selectCoin}
+                selectCurrency={selectCurrency}
               />
             </div>
           ) : (

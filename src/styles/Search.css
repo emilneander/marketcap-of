@@ -80,3 +80,9 @@
     height: 35px;
   }
 }
+@media (max-width: 360px) {
+  .coin-input {
+    width: 250px;
+    height: 35px;
+  }
+}

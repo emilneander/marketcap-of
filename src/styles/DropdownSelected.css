@@ -9,6 +9,7 @@
   width: 250px;
   height: 35px;
   position: relative;
+  cursor: pointer;
 }
 
 .fa-down {

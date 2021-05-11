@@ -86,10 +86,19 @@
   align-items: center;
   justify-content: center;
 }
+.before-symbol {
+  margin-right: 0.25rem;
+  order: 0;
+}
+.after-symbol {
+  margin-left: 0.25rem;
+  order: 1;
+}
 .percent {
   margin-left: 0.5rem;
   font-weight: lighter;
   font-size: 1.5rem;
+  order: 2;
 }
 .positive {
   color: #16c784;
@@ -135,7 +144,7 @@ h2 {
     height: 1rem;
   }
   .text-div {
-    margin-top: 2.5rem;
+    margin-top: 1.5rem;
   }
   h2 {
     font-size: 1.5rem;
@@ -143,7 +152,7 @@ h2 {
 }
 @media (max-width: 360px) {
   .text-div {
-    margin-top: 1.5rem;
+    margin-top: 1rem;
   }
   .text-div h2 {
     font-size: 1.15rem;

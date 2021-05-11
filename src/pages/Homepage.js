@@ -3,24 +3,31 @@ import { addDonationToData, addExchangeToData } from "../addPropsToData";
 //fetch
 import axios from "axios";
 //api
-import { apiUrl } from "../api";
+import { getDefaultCoins } from "../api";
 import CoinsList from "../components/CoinsList";
 import Footer from "../components/Footer";
+//logo
+import mcoLogo from "../img/mco-logo.png";
 //filter stablecoins
 import filterStableCoins from "../filterStableCoins";
 //coins from json
 import unhandledCoins from "../coins.json";
+//currencies from json
+import currencies from "../currencies.json";
 //components
 import Search from "../components/Search";
 import SelectedCoin from "../components/SelectedCoin";
 import Swap from "../components/Swap";
+import CurrencySelector from "../components/CurrencySelector";
 //hooks
 import useClickOutside from "../hooks/useClickOutside";
 //style
 import "../styles/Homepage.css";
+//route link for logo
+import { BrowserRouter as Router, Link, Route } from "react-router-dom";
 
 const Homepage = () => {
-  const [api, setApi] = useState(apiUrl);
+  // const [api, setApi] = useState(apiUrl);
   const [coins, setCoins] = useState([]);
   const [searchA, setSearchA] = useState("");
   const [searchB, setSearchB] = useState("");
@@ -36,12 +43,12 @@ const Homepage = () => {
   const [donateCoins, setDonateCoins] = useState([]);
   const [selectDonationCoin, setSelectDonationCoin] = useState({});
   const [extendSearch, setExtendSearch] = useState(false);
+  const [selectCurrency, setSelectCurrency] = useState(currencies[0]);
 
   //fetch all coins
   useEffect(() => {
     // setTimeout(() => {
-    axios
-      .get(api)
+    getDefaultCoins(selectCurrency.code)
       .then((res) => {
         //add the donation info to the data
         addDonationToData(res.data);
@@ -69,7 +76,7 @@ const Homepage = () => {
       })
       .catch((error) => console.log(error));
     // }, 4000);
-  }, [api, extendSearch]);
+  }, [selectCurrency, extendSearch]);
 
   //refs
   const aRef = useClickOutside(() => {
@@ -85,139 +92,160 @@ const Homepage = () => {
   const handleMouseMove = () => {
     setMouseMove(true);
   };
-  return (
-    <div className="homepage-container">
-      <div className="homepage" onMouseMove={handleMouseMove}>
-        <div className="title">
-          <h1>
-            Show the value of <span className="span-A">A</span> <br />
-            with the market cap of
-            <span className="span-B"> B</span>
-          </h1>
-        </div>
-        <div className="search-list-container" ref={aRef}>
-          {/* A - SEARCH/LIST */}
-          <Search
-            setSearch={setSearchA}
-            search={searchA}
-            searchName="A"
-            setDisplay={setDisplayAList}
-            display={displayAList}
-            placeholder="e.g Ethereum"
-            setSelectCoin={setSelectACoin}
-            selectCoin={selectACoin}
-            filteredCoins={filteredCoinsA}
-            nr={selectNr}
-            setNr={setSelectNr}
-            setKeyPress={setKeyPress}
-            setMouseMove={setMouseMove}
-            inputRef={inputRefA}
-            extendSearch={extendSearch}
-          />
-          {displayAList ? (
-            <CoinsList
-              coins={coins}
-              search={searchA}
-              setSelectCoin={setSelectACoin}
-              display={displayAList}
-              setDisplay={setDisplayAList}
-              setSearch={setSearchA}
-              setFilteredCoins={setFilteredCoinsA}
-              setNr={setSelectNr}
-              nr={selectNr}
-              keyPress={keyPress}
-              setKeyPress={setKeyPress}
-              mouseMove={mouseMove}
-              setExtendSearch={setExtendSearch}
-              extendSearch={extendSearch}
-              inputRef={inputRefA}
-              setMouseMove={setMouseMove}
-              showExtend={true}
-            />
-          ) : (
-            ""
-          )}
-        </div>
 
-        <Swap
-          setSelectACoin={setSelectACoin}
-          setSelectBCoin={setSelectBCoin}
-          selectACoin={selectACoin}
-          selectBCoin={selectBCoin}
-        />
-        {/* B - SEARCH/LIST */}
-        <div className="search-list-container" ref={bRef}>
-          <Search
-            setSearch={setSearchB}
-            search={searchB}
-            searchName="B"
-            setDisplay={setDisplayBList}
-            display={displayBList}
-            placeholder="e.g Bitcoin"
-            setSelectCoin={setSelectBCoin}
-            selectCoin={selectBCoin}
-            filteredCoins={filteredCoinsB}
-            setNr={setSelectNr}
-            nr={selectNr}
-            setKeyPress={setKeyPress}
-            setMouseMove={setMouseMove}
-            inputRef={inputRefB}
-            extendSearch={extendSearch}
-          />
-          {displayBList ? (
-            <CoinsList
-              coins={coins}
-              search={searchB}
-              setSelectCoin={setSelectBCoin}
-              setDisplay={setDisplayBList}
-              display={displayBList}
-              setSearch={setSearchB}
-              setFilteredCoins={setFilteredCoinsB}
-              setNr={setSelectNr}
-              nr={selectNr}
-              keyPress={keyPress}
-              setKeyPress={setKeyPress}
-              mouseMove={mouseMove}
-              setExtendSearch={setExtendSearch}
-              extendSearch={extendSearch}
-              inputRef={inputRefB}
-              setMouseMove={setMouseMove}
-              showExtend={true}
+  return (
+    <Router>
+      <Route path="/">
+        <div className="homepage-container">
+          <div className="mco-div">
+            <Link to="/" className="link">
+              <div className="logo-title">
+                <img className="mco-logo" src={mcoLogo} alt="logo" />
+                <span>MarketCapOf</span>
+              </div>
+              <hr className="hr-under-logo" />
+            </Link>
+            <CurrencySelector
+              setSelectCurrency={setSelectCurrency}
+              selectCurrency={selectCurrency}
             />
-          ) : (
-            ""
-          )}
-        </div>
-        <div className="selectedCoin-div">
-          {Object.keys(selectACoin).length &&
-          Object.keys(selectBCoin).length ? (
-            <SelectedCoin
+          </div>
+          <div className="homepage" onMouseMove={handleMouseMove}>
+            <div className="title">
+              <h1>
+                Show the value of <span className="span-A">A</span> <br />
+                with the market cap of
+                <span className="span-B"> B</span>
+              </h1>
+            </div>
+            <div className="search-list-container" ref={aRef}>
+              {/* A - SEARCH/LIST */}
+              <Search
+                setSearch={setSearchA}
+                search={searchA}
+                searchName="A"
+                setDisplay={setDisplayAList}
+                display={displayAList}
+                placeholder="e.g Ethereum"
+                setSelectCoin={setSelectACoin}
+                selectCoin={selectACoin}
+                filteredCoins={filteredCoinsA}
+                nr={selectNr}
+                setNr={setSelectNr}
+                setKeyPress={setKeyPress}
+                setMouseMove={setMouseMove}
+                inputRef={inputRefA}
+                extendSearch={extendSearch}
+                selectCurrency={selectCurrency}
+              />
+              {displayAList ? (
+                <CoinsList
+                  coins={coins}
+                  search={searchA}
+                  setSelectCoin={setSelectACoin}
+                  display={displayAList}
+                  setDisplay={setDisplayAList}
+                  setSearch={setSearchA}
+                  setFilteredCoins={setFilteredCoinsA}
+                  setNr={setSelectNr}
+                  nr={selectNr}
+                  keyPress={keyPress}
+                  setKeyPress={setKeyPress}
+                  mouseMove={mouseMove}
+                  setExtendSearch={setExtendSearch}
+                  extendSearch={extendSearch}
+                  inputRef={inputRefA}
+                  setMouseMove={setMouseMove}
+                  showExtend={true}
+                />
+              ) : (
+                ""
+              )}
+            </div>
+
+            <Swap
+              setSelectACoin={setSelectACoin}
+              setSelectBCoin={setSelectBCoin}
               selectACoin={selectACoin}
               selectBCoin={selectBCoin}
-              displayAList={displayAList}
-              displayBList={displayBList}
             />
-          ) : (
-            ""
-          )}
+            {/* B - SEARCH/LIST */}
+            <div className="search-list-container" ref={bRef}>
+              <Search
+                setSearch={setSearchB}
+                search={searchB}
+                searchName="B"
+                setDisplay={setDisplayBList}
+                display={displayBList}
+                placeholder="e.g Bitcoin"
+                setSelectCoin={setSelectBCoin}
+                selectCoin={selectBCoin}
+                filteredCoins={filteredCoinsB}
+                setNr={setSelectNr}
+                nr={selectNr}
+                setKeyPress={setKeyPress}
+                setMouseMove={setMouseMove}
+                inputRef={inputRefB}
+                extendSearch={extendSearch}
+                selectCurrency={selectCurrency}
+              />
+              {displayBList ? (
+                <CoinsList
+                  coins={coins}
+                  search={searchB}
+                  setSelectCoin={setSelectBCoin}
+                  setDisplay={setDisplayBList}
+                  display={displayBList}
+                  setSearch={setSearchB}
+                  setFilteredCoins={setFilteredCoinsB}
+                  setNr={setSelectNr}
+                  nr={selectNr}
+                  keyPress={keyPress}
+                  setKeyPress={setKeyPress}
+                  mouseMove={mouseMove}
+                  setExtendSearch={setExtendSearch}
+                  extendSearch={extendSearch}
+                  inputRef={inputRefB}
+                  setMouseMove={setMouseMove}
+                  showExtend={true}
+                />
+              ) : (
+                ""
+              )}
+            </div>
+            <div className="selectedCoin-div">
+              {Object.keys(selectACoin).length &&
+              Object.keys(selectBCoin).length ? (
+                <SelectedCoin
+                  selectACoin={selectACoin}
+                  selectBCoin={selectBCoin}
+                  displayAList={displayAList}
+                  displayBList={displayBList}
+                  selectCurrency={selectCurrency}
+                />
+              ) : (
+                ""
+              )}
+            </div>
+          </div>
+          <Footer
+            className="footi"
+            selectACoin={selectACoin}
+            selectBCoin={selectBCoin}
+            coins={coins}
+            selectNr={selectNr}
+            setSelectNr={setSelectNr}
+            keyPress={keyPress}
+            setKeyPress={setKeyPress}
+            mouseMove={mouseMove}
+            setMouseMove={setMouseMove}
+            donateCoins={donateCoins}
+            selectDonationCoin={selectDonationCoin}
+            setSelectDonationCoin={setSelectDonationCoin}
+          />
         </div>
-      </div>
-      <Footer
-        className="footi"
-        selectACoin={selectACoin}
-        selectBCoin={selectBCoin}
-        coins={coins}
-        selectNr={selectNr}
-        setSelectNr={setSelectNr}
-        keyPress={keyPress}
-        setKeyPress={setKeyPress}
-        mouseMove={mouseMove}
-        setMouseMove={setMouseMove}
-        donateCoins={donateCoins}
-        selectDonationCoin={selectDonationCoin}
-        setSelectDonationCoin={setSelectDonationCoin}
-      />
-    </div>
+      </Route>
+    </Router>
   );
 };
 export default Homepage;

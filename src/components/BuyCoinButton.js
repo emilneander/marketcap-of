@@ -38,24 +38,20 @@ const BuyCoinButton = ({ selectACoin }) => {
     }
   }, [selectACoin]);
   return (
-    <Router>
-      <div>
-        {exchangeAvailable ? (
-          <Link to="/buy-coin" className="link">
-            <button className="btn btn-buy">
-              <p className="buy-text">Buy {lastCoin.symbol.toUpperCase()}</p>
-            </button>
-          </Link>
-        ) : (
-          ""
-        )}
-      </div>
-      <Switch>
-        <Route exact path="/buy-coin">
-          <BuyCoin markets={markets} coinName={lastCoin.name} />
-        </Route>
-      </Switch>
-    </Router>
+    <div>
+      {exchangeAvailable ? (
+        <Link to="/buy-coin" className="link">
+          <button className="btn btn-buy">
+            <p className="buy-text">Buy {lastCoin.symbol.toUpperCase()}</p>
+          </button>
+        </Link>
+      ) : (
+        ""
+      )}
+      <Route exact path="/buy-coin">
+        <BuyCoin markets={markets} coinName={lastCoin.name} />
+      </Route>
+    </div>
   );
 };
 export default BuyCoinButton;

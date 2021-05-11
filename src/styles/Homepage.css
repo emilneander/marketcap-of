@@ -1,3 +1,4 @@
+@import url("https://fonts.googleapis.com/css2?family=Nunito&display=swap");
 .homepage-container {
   height: 100%;
   display: flex;
@@ -11,11 +12,50 @@
   flex-direction: row;
   justify-content: center;
   align-items: flex-start;
-  padding-top: 2rem;
+  padding-top: 4rem;
   flex-wrap: wrap;
   position: relative;
 }
-
+.mco-div {
+  position: absolute;
+  height: 5rem;
+  width: 100%;
+  top: 0;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: #161727;
+  z-index: 1;
+}
+.logo-title {
+  background-color: transparent;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-left: 0.75rem;
+}
+.link {
+  background-color: transparent;
+}
+.mco-logo {
+  width: 3.5rem;
+  height: 3.5rem;
+  margin-right: 0.5rem;
+}
+.logo-title > span {
+  font-family: "Nunito", sans-serif;
+  font-size: 1.75rem;
+  font-weight: bold;
+  color: #eaddfd;
+}
+.hr-under-logo {
+  margin: 0;
+  width: 100%;
+  color: #eaddfd;
+  opacity: 0.2;
+  position: absolute;
+  bottom: 0;
+}
 .search-list-container {
   margin: 0 2rem 0 2rem;
 }
@@ -24,6 +64,7 @@
   width: 100%;
 }
 .title h1 {
+  margin-top: 2rem;
   flex-basis: 100%;
   text-align: center;
   margin-bottom: 3rem;
@@ -39,11 +80,39 @@
 .selectedCoin-div {
   flex-basis: 100%;
 }
+@media (max-width: 1000px) {
+  .mco-logo {
+    width: 3rem;
+    height: 3rem;
+  }
+  .mco-div > span {
+    font-size: 1.5rem;
+  }
+  .mco-div {
+    height: 4.25rem;
+  }
+  .homepage {
+    padding-top: 3.25rem;
+  }
+}
 @media (max-width: 800px) {
+  .mco-div {
+    height: 3.5rem;
+  }
+  .logo-title {
+    margin-left: 0.5rem;
+  }
+  .mco-logo {
+    width: 2.5rem;
+    height: 2.5rem;
+  }
+  .logo-title > span {
+    font-size: 1.2rem;
+  }
   .title h1 {
     font-size: 1.75rem;
     margin-bottom: 3rem;
-    margin-top: 0rem;
+    margin-top: 2rem;
   }
   .search-list-container {
     margin: 0 2.5% 0 2.5%;
@@ -51,16 +120,45 @@
 }
 @media (max-width: 555px) {
   .search-list-container {
-    margin-bottom: 1rem;
+    margin-bottom: 0.5rem;
   }
   .title h1 {
     font-size: 1.5rem;
     margin-bottom: 1.8rem;
   }
+  .mco-logo {
+    width: 2rem;
+    height: 2rem;
+    margin-right: 0.35rem;
+  }
+  .logo-title > span {
+    font-size: 1rem;
+  }
+  .mco-div {
+    height: 3.25rem;
+  }
+  .logo-title {
+    margin-left: 0.25rem;
+  }
 }
 @media (max-width: 360px) {
+  .search-list-container {
+    margin-bottom: 0.3rem;
+  }
+  .mco-div {
+    height: 2.75rem;
+  }
+  .mco-logo {
+    width: 1.65rem;
+    height: 1.65rem;
+    margin-right: 0.25rem;
+  }
+
+  .logo-title > span {
+    font-size: 1rem;
+  }
   .homepage {
-    padding-top: 1rem;
+    padding-top: 1.5rem;
   }
   .title h1 {
     font-size: 1.3rem;

@@ -1,0 +1,18 @@
+.currency-selector-container {
+  margin-right: 2rem;
+}
+
+.currency-opener {
+  width: 5rem;
+  height: 2rem;
+  color: white;
+  border-radius: 5px;
+  outline: transparent;
+  border: transparent;
+  position: relative;
+  cursor: pointer;
+}
+.fa-down {
+  right: 0.5rem;
+  font-size: 1.2rem;
+}

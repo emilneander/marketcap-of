@@ -1,7 +1,14 @@
 import axios from "axios";
 
-export const apiUrl =
-  "https://api.coingecko.com/api/v3/coins/markets?vs_currency=usd&order=market_cap_desc&per_page=250&page=1&sparkline=false";
+export const getDefaultCoins = (currency) => {
+  return axios
+    .get(
+      `https://api.coingecko.com/api/v3/coins/markets?vs_currency=${currency}&order=market_cap_desc&per_page=250&page=1&sparkline=false`
+    )
+    .then((response) => {
+      return response;
+    });
+};
 
 export const apiStableCoinsId = () => {
   return axios

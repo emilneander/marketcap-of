@@ -5,7 +5,7 @@ import InfoBox from "./InfoBox";
 import "../styles/SelectedCoin.css";
 import { calculatePrice, calculatePercentage } from "../calculatePrice";
 
-const SelectedCoin = ({ selectACoin, selectBCoin }) => {
+const SelectedCoin = ({ selectACoin, selectBCoin, selectCurrency }) => {
   const price = calculatePrice(selectACoin, selectBCoin);
   const percentage = calculatePercentage(price, selectACoin.current_price);
   const a = selectACoin;
@@ -23,17 +23,28 @@ const SelectedCoin = ({ selectACoin, selectBCoin }) => {
         <div className="selectedCoins-container">
           <div className="img-price">
             <img className="a-img" src={a.image} alt="crypto a" />
+            <h1
+              className={
+                selectCurrency.position === "after"
+                  ? "coin-prices after-symbol"
+                  : "coin-prices before-symbol"
+              }
+            >
+              {selectCurrency.symbol}
+            </h1>
             <h1 className="coin-prices">
               {/* Show only 2 decimals if price is over 0.1 */}
-              {price > 0.1 ? "$" + price.toFixed(2) : "$" + price.toFixed(4)}
-              <span
-                className={
-                  percentage >= 0 ? "percent positive" : "percent negative"
-                }
-              >
-                ({percentage.toFixed(2)}%)
-              </span>
+              {price > 0.1
+                ? price.toFixed(2).toLocaleString()
+                : price.toFixed(4).toLocaleString()}
             </h1>
+            <span
+              className={
+                percentage >= 0 ? "percent positive" : "percent negative"
+              }
+            >
+              ({percentage.toFixed(2)}%)
+            </span>
           </div>
           {/* here is the grid of market caps */}
           <div className="text-div">

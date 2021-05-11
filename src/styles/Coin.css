@@ -2,6 +2,7 @@
   display: flex;
   justify-content: center;
   align-items: center;
+  width: 100%;
 }
 .coin-row {
   display: flex;
@@ -16,7 +17,7 @@
   cursor: pointer;
 }
 .donation-coin {
-  height: 50px;
+  height: 55px;
 }
 .donation-coin > .coin > img {
   height: 23px;
@@ -77,5 +78,10 @@
   }
   .coin-symbol {
     font-size: 0.9rem;
+  }
+}
+@media (max-width: 360px) {
+  .coin-row {
+    height: 50px;
   }
 }

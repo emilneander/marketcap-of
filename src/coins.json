@@ -9011,5 +9011,11 @@
         "symbol": "MOON",
         "id": "moon",
         "image": "https://assets.coingecko.com/coins/images/11222/small/Moons.png?1589620193"
+    },
+    {
+        "name": "SafeMoon",
+        "symbol": "SAFEMOON",
+        "id": "safemoon",
+        "image": "https://assets.coingecko.com/coins/images/14362/small/174x174-white.png?1617174846"
     }
 ]
