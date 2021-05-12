@@ -35,10 +35,10 @@ const InfoBox = ({ selectACoin }) => {
       <div className="content" ref={ref}>
         {/* <FontAwesomeIcon className="fa-times" icon={faTimes} /> */}
         <p>
-          The market cap is equal to the price of a coin/share multiplied by
-          it's total number of coins in circulation. <br /> For example {a.name}
-          : ≈${a.current_price.toLocaleString()} *{" "}
-          {a.circulating_supply.toLocaleString()} = $
+          The market cap is equal to the price of a coin multiplied by it's
+          total number of coins in circulation. <br /> For example {a.name}: ≈
+          {a.current_price.toLocaleString()} *{" "}
+          {a.circulating_supply.toLocaleString()} ={" "}
           {a.market_cap.toLocaleString()}
         </p>
       </div>
