@@ -32,7 +32,17 @@ const SelectedCoinInSearch = ({
       <img src={selectCoin.image} alt="img-a" />
       <h4 className="symbol">{selectCoin.symbol.toUpperCase()}</h4>
       <h4 className={symbolClass}>{selectCurrency.symbol}</h4>
-      <h4 className="price">{selectCoin.current_price.toLocaleString()}</h4>
+      <h4 className="price">
+        {selectCoin.current_price > 1
+          ? selectCoin.current_price.toLocaleString(undefined, {
+              minimumFractionDigits: 0,
+              maximumFractionDigits: 2,
+            })
+          : selectCoin.current_price.toLocaleString(undefined, {
+              minimumFractionDigits: 0,
+              maximumFractionDigits: 8,
+            })}
+      </h4>
       <FontAwesomeIcon
         className="fa-times"
         icon={faTimesCircle}

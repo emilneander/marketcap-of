@@ -48,14 +48,14 @@ const SelectedCoin = ({ selectACoin, selectBCoin, selectCurrency }) => {
             </h1>
             <h1 className="coin-prices">
               {/* Show only 2 decimals if price is over 0.1 */}
-              {price > 0.1
+              {price > 1
                 ? price.toLocaleString(undefined, {
                     minimumFractionDigits: 0,
                     maximumFractionDigits: 2,
                   })
                 : price.toLocaleString(undefined, {
                     minimumFractionDigits: 0,
-                    maximumFractionDigits: 4,
+                    maximumFractionDigits: 8,
                   })}
             </h1>
             <span
