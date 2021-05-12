@@ -88,8 +88,9 @@ const Donation = ({
             <header>
               <h1 className="donation-title noSelect">Donate</h1>
               <p className="donation-description">
-                Your contribution makes big difference. To be able to run this
-                alone and add more coins I need your support. Who likes ads?
+                Your contribution is life changing to me. To be able to run this
+                alone and keep improving the site I need your help. Who likes
+                ads?
               </p>
             </header>
             <ul className="nav-donation noSelect">

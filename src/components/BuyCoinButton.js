@@ -49,7 +49,7 @@ const BuyCoinButton = ({ selectACoin }) => {
         ""
       )}
       <Route exact path="/buy-coin">
-        <BuyCoin markets={markets} coinName={lastCoin.name} />
+        <BuyCoin markets={markets} coinName={lastCoin.symbol} />
       </Route>
     </div>
   );

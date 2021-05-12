@@ -10,6 +10,7 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { Link } from "react-router-dom";
 
 const BuyCoin = ({ markets, coinName }) => {
+  coinName = coinName.toUpperCase();
   return (
     <div className="buy-coin-overlay">
       <div className="buy-popup">

@@ -118,3 +118,9 @@
   top: 0.5rem;
   right: 1rem;
 }
+.faExternalLinkAlt {
+  background-color: transparent;
+  font-size: 0.8rem;
+  right: 0.7rem;
+  position: absolute;
+}

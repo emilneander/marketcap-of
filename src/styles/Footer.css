@@ -22,6 +22,16 @@
     transform: translateY(-100px);
   }
 }
+@keyframes anim-from-right {
+  from {
+    transform: translateX(500px);
+    opacity: 0;
+  }
+  to {
+    transform: translateX(0px);
+    opacity: 1;
+  }
+}
 .footer {
   width: 100vw;
   display: flex;
@@ -56,7 +66,7 @@ hr {
 
 .social-icons > li {
   display: flex;
-  margin: 0 0.75rem 0 0.75rem;
+  margin: 0 0.5rem 0 0.5rem;
   justify-content: center;
   align-items: center;
 }
@@ -138,6 +148,46 @@ hr {
 }
 .link {
   text-decoration: none;
+}
+.ad-free-text {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  animation: anim-from-right 3s ease-out 3s both;
+  opacity: 1;
+}
+.ad-free-text > p {
+  color: #a4aabb;
+  font-weight: bold;
+}
+.faLongArrowAltLeft {
+  color: #a4aabb;
+  font-size: 1.75rem;
+  margin: 0 0.25rem 0 0.5rem;
+}
+@media (max-width: 555px) {
+  .ad-free-text {
+    margin-top: 0.5rem;
+    flex-direction: column-reverse;
+  }
+  .ad-free-text > p {
+    font-size: 0.65rem;
+    font-weight: bold;
+    margin-left: 0.25rem;
+  }
+  .faLongArrowAltLeft {
+    font-size: 1.25rem;
+  }
+}
+@media (max-width: 388px) {
+  .ad-free-text {
+    margin-top: 0.2rem;
+  }
+  .ad-free-text > p {
+    font-size: 0.45rem;
+    font-weight: bold;
+    margin-left: 0.25rem;
+  }
 }
 @media (max-width: 360px) {
   hr {
