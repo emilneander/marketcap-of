@@ -65,7 +65,7 @@ const CurrencySelector = ({
   return (
     <div className="currency-selector-container" ref={ref}>
       <button className="btn currency-opener" onClick={handleClick}>
-        {selectCurrency.code}
+        <p> {selectCurrency.code}</p>
         <FontAwesomeIcon
           className={showCurrencyDropDown ? "fa-down up" : "fa-down"}
           icon={faCaretDown}

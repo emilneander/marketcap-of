@@ -88,6 +88,7 @@
   flex-direction: row;
   align-items: center;
   justify-content: center;
+  flex-wrap: wrap;
 }
 .before-symbol {
   order: 0;
@@ -148,7 +149,7 @@ h2 {
 
 @media (max-width: 555px) {
   .selectedCoins-container {
-    margin: 1rem 1rem 0 1rem;
+    margin: 1rem 0rem 0 0rem;
   }
   .coin-prices {
     font-size: 2.25rem;
@@ -181,5 +182,12 @@ h2 {
   }
   .coin-prices {
     font-size: 1.7rem;
+  }
+  .a-img {
+    width: 2rem;
+    height: 2rem;
+  }
+  .percent {
+    font-size: 1rem;
   }
 }

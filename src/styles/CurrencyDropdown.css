@@ -61,3 +61,8 @@
   color: rgb(184, 182, 182);
   margin-left: 0.35rem;
 }
+@media (max-width: 360px) {
+  .currency-dropdown {
+    width: 16rem;
+  }
+}

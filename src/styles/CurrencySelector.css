@@ -3,8 +3,8 @@
 }
 
 .currency-opener {
-  width: 5rem;
-  height: 2rem;
+  width: 7rem;
+  height: 2.5rem;
   color: white;
   border-radius: 5px;
   outline: transparent;
@@ -12,7 +12,54 @@
   position: relative;
   cursor: pointer;
 }
+.currency-opener > p {
+  font-size: 1rem;
+  background-color: transparent;
+  margin-right: 0.5rem;
+}
 .fa-down {
-  right: 0.5rem;
-  font-size: 1.2rem;
+  font-size: 1.35rem;
+}
+@media (max-width: 1000px) {
+  .currency-opener {
+    width: 6rem;
+    height: 2rem;
+  }
+  .currency-opener > p {
+    font-size: 0.85rem;
+  }
+  .fa-down {
+    font-size: 1.25rem;
+  }
+}
+@media (max-width: 555px) {
+  .currency-opener {
+    width: 5rem;
+    height: 1.85rem;
+  }
+  .currency-opener > p {
+    font-size: 0.8rem;
+  }
+  .fa-down {
+    font-size: 1.2rem;
+    right: 0.5rem;
+  }
+}
+@media (max-width: 360px) {
+  .currency-opener {
+    width: 4rem;
+    height: 1.75rem;
+  }
+  .currency-opener > p {
+    background-color: transparent;
+
+    font-size: 0.75rem;
+  }
+  .fa-down {
+    font-size: 1.1rem;
+    right: 0.5rem;
+  }
+  .currency-selector-container {
+    margin-right: 1rem;
+  }
 }
