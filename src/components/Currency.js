@@ -5,9 +5,7 @@ const Currency = ({
   name,
   code,
   symbol,
-  position,
   icon,
-  index,
   setSelectCurrency,
   setShowCurrencyDropDown,
 }) => {

@@ -29,13 +29,17 @@ h4 {
   margin-right: 0.05rem;
 }
 .input-after-symbol {
-  margin-left: 0.05rem;
   order: 1;
 }
 .input-before-symbol {
   margin-left: 0.1rem;
-  margin-right: 0.05rem;
   order: 0;
+}
+.letters-after {
+  margin-left: 0.12rem;
+}
+.letters-before {
+  margin-right: 0.2rem;
 }
 span {
   color: #5306fc;

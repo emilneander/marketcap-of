@@ -14,20 +14,24 @@ const SelectedCoinInSearch = ({
   const handleClick = () => {
     setSelectCoin({});
   };
-
+  //classname for symbol
+  let symbolClass = "price";
+  if (selectCurrency.position === "after") {
+    symbolClass = "price input-after-symbol";
+    if (/[a-zA-Z]/.test(selectCurrency.symbol)) {
+      symbolClass = "price input-after-symbol letters-after";
+    }
+  } else {
+    symbolClass = "price input-before-symbol";
+    if (/[a-zA-Z]/.test(selectCurrency.symbol)) {
+      symbolClass = "price input-before-symbol letters-before";
+    }
+  }
   return (
     <div className="coin-in-search-container">
       <img src={selectCoin.image} alt="img-a" />
       <h4 className="symbol">{selectCoin.symbol.toUpperCase()}</h4>
-      <h4
-        className={
-          selectCurrency.position === "after"
-            ? "price input-after-symbol"
-            : "price input-before-symbol"
-        }
-      >
-        {selectCurrency.symbol}
-      </h4>
+      <h4 className={symbolClass}>{selectCurrency.symbol}</h4>
       <h4 className="price">{selectCoin.current_price.toLocaleString()}</h4>
       <FontAwesomeIcon
         className="fa-times"

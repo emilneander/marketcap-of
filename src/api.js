@@ -24,7 +24,7 @@ export const apiStableCoinsId = () => {
     });
 };
 
-export const getCoinById = (id) => {
+export const getCoinById = (id, currency) => {
   return axios
     .get(
       `https://api.coingecko.com/api/v3/coins/${id}?localization=false&tickers=true&market_data=true&community_data=false&developer_data=false&sparkline=false`
@@ -35,12 +35,15 @@ export const getCoinById = (id) => {
         const identifiers = tickers.map((obj) => {
           return obj.market.identifier;
         });
+        //to match with property key
+        const currencyLower = currency.toLowerCase();
+
         return {
           id: item.id,
           name: item.name,
           image: item.image.thumb,
-          market_cap: item.market_data.market_cap.usd,
-          current_price: item.market_data.current_price.usd,
+          market_cap: item.market_data.market_cap[currencyLower],
+          current_price: item.market_data.current_price[currencyLower],
           circulating_supply: item.market_data.circulating_supply,
           symbol: item.symbol,
           exhange: identifiers,

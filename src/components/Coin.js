@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect } from "react";
 import "../styles/Coin.css";
 import { getCoinById } from "../api";
 
@@ -18,6 +18,7 @@ const Coin = ({
   donationCoinStyle,
   selectedDonationCoinStyle,
   extendSearch,
+  selectCurrency,
 }) => {
   //when clicking on a coin in the list
   const clickHandler = () => {
@@ -30,7 +31,7 @@ const Coin = ({
         setDisplay(false);
         //else fetch specific coin
       } else if (extendSearch) {
-        getCoinById(coinElement.id).then((result) => {
+        getCoinById(coinElement.id, selectCurrency.code).then((result) => {
           //if we get a result from fetch
           if (result) {
             setSelectCoin(result[0]);

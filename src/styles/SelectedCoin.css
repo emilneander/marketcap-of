@@ -28,9 +28,10 @@
 }
 .text-div {
   display: grid;
-  grid-template-columns: auto auto 0.5rem auto auto;
+  grid-template-columns: auto auto auto auto auto;
   grid-template-rows: auto auto auto;
   margin-top: 2.25rem;
+  align-items: center;
 }
 .market-cap-title {
   grid-column: 1/5;
@@ -58,20 +59,22 @@
 }
 
 .first-text {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
   grid-column: 2/3;
   grid-row: 2/3;
-  align-items: center;
 }
 .second-text {
   grid-column: 2/3;
   grid-row: 3/4;
+  display: flex;
   align-items: center;
+  justify-content: flex-start;
 }
-.first-mcap {
-  grid-column: 4/5;
-}
-.second-mcap {
-  grid-column: 4/5;
+
+.grid-symbol {
+  font-size: 2rem;
 }
 
 .coin-prices {
@@ -87,12 +90,31 @@
   justify-content: center;
 }
 .before-symbol {
-  margin-right: 0.25rem;
   order: 0;
 }
 .after-symbol {
-  margin-left: 0.25rem;
   order: 1;
+}
+.letter-before {
+  margin-right: 0.6rem;
+}
+.letter-after {
+  margin-left: 0.35rem;
+}
+.grid-before {
+  font-size: 2rem;
+  grid-column: 3/4;
+  grid-row: 3/4;
+}
+.grid-after {
+  font-size: 2rem;
+  grid-column: 4/5;
+  grid-row: 3/4;
+  justify-self: flex-end;
+  z-index: 2;
+}
+.symbol-first {
+  grid-row: 2/3;
 }
 .percent {
   margin-left: 0.5rem;

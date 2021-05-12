@@ -11,6 +11,7 @@ const CoinsList = ({
   search,
   coins,
   setSelectCoin,
+  selectCoin,
   setDisplay,
   display,
   setSearch,
@@ -27,6 +28,7 @@ const CoinsList = ({
   extendSearch,
   inputRef,
   showExtend,
+  selectCurrency,
 }) => {
   const [coinsFound, setCoinsFound] = useState(true);
   //filter coins to what the current search value is
@@ -113,6 +115,7 @@ const CoinsList = ({
                 selectedDonationCoinStyle={selectedDonationCoinStyle}
                 setExtendSearch={setExtendSearch}
                 extendSearch={extendSearch}
+                selectCurrency={selectCurrency}
               />
             );
           }

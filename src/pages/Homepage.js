@@ -61,6 +61,7 @@ const Homepage = () => {
           filterStableCoins(data).then((filteredData) => {
             setCoins(filteredData);
           });
+          //setting extended coins if extendSearch is true
         } else if (extendSearch) {
           //filter away stable coins and set coins if extend search
           filterStableCoins(unhandledCoins).then((filteredData) => {
@@ -76,7 +77,7 @@ const Homepage = () => {
       })
       .catch((error) => console.log(error));
     // }, 4000);
-  }, [selectCurrency, extendSearch]);
+  }, [extendSearch, selectCurrency]);
 
   //refs
   const aRef = useClickOutside(() => {
@@ -108,6 +109,10 @@ const Homepage = () => {
             <CurrencySelector
               setSelectCurrency={setSelectCurrency}
               selectCurrency={selectCurrency}
+              selectACoin={selectACoin}
+              setSelectACoin={setSelectACoin}
+              selectBCoin={selectBCoin}
+              setSelectBCoin={setSelectBCoin}
             />
           </div>
           <div className="homepage" onMouseMove={handleMouseMove}>
@@ -143,6 +148,7 @@ const Homepage = () => {
                   coins={coins}
                   search={searchA}
                   setSelectCoin={setSelectACoin}
+                  selectCoin={selectACoin}
                   display={displayAList}
                   setDisplay={setDisplayAList}
                   setSearch={setSearchA}
@@ -157,6 +163,7 @@ const Homepage = () => {
                   inputRef={inputRefA}
                   setMouseMove={setMouseMove}
                   showExtend={true}
+                  selectCurrency={selectCurrency}
                 />
               ) : (
                 ""
@@ -194,6 +201,7 @@ const Homepage = () => {
                   coins={coins}
                   search={searchB}
                   setSelectCoin={setSelectBCoin}
+                  selectCoin={selectBCoin}
                   setDisplay={setDisplayBList}
                   display={displayBList}
                   setSearch={setSearchB}
@@ -208,6 +216,7 @@ const Homepage = () => {
                   inputRef={inputRefB}
                   setMouseMove={setMouseMove}
                   showExtend={true}
+                  selectCurrency={selectCurrency}
                 />
               ) : (
                 ""

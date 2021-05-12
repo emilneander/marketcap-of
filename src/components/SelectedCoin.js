@@ -4,6 +4,7 @@ import InfoBox from "./InfoBox";
 //styles
 import "../styles/SelectedCoin.css";
 import { calculatePrice, calculatePercentage } from "../calculatePrice";
+import Currency from "./Currency";
 
 const SelectedCoin = ({ selectACoin, selectBCoin, selectCurrency }) => {
   const price = calculatePrice(selectACoin, selectBCoin);
@@ -11,6 +12,25 @@ const SelectedCoin = ({ selectACoin, selectBCoin, selectCurrency }) => {
   const a = selectACoin;
   const b = selectBCoin;
 
+  //get classaname for the currency symbol to position it correctly
+  let symbolClass = "coin-prices";
+  let symbolClassGrid = "";
+  if (selectCurrency.position === "after") {
+    symbolClass = "after-symbol";
+    symbolClassGrid = "grid-after";
+    //more space if it is a letter base symbol
+    if (/[a-zA-Z]/.test(selectCurrency.symbol)) {
+      symbolClass = "after-symbol letter-after";
+      symbolClassGrid = "grid-after letter-after";
+    }
+  } else {
+    symbolClass = "before-symbol";
+    symbolClassGrid = "grid-before";
+    if (/[a-zA-Z]/.test(selectCurrency.symbol)) {
+      symbolClass = "before-symbol letter-before";
+      symbolClassGrid = "grid-before letter-before";
+    }
+  }
   return (
     <div
       className="selectedCoin-container-parent"
@@ -23,20 +43,20 @@ const SelectedCoin = ({ selectACoin, selectBCoin, selectCurrency }) => {
         <div className="selectedCoins-container">
           <div className="img-price">
             <img className="a-img" src={a.image} alt="crypto a" />
-            <h1
-              className={
-                selectCurrency.position === "after"
-                  ? "coin-prices after-symbol"
-                  : "coin-prices before-symbol"
-              }
-            >
+            <h1 className={"coin-prices " + symbolClass}>
               {selectCurrency.symbol}
             </h1>
             <h1 className="coin-prices">
               {/* Show only 2 decimals if price is over 0.1 */}
               {price > 0.1
-                ? price.toFixed(2).toLocaleString()
-                : price.toFixed(4).toLocaleString()}
+                ? price.toLocaleString(undefined, {
+                    minimumFractionDigits: 0,
+                    maximumFractionDigits: 2,
+                  })
+                : price.toLocaleString(undefined, {
+                    minimumFractionDigits: 0,
+                    maximumFractionDigits: 4,
+                  })}
             </h1>
             <span
               className={
@@ -53,13 +73,19 @@ const SelectedCoin = ({ selectACoin, selectBCoin, selectCurrency }) => {
               <InfoBox selectACoin={selectACoin} />
             </h2>
             {/* <h2 className="first-text">{a.symbol.toUpperCase()}: </h2> */}
-            <h2 className="first-text first-mcap">
-              ${a.market_cap.toLocaleString()}
-            </h2>
+            <div className="first-text">
+              <h2 className={symbolClass + " grid-symbol"}>
+                {selectCurrency.symbol}
+              </h2>
+              <h2>{a.market_cap.toLocaleString()}</h2>
+            </div>
             {/* <h2 className="second-text">{b.symbol.toUpperCase()}: </h2> */}
-            <h2 className="second-text second-mcap">
-              ${b.market_cap.toLocaleString()}
-            </h2>
+            <div className="second-text">
+              <h2 className={symbolClass + " grid-symbol"}>
+                {selectCurrency.symbol}
+              </h2>
+              <h2>{b.market_cap.toLocaleString()}</h2>
+            </div>
             <img //imgages to grid
               className="b-img first-text-img"
               src={a.image}
