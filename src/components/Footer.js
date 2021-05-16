@@ -78,13 +78,13 @@ const Footer = ({
                 <p className="donate-text">Donate</p>
               </button>
             </Link>
-            <div className="ad-free-text">
+            {/* <div className="ad-free-text">
               <FontAwesomeIcon
                 className="faLongArrowAltLeft"
                 icon={faLongArrowAltLeft}
               />
               <p>Keep me ad free</p>
-            </div>
+            </div> */}
           </li>
         </ul>
       </div>

@@ -1,0 +1,143 @@
+.ledger-container {
+  position: absolute;
+  margin-top: 1rem;
+  right: 0;
+  width: 230px;
+  height: 515px;
+  background-color: transparent;
+  z-index: 0;
+  display: flex;
+}
+.ledger-container > a {
+  text-decoration: transparent;
+}
+.faMinusSquare {
+  color: #a4aabb;
+  margin: 0;
+  margin-right: 0.5rem;
+  margin-top: 0.25rem;
+  cursor: pointer;
+}
+.ledger-banner {
+  width: 200px;
+  height: 460px;
+  background-color: white;
+  border-radius: 10px;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+}
+.ledger-logo {
+  width: 187px;
+  height: 46px;
+  margin: 0.5rem 0 1rem 0;
+}
+.ledger-starter-pack {
+  width: 180px;
+  height: 230px;
+  position: absolute;
+  bottom: 0;
+}
+.ledger-title {
+  background-color: transparent;
+  color: #1d2028;
+  text-align: center;
+  margin-bottom: 0.5rem;
+  font-size: 1.45rem;
+  width: 95%;
+}
+.ledger-description {
+  background: transparent;
+  color: #1d2028;
+  text-align: center;
+  width: 85%;
+  margin-bottom: 0.85rem;
+}
+.ledger-btn {
+  border-radius: 10px;
+  width: 9rem;
+  border: transparent;
+  cursor: pointer;
+}
+.ledger-btn-text {
+  font-size: 1rem;
+  color: #ebebeb;
+  font-weight: bold;
+}
+.voucher-span {
+  color: #41cdb3;
+}
+.faLongArrowAltRight {
+  color: white;
+  font-size: 1rem;
+  margin-top: 0.2rem;
+  margin-left: 0.5rem;
+}
+
+@media (max-width: 1200px) {
+  .ledger-container {
+    width: 170px;
+    height: 420px;
+  }
+  .ledger-banner {
+    width: 140px;
+    height: 380px;
+  }
+  .ledger-logo {
+    width: 117px;
+    height: 30px;
+  }
+  .ledger-title {
+    font-size: 1.3rem;
+  }
+  .ledger-description {
+    font-size: 0.8rem;
+  }
+  .ledger-btn {
+    width: 7rem;
+    height: 2.5rem;
+  }
+  .ledger-btn-text {
+    font-size: 0.85rem;
+  }
+  .ledger-starter-pack {
+    width: 122px;
+    height: 154px;
+  }
+}
+@media (max-width: 1200px) {
+  .ledger-container {
+    width: 170px;
+    height: 420px;
+  }
+  .ledger-banner {
+    width: 140px;
+    height: 380px;
+  }
+  .ledger-logo {
+    width: 117px;
+    height: 30px;
+  }
+  .ledger-title {
+    font-size: 1.3rem;
+  }
+  .ledger-description {
+    font-size: 0.8rem;
+  }
+  .ledger-btn {
+    width: 7rem;
+    height: 2.5rem;
+  }
+  .ledger-btn-text {
+    font-size: 0.85rem;
+  }
+  .ledger-starter-pack {
+    width: 122px;
+    height: 154px;
+  }
+}
+@media (max-width: 1060px) {
+  .ledger-container {
+    visibility: hidden;
+  }
+}

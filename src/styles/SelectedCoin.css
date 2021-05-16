@@ -145,6 +145,9 @@ h2 {
   h2 {
     font-size: 1.75rem;
   }
+  .firstafter-text > h2 {
+    font-size: 1.75rem;
+  }
 }
 
 @media (max-width: 555px) {
@@ -170,6 +173,9 @@ h2 {
     margin-top: 1.5rem;
   }
   h2 {
+    font-size: 1.5rem;
+  }
+  .firstafter-text > h2 {
     font-size: 1.5rem;
   }
 }

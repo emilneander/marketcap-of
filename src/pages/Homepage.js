@@ -1,4 +1,4 @@
-import React, { useEffect, useState, useRef, createRef } from "react";
+import React, { useEffect, useState, useRef } from "react";
 import { addDonationToData, addExchangeToData } from "../addPropsToData";
 //api
 import { getDefaultCoins } from "../api";
@@ -17,7 +17,7 @@ import Search from "../components/Search";
 import SelectedCoin from "../components/SelectedCoin";
 import Swap from "../components/Swap";
 import CurrencySelector from "../components/CurrencySelector";
-// import DowloadScreenshot from "../components/DownloadScreenshot";
+import LedgerBanner from "../components/LedgerBanner";
 //hooks
 import useClickOutside from "../hooks/useClickOutside";
 //style
@@ -118,6 +118,7 @@ const Homepage = () => {
             />
           </div>
           <div className="homepage" onMouseMove={handleMouseMove}>
+            <LedgerBanner />
             <div className="title">
               <h1>
                 Show the value of <span className="span-A">A</span> <br />

@@ -1,7 +1,7 @@
 .swap {
   background-color: transparent;
   position: absolute;
-  top: 17.2rem;
+  top: 16.75rem;
   cursor: pointer;
   /* To make all text unselectable */
   -webkit-touch-callout: none; /* iOS Safari */
@@ -19,12 +19,15 @@
 }
 @media (max-width: 1000px) {
   .swap {
-    top: 15.45rem;
+    top: 15.1rem;
   }
 }
 @media (max-width: 800px) {
   .swap {
-    top: 12.6rem;
+    top: 12.45rem;
+  }
+  .icon {
+    font-size: 1.85rem;
   }
 }
 /* @media (max-width: 572px) {
@@ -44,7 +47,7 @@
   .swap {
     right: 0rem;
     margin-right: 7rem;
-    top: 15.95rem;
+    top: 15.55rem;
     transform: rotate(90deg);
   }
 }
@@ -55,7 +58,12 @@
 }
 @media (max-width: 360px) {
   .swap {
-    top: 12.6rem;
+    top: 12.25rem;
     margin-right: 2rem;
+  }
+}
+@media (max-width: 243px) {
+  .swap {
+    visibility: hidden;
   }
 }

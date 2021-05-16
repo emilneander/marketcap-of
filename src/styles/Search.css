@@ -14,7 +14,7 @@
   -webkit-tap-highlight-color: transparent; /*android chrome*/
 }
 .coin-text {
-  font-size: 2rem;
+  font-size: 1.65rem;
   margin-bottom: 0.3rem;
   text-align: center;
   color: white;
@@ -60,7 +60,7 @@
 
 @media (max-width: 800px) {
   .coin-text {
-    font-size: 1.75rem;
+    font-size: 1.4rem;
   }
   .coin-input {
     width: 250px;
@@ -70,7 +70,7 @@
 
 @media (max-width: 555px) {
   .coin-text {
-    font-size: 1.5rem;
+    font-size: 1.25rem;
   }
   .coin-input {
     width: 250px;

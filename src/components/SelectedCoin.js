@@ -73,14 +73,14 @@ const SelectedCoin = ({ selectACoin, selectBCoin, selectCurrency }) => {
               <InfoBox selectACoin={selectACoin} />
             </h2>
             {/* <h2 className="first-text">{a.symbol.toUpperCase()}: </h2> */}
-            <div className="first-text">
+            <div className="firstafter-text first-text">
               <h2 className={symbolClass + " grid-symbol"}>
                 {selectCurrency.symbol}
               </h2>
               <h2>{a.market_cap.toLocaleString()}</h2>
             </div>
             {/* <h2 className="second-text">{b.symbol.toUpperCase()}: </h2> */}
-            <div className="second-text">
+            <div className="firstafter-text second-text">
               <h2 className={symbolClass + " grid-symbol"}>
                 {selectCurrency.symbol}
               </h2>
