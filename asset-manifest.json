@@ -1,15 +1,15 @@
 {
   "files": {
-    "main.css": "/static/css/main.a438705f.chunk.css",
-    "main.js": "/static/js/main.83dee7c4.chunk.js",
-    "main.js.map": "/static/js/main.83dee7c4.chunk.js.map",
+    "main.css": "/static/css/main.d93bc015.chunk.css",
+    "main.js": "/static/js/main.61a02248.chunk.js",
+    "main.js.map": "/static/js/main.61a02248.chunk.js.map",
     "runtime-main.js": "/static/js/runtime-main.97f13d69.js",
     "runtime-main.js.map": "/static/js/runtime-main.97f13d69.js.map",
-    "static/js/2.50c3ae1c.chunk.js": "/static/js/2.50c3ae1c.chunk.js",
-    "static/js/2.50c3ae1c.chunk.js.map": "/static/js/2.50c3ae1c.chunk.js.map",
+    "static/js/2.c03ed493.chunk.js": "/static/js/2.c03ed493.chunk.js",
+    "static/js/2.c03ed493.chunk.js.map": "/static/js/2.c03ed493.chunk.js.map",
     "index.html": "/index.html",
-    "static/css/main.a438705f.chunk.css.map": "/static/css/main.a438705f.chunk.css.map",
-    "static/js/2.50c3ae1c.chunk.js.LICENSE.txt": "/static/js/2.50c3ae1c.chunk.js.LICENSE.txt",
+    "static/css/main.d93bc015.chunk.css.map": "/static/css/main.d93bc015.chunk.css.map",
+    "static/js/2.c03ed493.chunk.js.LICENSE.txt": "/static/js/2.c03ed493.chunk.js.LICENSE.txt",
     "static/media/Algorand-qr.50b3e11d.PNG": "/static/media/Algorand-qr.50b3e11d.PNG",
     "static/media/BinanceCoin-qr.fa8934af.PNG": "/static/media/BinanceCoin-qr.fa8934af.PNG",
     "static/media/Bitcoin-qr.b3f81fbc.PNG": "/static/media/Bitcoin-qr.b3f81fbc.PNG",
@@ -18,6 +18,7 @@
     "static/media/ChainLink-qr.51675279.PNG": "/static/media/ChainLink-qr.51675279.PNG",
     "static/media/DogeCoin-qr.0b9bb98e.PNG": "/static/media/DogeCoin-qr.0b9bb98e.PNG",
     "static/media/Ethereum-qr.26fd2dad.PNG": "/static/media/Ethereum-qr.26fd2dad.PNG",
+    "static/media/Ledger-logo.39166120.png": "/static/media/Ledger-logo.39166120.png",
     "static/media/LiteCoin-qr.a53b100a.PNG": "/static/media/LiteCoin-qr.a53b100a.PNG",
     "static/media/Monero-qr.0c64711a.PNG": "/static/media/Monero-qr.0c64711a.PNG",
     "static/media/NEO-qr.4e225e50.PNG": "/static/media/NEO-qr.4e225e50.PNG",
@@ -31,12 +32,13 @@
     "static/media/VeThor-qr.0df4ad4e.PNG": "/static/media/VeThor-qr.0df4ad4e.PNG",
     "static/media/XRP-qr.1d391d2e.PNG": "/static/media/XRP-qr.1d391d2e.PNG",
     "static/media/hand.60c48d49.svg": "/static/media/hand.60c48d49.svg",
+    "static/media/ledger-starter-pack.4cc8c0dd.png": "/static/media/ledger-starter-pack.4cc8c0dd.png",
     "static/media/mco-logo.60103d23.png": "/static/media/mco-logo.60103d23.png"
   },
   "entrypoints": [
     "static/js/runtime-main.97f13d69.js",
-    "static/js/2.50c3ae1c.chunk.js",
-    "static/css/main.a438705f.chunk.css",
-    "static/js/main.83dee7c4.chunk.js"
+    "static/js/2.c03ed493.chunk.js",
+    "static/css/main.d93bc015.chunk.css",
+    "static/js/main.61a02248.chunk.js"
   ]
 }
