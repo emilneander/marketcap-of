@@ -3512,7 +3512,7 @@
     {
         "name": "VIDT Datalink",
         "symbol": "VIDT",
-        "id": "vidt-datalink",
+        "id": "v-id-blockchain",
         "image": "https://assets.coingecko.com/coins/images/6115/thumb/V-ID_blockchain_-logo.png?1547042127"
     },
     {
@@ -9017,5 +9017,17 @@
         "symbol": "SAFEMOON",
         "id": "safemoon",
         "image": "https://assets.coingecko.com/coins/images/14362/small/174x174-white.png?1617174846"
+    },
+    {
+        "name": "Trias Token",
+        "symbol": "TRIAS",
+        "id": "trias-token",
+        "image": "https://assets.coingecko.com/coins/images/13963/small/5ELqtwp__400x400_%281%29.jpg?1613527958"
+    },
+    {
+        "name": "Freedom Reserve",
+        "symbol": "FR",
+        "id": "freedom-reserve",
+        "image": "https://assets.coingecko.com/coins/images/13342/small/J6uNL2FS_400x400.jpg?1607589046"
     }
 ]

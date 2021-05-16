@@ -29,7 +29,6 @@ const CurrencySelector = ({
 
   //useeffect for fetching coins when currency changed
   useEffect(() => {
-    console.log("yo");
     if (Object.keys(selectACoin).length) {
       getCoinById(selectACoin.id, selectCurrency.code).then((result) => {
         //if we get a result from fetch

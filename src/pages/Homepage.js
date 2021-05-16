@@ -1,7 +1,5 @@
-import React, { useEffect, useState, useRef } from "react";
+import React, { useEffect, useState, useRef, createRef } from "react";
 import { addDonationToData, addExchangeToData } from "../addPropsToData";
-//fetch
-import axios from "axios";
 //api
 import { getDefaultCoins } from "../api";
 import CoinsList from "../components/CoinsList";
@@ -19,6 +17,7 @@ import Search from "../components/Search";
 import SelectedCoin from "../components/SelectedCoin";
 import Swap from "../components/Swap";
 import CurrencySelector from "../components/CurrencySelector";
+// import DowloadScreenshot from "../components/DownloadScreenshot";
 //hooks
 import useClickOutside from "../hooks/useClickOutside";
 //style
@@ -89,11 +88,13 @@ const Homepage = () => {
   //ref for input search
   const inputRefA = useRef(null);
   const inputRefB = useRef(null);
+
   //handler
   const handleMouseMove = () => {
     setMouseMove(true);
   };
-
+  // //create ref for screenshot
+  // const ref = createRef(null);
   return (
     <Router>
       <Route path="/">
@@ -106,6 +107,7 @@ const Homepage = () => {
               </div>
               <hr className="hr-under-logo" />
             </Link>
+            {/* <DowloadScreenshot ref={ref} /> */}
             <CurrencySelector
               setSelectCurrency={setSelectCurrency}
               selectCurrency={selectCurrency}

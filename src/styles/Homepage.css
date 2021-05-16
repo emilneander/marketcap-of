@@ -12,7 +12,7 @@
   flex-direction: row;
   justify-content: center;
   align-items: flex-start;
-  padding-top: 4rem;
+  padding-top: 5rem;
   flex-wrap: wrap;
   position: relative;
 }
@@ -64,7 +64,7 @@
   width: 100%;
 }
 .title h1 {
-  margin-top: 2rem;
+  margin-top: 1rem;
   flex-basis: 100%;
   text-align: center;
   margin-bottom: 3rem;
