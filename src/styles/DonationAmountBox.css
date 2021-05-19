@@ -26,6 +26,9 @@
   align-items: center;
   position: relative;
 }
+.amount > input {
+  background-color: #171825;
+}
 .amount:hover {
   background-color: #34364d8e;
 }

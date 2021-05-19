@@ -1,31 +1,24 @@
 import React, { useState } from "react";
 import "../styles/LedgerBanner.css";
 //img
-import LedgerLogo from "../img/Ledger-logo.png";
+import LedgerLogo from "../img/Ledger-logo-white.png";
 import LedgerStartedPack from "../img/ledger-starter-pack.png";
 //icons
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faLongArrowAltRight } from "@fortawesome/free-solid-svg-icons";
-import {
-  faMinusSquare,
-  faPlusSquare,
-} from "@fortawesome/free-regular-svg-icons";
+import { faMinusSquare } from "@fortawesome/free-regular-svg-icons";
 
 const LedgerBanner = () => {
   //show/hide
   const [show, setShow] = useState(true);
 
   //handler
-  const handleClick = () => {
+  const handleClick = (e) => {
+    e.preventDefault();
     setShow(!show);
   };
   return (
     <div className="ledger-container">
-      <FontAwesomeIcon
-        className="faMinusSquare noSelect"
-        icon={show ? faMinusSquare : faPlusSquare}
-        onClick={handleClick}
-      />
       {show ? (
         <a
           href="https://shop.ledger.com/products/crypto-starter-pack?r=b22d433db482"
@@ -33,14 +26,20 @@ const LedgerBanner = () => {
           rel="nofollow"
         >
           <div className="ledger-banner">
+            <FontAwesomeIcon
+              className="faMinusSquare noSelect"
+              icon={faMinusSquare}
+              onClick={handleClick}
+            />
             <img className="ledger-logo" src={LedgerLogo} alt="ledger-logo" />
-            <h1 className="ledger-title">Be smart, secure your assets</h1>
-            <p className="ledger-description">
-              and get a <span className="voucher-span">$25</span> voucher for
-              you to buy your favorite crypto!
-            </p>
+            <h1 className="ledger-title"></h1>
+            <div className="ledger-desc-div">
+              <p className="ledger-description desc-one" />
+              <p className="voucher-span desc-two" />
+              <p className="ledger-description desc-three" />
+            </div>
             <button className="btn ledger-btn">
-              <p className="ledger-btn-text">Shop now</p>
+              <p className="ledger-btn-text">Read more</p>
               <FontAwesomeIcon
                 className="faLongArrowAltRight"
                 icon={faLongArrowAltRight}

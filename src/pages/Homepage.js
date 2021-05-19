@@ -118,7 +118,6 @@ const Homepage = () => {
             />
           </div>
           <div className="homepage" onMouseMove={handleMouseMove}>
-            <LedgerBanner />
             <div className="title">
               <h1>
                 Show the value of <span className="span-A">A</span> <br />
@@ -240,8 +239,12 @@ const Homepage = () => {
               )}
             </div>
           </div>
+          <LedgerBanner
+            styleName="desktop"
+            title="Don't lose your cryptos,
+ use a hardware wallet!"
+          />
           <Footer
-            className="footi"
             selectACoin={selectACoin}
             selectBCoin={selectBCoin}
             coins={coins}

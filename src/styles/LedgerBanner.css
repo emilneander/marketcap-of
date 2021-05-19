@@ -1,27 +1,30 @@
 .ledger-container {
   position: absolute;
-  margin-top: 1rem;
+  margin-top: 6.5rem;
   right: 0;
   width: 230px;
-  height: 515px;
+  height: 490px;
   background-color: transparent;
   z-index: 0;
   display: flex;
 }
+
 .ledger-container > a {
   text-decoration: transparent;
 }
 .faMinusSquare {
   color: #a4aabb;
   margin: 0;
-  margin-right: 0.5rem;
-  margin-top: 0.25rem;
   cursor: pointer;
+  position: absolute;
+  left: -1.5rem;
+  top: 0.25rem;
 }
 .ledger-banner {
   width: 200px;
-  height: 460px;
-  background-color: white;
+  height: 435px;
+  background-color: #171825;
+  border: 1px solid #707070;
   border-radius: 10px;
   display: flex;
   align-items: center;
@@ -40,18 +43,38 @@
 }
 .ledger-title {
   background-color: transparent;
-  color: #1d2028;
+  color: #bbc0cf;
   text-align: center;
   margin-bottom: 0.5rem;
-  font-size: 1.45rem;
+  font-size: 1rem;
   width: 95%;
+  line-height: 140%;
+}
+.ledger-title::after {
+  content: "Don't lose your cryptos, use a hardware wallet!";
+}
+.ledger-desc-div {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  width: 85%;
+  margin-bottom: 0.85rem;
 }
 .ledger-description {
   background: transparent;
-  color: #1d2028;
-  text-align: center;
-  width: 85%;
-  margin-bottom: 0.85rem;
+  color: #979ca9;
+  font-size: 0.9rem;
+}
+.desc-one::after {
+  content: "and get a\00a0";
+}
+.desc-two::after {
+  content: "$25\00a0";
+}
+.desc-three::after {
+  content: "voucher for you to buy your favorite crypto!";
 }
 .ledger-btn {
   border-radius: 10px;
@@ -61,34 +84,39 @@
 }
 .ledger-btn-text {
   font-size: 1rem;
-  color: #ebebeb;
+  color: #a4aabb;
   font-weight: bold;
+  background-color: transparent;
 }
+
 .voucher-span {
-  color: #41cdb3;
+  color: #9f84cf;
+  font-weight: bold;
+  font-size: 0.9rem;
 }
 .faLongArrowAltRight {
-  color: white;
+  color: #a4aabb;
   font-size: 1rem;
   margin-top: 0.2rem;
   margin-left: 0.5rem;
 }
 
-@media (max-width: 1200px) {
+@media (max-width: 1200px), (max-height: 700px) {
   .ledger-container {
     width: 170px;
-    height: 420px;
+    height: 410px;
+    z-index: 0;
   }
   .ledger-banner {
     width: 140px;
-    height: 380px;
+    height: 370px;
   }
   .ledger-logo {
     width: 117px;
     height: 30px;
   }
   .ledger-title {
-    font-size: 1.3rem;
+    font-size: 0.9rem;
   }
   .ledger-description {
     font-size: 0.8rem;
@@ -104,40 +132,270 @@
     width: 122px;
     height: 154px;
   }
-}
-@media (max-width: 1200px) {
-  .ledger-container {
-    width: 170px;
-    height: 420px;
-  }
-  .ledger-banner {
-    width: 140px;
-    height: 380px;
-  }
-  .ledger-logo {
-    width: 117px;
-    height: 30px;
-  }
-  .ledger-title {
-    font-size: 1.3rem;
-  }
-  .ledger-description {
+  .voucher-span {
     font-size: 0.8rem;
   }
-  .ledger-btn {
-    width: 7rem;
-    height: 2.5rem;
-  }
-  .ledger-btn-text {
-    font-size: 0.85rem;
-  }
-  .ledger-starter-pack {
-    width: 122px;
-    height: 154px;
-  }
 }
-@media (max-width: 1060px) {
+
+/* @media {
   .ledger-container {
     visibility: hidden;
+  }
+} */
+
+@media (max-width: 1060px), (max-height: 585px) {
+  .ledger-container {
+    position: relative;
+    margin-top: 0;
+    width: 100%;
+    height: 80px;
+    right: unset;
+    display: flex;
+    justify-content: center;
+  }
+  .ledger-banner {
+    position: relative;
+    width: 600px;
+    height: 80px;
+    flex-direction: row;
+  }
+  .ledger-logo {
+    width: 117px;
+    height: 30px;
+    margin: 0;
+    margin-left: 0.75rem;
+  }
+  .ledger-title {
+    font-size: 1rem;
+    margin: 0;
+    width: 17rem;
+    margin-left: 0.5rem;
+  }
+  .ledger-title::after {
+    content: "Be smart, secure your crypto!";
+  }
+  .ledger-description {
+    font-size: 0.8rem;
+    margin: 0;
+  }
+  .voucher-span {
+    font-size: 0.7rem;
+  }
+  .ledger-desc-div {
+    margin: 0;
+    width: unset;
+  }
+  .desc-three::after {
+    content: "voucher";
+  }
+  .ledger-btn {
+    width: 10rem;
+    height: 2rem;
+    margin: 0 1rem 0 1rem;
+  }
+  .ledger-btn-text {
+    font-size: 0.85rem;
+  }
+  .ledger-starter-pack {
+    display: none;
+  }
+  .faMinusSquare {
+    left: 0;
+    top: -1.25rem;
+  }
+}
+
+@media (max-width: 1060px) {
+  @media (max-height: 790px) {
+    .ledger-container {
+      margin-top: 0.5rem;
+      height: 60px;
+    }
+    .ledger-banner {
+      width: 600px;
+      height: 60px;
+    }
+    .ledger-logo {
+      width: 117px;
+      height: 30px;
+      margin: 0;
+    }
+    .ledger-title {
+      font-size: 0.85rem;
+      margin: 0;
+      width: 17rem;
+    }
+    .ledger-title::after {
+      content: "Be smart, secure your crypto!";
+    }
+    .ledger-description {
+      font-size: 0.8rem;
+      margin: 0;
+      width: unset;
+    }
+    .ledger-btn {
+      width: 15rem;
+      height: 2rem;
+      margin: 0 1rem 0 1rem;
+    }
+    .ledger-btn-text {
+      font-size: 0.85rem;
+    }
+    .ledger-starter-pack {
+      display: none;
+    }
+    .voucher-span {
+      font-size: 0.8rem;
+    }
+  }
+}
+@media (max-width: 630px) {
+  .ledger-banner {
+    width: 500px;
+  }
+  .ledger-btn {
+    width: 12rem;
+  }
+  .ledger-title {
+    font-size: 0.9rem;
+  }
+  .ledger-logo {
+    margin-left: 0.25rem;
+  }
+  @media (max-height: 710px) {
+    .ledger-container {
+      margin-top: 0.5rem;
+      height: 50px;
+    }
+    .ledger-banner {
+      height: 50px;
+    }
+  }
+}
+@media (max-width: 520px) {
+  .ledger-banner {
+    width: 400px;
+  }
+  .ledger-title {
+    display: none;
+  }
+  .ledger-description {
+    font-size: 1rem;
+    font-weight: bold;
+  }
+  .voucher-span {
+    font-size: 1rem;
+  }
+  .ledger-desc-div {
+    width: 10rem;
+  }
+  .ledger-logo {
+    margin: 0 0.5rem 0 0.5rem;
+  }
+  .ledger-btn {
+    width: 8rem;
+  }
+  .ledger-btn-text {
+    font-size: 0.85rem;
+  }
+  .desc-one::after {
+    content: "Secure your\00a0";
+  }
+  .desc-two::after {
+    content: "$25";
+  }
+  .desc-one {
+    order: 1;
+    display: inline-block;
+  }
+  .desc-two {
+    order: 3;
+  }
+  .desc-three {
+    order: 2;
+  }
+  .desc-three::after {
+    content: "cryptos, get\00a0";
+  }
+  .faLongArrowAltRight {
+    font-size: 0.8rem;
+    margin-left: 0.3rem;
+  }
+  @media (max-height: 710px) {
+    .ledger-description {
+      font-size: 0.8rem;
+    }
+    .voucher-span {
+      font-size: 0.8rem;
+    }
+  }
+}
+@media (max-width: 410px) {
+  .ledger-banner {
+    width: 350px;
+  }
+  .ledger-logo {
+    margin: 0;
+    width: 110px;
+    height: 27px;
+  }
+  .ledger-btn {
+    margin: 0 0.5rem 0 0.5rem;
+  }
+  .ledger-btn-text {
+    font-size: 0.8rem;
+  }
+  .ledger-description {
+    font-size: 0.8rem;
+  }
+  .voucher-span {
+    font-size: 0.8rem;
+  }
+}
+@media (max-width: 355px) {
+  .ledger-banner {
+    width: 330px;
+    height: 40px;
+  }
+  .ledger-logo {
+    width: 90px;
+    height: 24px;
+  }
+  .ledger-btn {
+    height: 1.5rem;
+  }
+  .faLongArrowAltRight {
+    display: none;
+  }
+}
+@media (max-width: 338px) {
+  .ledger-banner {
+    width: 310px;
+  }
+  .ledger-description {
+    font-size: 0.75rem;
+  }
+  .voucher-span {
+    font-size: 0.75rem;
+  }
+  .ledger-btn-text {
+    font-size: 0.75rem;
+  }
+  .faLongArrowAltRight {
+    display: none;
+  }
+}
+@media (max-width: 313px) {
+  .ledger-banner {
+    width: 300px;
+  }
+}
+@media (max-width: 301px) {
+  .ledger-banner {
+    width: 290px;
+  }
+  .ledger-logo {
+    width: 90px;
+    height: 24px;
   }
 }

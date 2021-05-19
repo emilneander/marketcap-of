@@ -19,7 +19,7 @@
 }
 @media (max-width: 1000px) {
   .swap {
-    top: 15.1rem;
+    top: 16rem;
   }
 }
 @media (max-width: 800px) {
@@ -47,7 +47,7 @@
   .swap {
     right: 0rem;
     margin-right: 7rem;
-    top: 15.55rem;
+    top: 14.45rem;
     transform: rotate(90deg);
   }
 }
@@ -58,7 +58,7 @@
 }
 @media (max-width: 360px) {
   .swap {
-    top: 12.25rem;
+    top: 11.65rem;
     margin-right: 2rem;
   }
 }

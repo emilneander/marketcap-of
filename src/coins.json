@@ -1718,7 +1718,7 @@
     {
         "name": "Constellation",
         "symbol": "DAG",
-        "id": "constellation",
+        "id": "constellation-labs",
         "image": "https://assets.coingecko.com/coins/images/4645/thumb/Constellation.jpg?1613976385"
     },
     {
@@ -3440,7 +3440,7 @@
     {
         "name": "Callisto Network",
         "symbol": "CLO",
-        "id": "callisto-network",
+        "id": "callisto",
         "image": "https://assets.coingecko.com/coins/images/4051/thumb/CLO.png?1613015885"
     },
     {
