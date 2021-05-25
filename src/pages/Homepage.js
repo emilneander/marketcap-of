@@ -1,7 +1,10 @@
 import React, { useEffect, useState, useRef } from "react";
-import { addDonationToData, addExchangeToData } from "../addPropsToData";
+//add props
+import { addDonationToData, addImgToData } from "../addPropsToData";
+//checker
+import { canDonateTo } from "../checker";
 //api
-import { getDefaultCoins } from "../api";
+import { getDefaultCoins, getExtendedCoins } from "../api";
 import CoinsList from "../components/CoinsList";
 import Footer from "../components/Footer";
 //logo
@@ -28,6 +31,8 @@ import { BrowserRouter as Router, Link, Route } from "react-router-dom";
 const Homepage = () => {
   // const [api, setApi] = useState(apiUrl);
   const [coins, setCoins] = useState([]);
+  const [extendedCoins, setExtendedCoins] = useState([]);
+  const [topCoins, setTopCoins] = useState([]);
   const [searchA, setSearchA] = useState("");
   const [searchB, setSearchB] = useState("");
   const [displayAList, setDisplayAList] = useState(false);
@@ -46,37 +51,40 @@ const Homepage = () => {
 
   //fetch all coins
   useEffect(() => {
-    // setTimeout(() => {
-    getDefaultCoins(selectCurrency.code)
-      .then((res) => {
-        //add the donation info to the data
-        addDonationToData(res.data);
-        //add exchange props to data
-        addExchangeToData(res.data);
-        const data = res.data;
-        //setting default coins if extendSearch is false
-        if (!extendSearch) {
-          //filter away stable coins and set coins if NOT extend search
-          filterStableCoins(data).then((filteredData) => {
-            setCoins(filteredData);
-          });
-          //setting extended coins if extendSearch is true
-        } else if (extendSearch) {
-          //filter away stable coins and set coins if extend search
-          filterStableCoins(unhandledCoins).then((filteredData) => {
-            setCoins(filteredData);
-          });
-        }
-        //setting the donation coins
-        const canDonateTo = res.data.filter((coin) => {
-          return coin.donation.active === true;
-        });
-        setDonateCoins(canDonateTo);
-        setSelectDonationCoin(canDonateTo[0]);
-      })
-      .catch((error) => console.log(error));
+    //get top 250 coins with correct usd
+    getDefaultCoins(selectCurrency.code).then((res) => {
+      //add the donation info to the data
+      addDonationToData(res.data);
+      const data = res.data;
+      //filter away stable coins and set coins if NOT extend search
+      filterStableCoins(data).then((filteredData) => {
+        setTopCoins(filteredData);
+      });
+      const canDonateTo = res.data.filter((coin) => {
+        return coin.donation.active === true;
+      });
+      setDonateCoins(canDonateTo);
+      setSelectDonationCoin(canDonateTo[0]);
+    });
+    //adding extended coins
+    getExtendedCoins().then((res) => {
+      const extendedCoins = res.data;
+      //filter away stable coins and set coins if extend search
+      filterStableCoins(extendedCoins).then((filteredData) => {
+        setExtendedCoins(filteredData);
+      });
+    });
+  }, []);
+
+  useEffect(() => {
+    if (!extendSearch) {
+      setCoins(topCoins);
+      //setting coins to extendedCoins if extendSearch is true
+    } else if (extendSearch) {
+      setCoins(extendedCoins);
+    }
     // }, 4000);
-  }, [extendSearch, selectCurrency]);
+  }, [topCoins, extendedCoins, extendSearch, selectCurrency]);
 
   //refs
   const aRef = useClickOutside(() => {
@@ -107,7 +115,6 @@ const Homepage = () => {
               </div>
               <hr className="hr-under-logo" />
             </Link>
-            {/* <DowloadScreenshot ref={ref} /> */}
             <CurrencySelector
               setSelectCurrency={setSelectCurrency}
               selectCurrency={selectCurrency}
@@ -166,6 +173,7 @@ const Homepage = () => {
                   setMouseMove={setMouseMove}
                   showExtend={true}
                   selectCurrency={selectCurrency}
+                  filteredCoins={filteredCoinsA}
                 />
               ) : (
                 ""
@@ -219,13 +227,16 @@ const Homepage = () => {
                   setMouseMove={setMouseMove}
                   showExtend={true}
                   selectCurrency={selectCurrency}
+                  filteredCoins={filteredCoinsB}
                 />
               ) : (
                 ""
               )}
             </div>
             <div className="selectedCoin-div">
-              {Object.keys(selectACoin).length &&
+              {selectACoin &&
+              selectBCoin &&
+              Object.keys(selectACoin).length &&
               Object.keys(selectBCoin).length ? (
                 <SelectedCoin
                   selectACoin={selectACoin}

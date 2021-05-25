@@ -24,7 +24,7 @@ export const apiStableCoinsId = () => {
     });
 };
 
-export const getCoinById = (id, currency) => {
+export const getCoinAndMarketById = (id, currency) => {
   return axios
     .get(
       `https://api.coingecko.com/api/v3/coins/${id}?localization=false&tickers=true&market_data=true&community_data=false&developer_data=false&sparkline=false`
@@ -62,4 +62,27 @@ export const GetCoinTickerById = (id) => {
       return res.data;
     })
     .catch((error) => console.log(error));
+};
+
+export const getCoinById = (id, currency) => {
+  return axios
+    .get(
+      `https://api.coingecko.com/api/v3/coins/markets?vs_currency=${currency}&ids=${id}`
+    )
+    .then((res) => {
+      return res.data;
+    })
+    .catch((error) => console.log(error));
+};
+
+export const getExtendedCoins = () => {
+  console.log("loading");
+  return axios
+    .get(`https://api.coingecko.com/api/v3/coins/list?include_platform=false`)
+    .then((res) => {
+      return res;
+    })
+    .catch((error) => {
+      console.log(error);
+    });
 };

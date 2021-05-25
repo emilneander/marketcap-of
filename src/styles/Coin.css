@@ -41,11 +41,15 @@
   width: 100%;
   background-color: transparent;
 }
-.coin img {
+.coin-img {
   height: 30px;
   width: 30px;
   margin-right: 10px;
   background-color: transparent;
+  visibility: visible;
+}
+.img-hidden {
+  visibility: hidden;
 }
 
 .coin h1 {

@@ -56,7 +56,7 @@ const Coin = ({
     }
     return;
   };
-  return (
+  return Object.keys(coinElement).length && coinElement && name ? (
     <div
       className="coin-container"
       onClick={clickHandler}
@@ -73,13 +73,19 @@ const Coin = ({
         }
       >
         <div className="coin">
-          <img src={image} alt="crypto" />
+          <img
+            src={image}
+            className={image ? "coin-img img-visible" : "coin-img img-hidden"}
+            alt="crypto"
+          />
           <h1>{name}</h1>
           {!donationCoinStyle ? <p className="coin-symbol">{symbol}</p> : ""}
           {/* <p className="coin-price">${price}</p> */}
         </div>
       </div>
     </div>
+  ) : (
+    ""
   );
 };
 export default Coin;

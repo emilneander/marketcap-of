@@ -7,7 +7,6 @@ import { faTimesCircle } from "@fortawesome/free-solid-svg-icons";
 const SelectedCoinInSearch = ({
   selectCoin,
   setSelectCoin,
-  setExchangeAvailable,
   selectCurrency,
 }) => {
   //if clicked on the close icon

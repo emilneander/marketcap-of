@@ -1,5 +1,6 @@
 //supported coins JS
 import supportedCoins from "./donation/supported-coins";
+import coinsWithImg from "./coins.json";
 
 export const addDonationToData = (data) => {
   const newData = data.map((coin) => {
@@ -25,4 +26,25 @@ export const addExchangeToData = (data) => {
     coin["exchange"] = [];
   });
   return newData;
+};
+
+export const addImgToData = (data) => {
+  const newData = data.map((coin) => {
+    coinsWithImg.map((coinImg) => {
+      if (
+        coinImg.id === coin.id ||
+        coinImg.symbol === coin.symbol ||
+        coinImg.name === coin.name
+      ) {
+        coin["image"] = coinImg.image;
+        coin["rank"] = coinImg.rank;
+      }
+    });
+    return coin;
+  });
+  const sortedData = newData.sort((a, b) => {
+    return parseFloat(a.rank) - parseFloat(b.rank);
+  });
+
+  return sortedData;
 };

@@ -41,21 +41,23 @@ const Search = ({
         inputRef.current.blur();
         //else fetch specific coin
       } else if (extendSearch) {
-        getCoinById(filteredCoins[nr].id).then((result) => {
-          //if we get a result from fetch
-          if (result) {
-            setSelectCoin(result[0]);
-            setSearch("");
-            setDisplay(false);
-            inputRef.current.blur();
-          } else {
-            alert(
-              "Sorry " +
-                filteredCoins[nr].name +
-                " got some issues loading from coingecko. Tag me on Twitter and tell me what coin, I will fix it within 24h"
-            );
+        getCoinById(filteredCoins[nr].id, selectCurrency.code).then(
+          (result) => {
+            //if we get a result from fetch
+            if (result) {
+              setSelectCoin(result[0]);
+              setSearch("");
+              setDisplay(false);
+              inputRef.current.blur();
+            } else {
+              alert(
+                "Sorry " +
+                  filteredCoins[nr].name +
+                  " got some issues loading from coingecko. Tag me on Twitter and tell me what coin, I will fix it within 24h"
+              );
+            }
           }
-        });
+        );
       }
     }
   };
@@ -110,10 +112,8 @@ const Search = ({
           ref={inputRef}
           autoComplete="off"
           spellCheck="false"
-          //show placeholder if there isnt a selected coin or display is shown
-          {...(Object.keys(selectCoin).length === 0 || display
-            ? (placeholder = { placeholder })
-            : "")}
+          //show placeholder if there isnt a selected coin
+          placeholder={Object.keys(selectCoin).length === 0 ? placeholder : ""}
         />
         {
           //only print out the component if there is a selected coin and display is not true

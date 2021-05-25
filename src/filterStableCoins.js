@@ -1,11 +1,13 @@
 import { apiStableCoinsId } from "./api";
 
 const filterStableCoins = (data) => {
-  //quickfix to get away the stable coins that aren't tagged as one
   const firstFilteredData = data.filter((coin) => {
     return (
+      //quickfix to get away the stable coins that aren't tagged as one
       !coin.name.toString().toLowerCase().includes("usd") &&
-      !coin.symbol.toString().toLowerCase().includes("usd")
+      !coin.symbol.toString().toLowerCase().includes("usd") &&
+      //remove long/short tokens
+      !/x\-long|x\-short/.test(coin.id)
     );
   });
   //go deeper and remove all that is officially stable coins

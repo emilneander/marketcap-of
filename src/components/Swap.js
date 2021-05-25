@@ -13,14 +13,20 @@ const Swap = ({ setSelectACoin, setSelectBCoin, selectACoin, selectBCoin }) => {
   return (
     <div
       className={
-        Object.keys(selectACoin).length && Object.keys(selectBCoin).length
+        selectACoin &&
+        selectBCoin &&
+        Object.keys(selectACoin).length &&
+        Object.keys(selectBCoin).length
           ? "swap s-selected"
           : "swap"
       }
     >
       <FontAwesomeIcon
         className={
-          Object.keys(selectACoin).length && Object.keys(selectBCoin).length
+          selectACoin &&
+          selectBCoin &&
+          Object.keys(selectACoin).length &&
+          Object.keys(selectBCoin).length
             ? "icon faExchangeAlt i-selected"
             : "icon faExchangeAlt"
         }

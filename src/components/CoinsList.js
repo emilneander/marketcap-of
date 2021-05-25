@@ -6,6 +6,7 @@ import {
   faAngleDoubleDown,
   faSearchPlus,
 } from "@fortawesome/free-solid-svg-icons";
+import { addImgToData } from "../addPropsToData";
 
 const CoinsList = ({
   search,
@@ -29,36 +30,72 @@ const CoinsList = ({
   inputRef,
   showExtend,
   selectCurrency,
+  filteredCoins,
 }) => {
   const [coinsFound, setCoinsFound] = useState(true);
-  //filter coins to what the current search value is
-  const filteredCoins = coins.filter((coin) => {
-    if (
-      coin.name.toString().toLowerCase().includes(search.toLocaleLowerCase()) ||
-      coin.symbol.toString().toLowerCase().includes(search.toLocaleLowerCase())
-    )
-      return coin;
-  });
-
   //useeffects
   //set filtered coins when input is changed
   useEffect(() => {
-    setFilteredCoins(filteredCoins);
+    let searchResult = coins.filter((coin) => {
+      if (
+        coin.name
+          .toString()
+          .toLowerCase()
+          .includes(search.toLocaleLowerCase()) ||
+        coin.symbol
+          .toString()
+          .toLowerCase()
+          .includes(search.toLocaleLowerCase())
+      ) {
+        return coin;
+      }
+    });
     if (filteredCoins.length === 0 && extendSearch) {
       setCoinsFound(false);
     } else {
       setCoinsFound(true);
+    }
+    if (!extendSearch) {
+      //filter coins to what the current search value is
+      setFilteredCoins(searchResult);
+    }
+    if (extendSearch) {
+      const newFiltered = searchResult.slice(0, 350);
+      const imgFiltered = addImgToData(newFiltered);
+      setFilteredCoins(imgFiltered);
     }
   }, [search]);
 
   //when changing coin fetch
   //set filtered coins and and also if there are any found
   useEffect(() => {
-    setFilteredCoins(filteredCoins);
+    //filter coins to what the current search value is
+    let searchResult = coins.filter((coin) => {
+      if (
+        coin.name
+          .toString()
+          .toLowerCase()
+          .includes(search.toLocaleLowerCase()) ||
+        coin.symbol
+          .toString()
+          .toLowerCase()
+          .includes(search.toLocaleLowerCase())
+      ) {
+        return coin;
+      }
+    });
     if (filteredCoins.length === 0 && extendSearch) {
       setCoinsFound(false);
     } else {
       setCoinsFound(true);
+    }
+    if (!extendSearch) {
+      setFilteredCoins(searchResult);
+    }
+    if (extendSearch) {
+      const newFiltered = searchResult.slice(0, 350);
+      const imgFiltered = addImgToData(newFiltered);
+      setFilteredCoins(imgFiltered);
     }
   }, [coins]);
 
