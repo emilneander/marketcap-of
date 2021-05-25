@@ -20,6 +20,8 @@ const Search = ({
   inputRef,
   extendSearch,
   selectCurrency,
+  setSupplyAvailable,
+  setCoinNoSupply,
 }) => {
   //handlers
   const handleChange = (e) => {
@@ -45,10 +47,14 @@ const Search = ({
           (result) => {
             //if we get a result from fetch
             if (result) {
-              setSelectCoin(result[0]);
               setSearch("");
               setDisplay(false);
               inputRef.current.blur();
+              setSelectCoin(result[0]);
+              if (result[0].market_cap === 0) {
+                setSupplyAvailable(false);
+                setCoinNoSupply(result[0]);
+              }
             } else {
               alert(
                 "Sorry " +

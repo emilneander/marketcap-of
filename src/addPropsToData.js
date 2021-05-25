@@ -48,3 +48,8 @@ export const addImgToData = (data) => {
 
   return sortedData;
 };
+export const addSupplyToData = (data, supply) => {
+  data.circulating_supply = supply;
+  data.market_cap = supply * data.current_price;
+  return data;
+};

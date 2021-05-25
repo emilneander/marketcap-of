@@ -21,6 +21,8 @@ import SelectedCoin from "../components/SelectedCoin";
 import Swap from "../components/Swap";
 import CurrencySelector from "../components/CurrencySelector";
 import LedgerBanner from "../components/LedgerBanner";
+import AddSupply from "../components/AddSupply";
+
 //hooks
 import useClickOutside from "../hooks/useClickOutside";
 //style
@@ -48,6 +50,8 @@ const Homepage = () => {
   const [selectDonationCoin, setSelectDonationCoin] = useState({});
   const [extendSearch, setExtendSearch] = useState(false);
   const [selectCurrency, setSelectCurrency] = useState(currencies[0]);
+  const [supplyAvailable, setSupplyAvailable] = useState(true);
+  const [coinNoSupply, setCoinNoSupply] = useState({});
 
   //fetch all coins
   useEffect(() => {
@@ -151,6 +155,8 @@ const Homepage = () => {
                 inputRef={inputRefA}
                 extendSearch={extendSearch}
                 selectCurrency={selectCurrency}
+                setSupplyAvailable={setSupplyAvailable}
+                setCoinNoSupply={setCoinNoSupply}
               />
               {displayAList ? (
                 <CoinsList
@@ -174,6 +180,8 @@ const Homepage = () => {
                   showExtend={true}
                   selectCurrency={selectCurrency}
                   filteredCoins={filteredCoinsA}
+                  setSupplyAvailable={setSupplyAvailable}
+                  setCoinNoSupply={setCoinNoSupply}
                 />
               ) : (
                 ""
@@ -205,6 +213,8 @@ const Homepage = () => {
                 inputRef={inputRefB}
                 extendSearch={extendSearch}
                 selectCurrency={selectCurrency}
+                setSupplyAvailable={setSupplyAvailable}
+                setCoinNoSupply={setCoinNoSupply}
               />
               {displayBList ? (
                 <CoinsList
@@ -228,13 +238,29 @@ const Homepage = () => {
                   showExtend={true}
                   selectCurrency={selectCurrency}
                   filteredCoins={filteredCoinsB}
+                  setSupplyAvailable={setSupplyAvailable}
+                  setCoinNoSupply={setCoinNoSupply}
                 />
               ) : (
                 ""
               )}
             </div>
             <div className="selectedCoin-div">
-              {selectACoin &&
+              {!supplyAvailable && Object.keys(coinNoSupply).length ? (
+                <AddSupply
+                  setCoinNoSupply={setCoinNoSupply}
+                  coinNoSupply={coinNoSupply}
+                  selectACoin={selectACoin}
+                  selectBCoin={selectBCoin}
+                  setSelectACoin={setSelectACoin}
+                  setSelectBCoin={setSelectBCoin}
+                  setSupplyAvailable={setSupplyAvailable}
+                />
+              ) : (
+                ""
+              )}
+              {supplyAvailable &&
+              selectACoin &&
               selectBCoin &&
               Object.keys(selectACoin).length &&
               Object.keys(selectBCoin).length ? (
@@ -244,6 +270,8 @@ const Homepage = () => {
                   displayAList={displayAList}
                   displayBList={displayBList}
                   selectCurrency={selectCurrency}
+                  supplyAvailable={supplyAvailable}
+                  setSupplyAvailable={setSupplyAvailable}
                 />
               ) : (
                 ""

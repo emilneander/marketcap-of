@@ -19,6 +19,8 @@ const Coin = ({
   selectedDonationCoinStyle,
   extendSearch,
   selectCurrency,
+  setSupplyAvailable,
+  setCoinNoSupply,
 }) => {
   //when clicking on a coin in the list
   const clickHandler = () => {
@@ -34,9 +36,14 @@ const Coin = ({
         getCoinById(coinElement.id, selectCurrency.code).then((result) => {
           //if we get a result from fetch
           if (result) {
-            setSelectCoin(result[0]);
             setSearch("");
             setDisplay(false);
+            setSelectCoin(result[0]);
+            //if supply is 0
+            if (result[0].market_cap === 0) {
+              setSupplyAvailable(false);
+              setCoinNoSupply(result[0]);
+            }
           } else {
             alert(
               "Sorry " +

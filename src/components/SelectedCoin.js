@@ -4,9 +4,14 @@ import InfoBox from "./InfoBox";
 //styles
 import "../styles/SelectedCoin.css";
 import { calculatePrice, calculatePercentage } from "../calculatePrice";
-import Currency from "./Currency";
 
-const SelectedCoin = ({ selectACoin, selectBCoin, selectCurrency }) => {
+const SelectedCoin = ({
+  selectACoin,
+  selectBCoin,
+  selectCurrency,
+  setSupplyAvailable,
+  supplyAvailable,
+}) => {
   const price = calculatePrice(selectACoin, selectBCoin);
   const percentage = calculatePercentage(price, selectACoin.current_price);
   const a = selectACoin;

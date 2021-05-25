@@ -31,6 +31,8 @@ const CoinsList = ({
   showExtend,
   selectCurrency,
   filteredCoins,
+  setSupplyAvailable,
+  setCoinNoSupply,
 }) => {
   const [coinsFound, setCoinsFound] = useState(true);
   //useeffects
@@ -153,6 +155,8 @@ const CoinsList = ({
                 setExtendSearch={setExtendSearch}
                 extendSearch={extendSearch}
                 selectCurrency={selectCurrency}
+                setSupplyAvailable={setSupplyAvailable}
+                setCoinNoSupply={setCoinNoSupply}
               />
             );
           }
