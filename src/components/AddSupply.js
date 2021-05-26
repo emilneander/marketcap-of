@@ -95,7 +95,7 @@ const AddSupply = ({
               placeholder="0"
               value={supply}
               onChange={handleChange}
-              min="1"
+              // min="1" need to fix this 1.1 does not work
               max={coinNoSupply.total_supply ? coinNoSupply.total_supply : ""}
               maxLength="26"
               autoFocus

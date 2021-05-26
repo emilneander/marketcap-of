@@ -47,11 +47,9 @@ const Coin = ({
               //if there already is an object with no supply, put it on hold
               if (!supplyAvailable) {
                 setCoinNoSupplyOnHold(result[0]);
-                console.log("on hold!");
               } else {
                 setCoinNoSupply(result[0]);
                 setSupplyAvailable(false);
-                console.log("new");
               }
             }
           } else {

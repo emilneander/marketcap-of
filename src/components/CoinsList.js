@@ -69,6 +69,10 @@ const CoinsList = ({
       const imgFiltered = addImgToData(newFiltered);
       setFilteredCoins(imgFiltered);
     }
+
+    if (!extendSearch && search.length >= 1 && searchResult.length <= 3) {
+      setExtendSearch(true);
+    }
   }, [search]);
 
   //when changing coin fetch
