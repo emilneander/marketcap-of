@@ -52,6 +52,7 @@ const Homepage = () => {
   const [selectCurrency, setSelectCurrency] = useState(currencies[0]);
   const [supplyAvailable, setSupplyAvailable] = useState(true);
   const [coinNoSupply, setCoinNoSupply] = useState({});
+  const [coinNoSupplyOnHold, setCoinNoSupplyOnHold] = useState({});
 
   //fetch all coins
   useEffect(() => {
@@ -100,6 +101,8 @@ const Homepage = () => {
   //ref for input search
   const inputRefA = useRef(null);
   const inputRefB = useRef(null);
+
+  const inputRefSupply = useRef(null);
 
   //handler
   const handleMouseMove = () => {
@@ -156,7 +159,11 @@ const Homepage = () => {
                 extendSearch={extendSearch}
                 selectCurrency={selectCurrency}
                 setSupplyAvailable={setSupplyAvailable}
+                supplyAvailable={supplyAvailable}
                 setCoinNoSupply={setCoinNoSupply}
+                coinNoSupply={coinNoSupply}
+                coinNoSupplyOnHold={coinNoSupplyOnHold}
+                setCoinNoSupplyOnHold={setCoinNoSupplyOnHold}
               />
               {displayAList ? (
                 <CoinsList
@@ -181,7 +188,10 @@ const Homepage = () => {
                   selectCurrency={selectCurrency}
                   filteredCoins={filteredCoinsA}
                   setSupplyAvailable={setSupplyAvailable}
+                  supplyAvailable={supplyAvailable}
                   setCoinNoSupply={setCoinNoSupply}
+                  coinNoSupply={coinNoSupply}
+                  setCoinNoSupplyOnHold={setCoinNoSupplyOnHold}
                 />
               ) : (
                 ""
@@ -214,7 +224,11 @@ const Homepage = () => {
                 extendSearch={extendSearch}
                 selectCurrency={selectCurrency}
                 setSupplyAvailable={setSupplyAvailable}
+                supplyAvailable={supplyAvailable}
                 setCoinNoSupply={setCoinNoSupply}
+                coinNoSupply={coinNoSupply}
+                setCoinNoSupplyOnHold={setCoinNoSupplyOnHold}
+                coinNoSupplyOnHold={coinNoSupplyOnHold}
               />
               {displayBList ? (
                 <CoinsList
@@ -239,7 +253,10 @@ const Homepage = () => {
                   selectCurrency={selectCurrency}
                   filteredCoins={filteredCoinsB}
                   setSupplyAvailable={setSupplyAvailable}
+                  supplyAvailable={supplyAvailable}
                   setCoinNoSupply={setCoinNoSupply}
+                  coinNoSupply={coinNoSupply}
+                  setCoinNoSupplyOnHold={setCoinNoSupplyOnHold}
                 />
               ) : (
                 ""
@@ -255,6 +272,9 @@ const Homepage = () => {
                   setSelectACoin={setSelectACoin}
                   setSelectBCoin={setSelectBCoin}
                   setSupplyAvailable={setSupplyAvailable}
+                  coinNoSupplyOnHold={coinNoSupplyOnHold}
+                  setCoinNoSupplyOnHold={setCoinNoSupplyOnHold}
+                  inputRefSupply={inputRefSupply}
                 />
               ) : (
                 ""

@@ -21,7 +21,11 @@ const Search = ({
   extendSearch,
   selectCurrency,
   setSupplyAvailable,
+  supplyAvailable,
   setCoinNoSupply,
+  coinNoSupply,
+  setCoinNoSupplyOnHold,
+  coinNoSupplyOnHold,
 }) => {
   //handlers
   const handleChange = (e) => {
@@ -52,8 +56,13 @@ const Search = ({
               inputRef.current.blur();
               setSelectCoin(result[0]);
               if (result[0].market_cap === 0) {
-                setSupplyAvailable(false);
-                setCoinNoSupply(result[0]);
+                //if there already is an object with no supply, put it on hold
+                if (!supplyAvailable) {
+                  setCoinNoSupplyOnHold(result[0]);
+                } else {
+                  setCoinNoSupply(result[0]);
+                  setSupplyAvailable(false);
+                }
               }
             } else {
               alert(
@@ -129,6 +138,11 @@ const Search = ({
                 setSelectCoin={setSelectCoin}
                 selectCoin={selectCoin}
                 selectCurrency={selectCurrency}
+                setCoinNoSupply={setCoinNoSupply}
+                coinNoSupply={coinNoSupply}
+                coinNoSupplyOnHold={coinNoSupplyOnHold}
+                setCoinNoSupplyOnHold={setCoinNoSupplyOnHold}
+                setSupplyAvailable={setSupplyAvailable}
               />
             </div>
           ) : (

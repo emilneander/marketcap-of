@@ -20,7 +20,10 @@ const Coin = ({
   extendSearch,
   selectCurrency,
   setSupplyAvailable,
+  supplyAvailable,
   setCoinNoSupply,
+  coinNoSupply,
+  setCoinNoSupplyOnHold,
 }) => {
   //when clicking on a coin in the list
   const clickHandler = () => {
@@ -41,8 +44,15 @@ const Coin = ({
             setSelectCoin(result[0]);
             //if supply is 0
             if (result[0].market_cap === 0) {
-              setSupplyAvailable(false);
-              setCoinNoSupply(result[0]);
+              //if there already is an object with no supply, put it on hold
+              if (!supplyAvailable) {
+                setCoinNoSupplyOnHold(result[0]);
+                console.log("on hold!");
+              } else {
+                setCoinNoSupply(result[0]);
+                setSupplyAvailable(false);
+                console.log("new");
+              }
             }
           } else {
             alert(

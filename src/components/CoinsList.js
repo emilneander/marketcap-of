@@ -32,7 +32,10 @@ const CoinsList = ({
   selectCurrency,
   filteredCoins,
   setSupplyAvailable,
+  supplyAvailable,
   setCoinNoSupply,
+  coinNoSupply,
+  setCoinNoSupplyOnHold,
 }) => {
   const [coinsFound, setCoinsFound] = useState(true);
   //useeffects
@@ -156,7 +159,10 @@ const CoinsList = ({
                 extendSearch={extendSearch}
                 selectCurrency={selectCurrency}
                 setSupplyAvailable={setSupplyAvailable}
+                supplyAvailable={supplyAvailable}
                 setCoinNoSupply={setCoinNoSupply}
+                coinNoSupply={coinNoSupply}
+                setCoinNoSupplyOnHold={setCoinNoSupplyOnHold}
               />
             );
           }
@@ -187,10 +193,7 @@ const CoinsList = ({
       )}
       {!coinsFound ? (
         <div className="no-result">
-          <p>
-            Sorry, no result...
-            <br /> Tag me on Twitter and I will try to add it
-          </p>
+          <p>Sorry, no more result...</p>
         </div>
       ) : (
         ""

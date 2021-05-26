@@ -8,9 +8,27 @@ const SelectedCoinInSearch = ({
   selectCoin,
   setSelectCoin,
   selectCurrency,
+  setCoinNoSupply,
+  coinNoSupply,
+  coinNoSupplyOnHold,
+  setCoinNoSupplyOnHold,
+  setSupplyAvailable,
 }) => {
   //if clicked on the close icon
   const handleClick = () => {
+    //to first remove if the supply needs a fix
+    if (coinNoSupply === selectCoin) {
+      if (Object.keys(coinNoSupplyOnHold).length) {
+        setCoinNoSupply(coinNoSupplyOnHold);
+        setCoinNoSupplyOnHold({});
+      } else {
+        setSupplyAvailable(true);
+        setCoinNoSupply({});
+      }
+    } else if (coinNoSupplyOnHold === selectCoin) {
+      setCoinNoSupplyOnHold({});
+    }
+    //remove the coin
     setSelectCoin({});
   };
   //classname for symbol

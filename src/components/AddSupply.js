@@ -12,6 +12,9 @@ const AddSupply = ({
   setSelectACoin,
   setSelectBCoin,
   setSupplyAvailable,
+  coinNoSupplyOnHold,
+  setCoinNoSupplyOnHold,
+  inputRefSupply,
 }) => {
   const [supply, setSupply] = useState("");
   //formating high number to e.g "k", "m"
@@ -29,21 +32,35 @@ const AddSupply = ({
   };
 
   //apply new supply
-  const applySupply = () => {
+  const applySupply = (e) => {
+    e.preventDefault();
     if (selectACoin === coinNoSupply) {
       const coinWithSupply = addSupplyToData(coinNoSupply, supply);
       setSelectACoin(coinWithSupply);
-      setSupplyAvailable(true);
-      setCoinNoSupply({});
+      if (Object.keys(coinNoSupplyOnHold).length) {
+        setCoinNoSupply(coinNoSupplyOnHold);
+        setCoinNoSupplyOnHold({});
+        inputRefSupply.current.focus();
+      } else {
+        setSupplyAvailable(true);
+        setCoinNoSupply({});
+      }
     }
     if (selectBCoin === coinNoSupply) {
       const coinWithSupply = addSupplyToData(coinNoSupply, supply);
       setSelectBCoin(coinWithSupply);
-      setSupplyAvailable(true);
-      setCoinNoSupply({});
+      if (Object.keys(coinNoSupplyOnHold).length) {
+        setCoinNoSupply(coinNoSupplyOnHold);
+        setCoinNoSupplyOnHold({});
+        inputRefSupply.current.focus();
+      } else {
+        setSupplyAvailable(true);
+        setCoinNoSupply({});
+      }
     }
+    setSupply("");
   };
-  console.log(coinNoSupply);
+
   return (
     <div className="add-supply-container">
       <div className="add-supply-box">
@@ -53,7 +70,7 @@ const AddSupply = ({
             not verified.
           </p>
         </div>
-        <div className="supply-input-container">
+        <form className="supply-input-container" onSubmit={applySupply}>
           <label className="supply-label" htmlFor="supply-input">
             Add the circulating supply manually
           </label>
@@ -66,6 +83,8 @@ const AddSupply = ({
               ""
             )}
             <input
+              ref={inputRefSupply}
+              required
               className={
                 supply.length >= 22
                   ? "supply-input input-smaller"
@@ -76,8 +95,10 @@ const AddSupply = ({
               placeholder="0"
               value={supply}
               onChange={handleChange}
-              max={coinNoSupply.total_supply}
+              min="1"
+              max={coinNoSupply.total_supply ? coinNoSupply.total_supply : ""}
               maxLength="26"
+              autoFocus
             />
           </div>
           {coinNoSupply.total_supply ? (
@@ -85,10 +106,10 @@ const AddSupply = ({
           ) : (
             ""
           )}
-          <button className="btn ledger-btn supply-btn" onClick={applySupply}>
-            <p className="ledger-btn-text">Apply</p>
+          <button type="submit" className="btn ledger-btn supply-btn">
+            <p className="ledger-btn-text supply-apply-text">Apply</p>
           </button>
-        </div>
+        </form>
       </div>
     </div>
   );
