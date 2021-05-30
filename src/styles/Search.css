@@ -58,7 +58,7 @@
   background: #484063;
 }
 
-@media (max-width: 800px) {
+@media (max-width: 800px), (max-height: 755px) {
   .coin-text {
     font-size: 1.4rem;
   }
@@ -80,7 +80,7 @@
     height: 35px;
   }
 }
-@media (max-width: 360px) {
+@media (max-width: 375px) {
   .coin-input {
     width: 250px;
     height: 35px;

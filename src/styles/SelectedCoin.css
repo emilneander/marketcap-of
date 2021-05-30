@@ -151,7 +151,7 @@ h2 {
   }
 }
 
-@media (max-width: 555px) {
+@media (max-width: 555px), (max-height: 755px) {
   .selectedCoins-container {
     margin: 1rem 0rem 0 0rem;
   }
@@ -180,7 +180,7 @@ h2 {
     font-size: 1.5rem;
   }
 }
-@media (max-width: 360px) {
+@media (max-width: 375px) {
   .text-div {
     margin-top: 1rem;
   }

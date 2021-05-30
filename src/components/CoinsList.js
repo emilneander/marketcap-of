@@ -69,9 +69,10 @@ const CoinsList = ({
       const imgFiltered = addImgToData(newFiltered);
       setFilteredCoins(imgFiltered);
     }
-
+    //if less than 4 coins then extend search
     if (!extendSearch && search.length >= 1 && searchResult.length <= 3) {
       setExtendSearch(true);
+      setNr(0);
     }
   }, [search]);
 

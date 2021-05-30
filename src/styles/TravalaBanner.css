@@ -1,0 +1,509 @@
+.travala-container {
+  height: 380px;
+  width: 230px;
+  position: absolute;
+  justify-content: center;
+  right: 0;
+  margin-top: 6.5rem;
+}
+
+.travala-banner {
+  height: 100%;
+  width: 200px;
+  position: relative;
+  justify-content: space-between;
+}
+.image-with-button-travala {
+  display: flex;
+  justify-content: center;
+  align-items: flex-end;
+  overflow: hidden;
+  position: relative;
+  border-radius: 140px 0 10px 10px;
+  height: 100%;
+  width: 100%;
+}
+.travala-title-div {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  margin: 1rem 0 0.25rem 0;
+}
+.travala-title {
+  font-size: 1.25rem;
+  color: #bbc0cf;
+  margin-bottom: 0.35rem;
+}
+.trava-p {
+  color: #9f84cf;
+}
+.save-up-to {
+  display: flex;
+  align-items: center;
+}
+.trava1::after {
+  content: "BOOK HOTELS";
+}
+.trava2::after {
+  content: "WITH CRYPTO";
+}
+.trava3::after {
+  content: "AND";
+}
+.trava4a::after {
+  content: "SAVE UP TO";
+}
+.trava4b::after {
+  content: " 40%";
+  white-space: pre;
+}
+.palm-image {
+  width: 100%;
+  height: 230px;
+  bottom: 0;
+  border: 1px solid #707070;
+  border-radius: 140px 0 10px 0;
+  display: unset;
+  margin-left: none;
+  margin-right: none;
+}
+.travala-smaller-image {
+  display: none;
+}
+.only-ocean {
+  display: none;
+  bottom: -22px;
+}
+.travala-btn-logo {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+.travala-logo {
+  width: 110px;
+  height: 14px;
+}
+.travala-btn {
+  height: 2.5rem;
+  width: 8rem;
+  margin: 0.25rem 0 0.5rem 0;
+}
+.travala-btn-text {
+  color: #bbc0cf;
+  font-size: 1rem;
+}
+.faMinusSquare-travala {
+  left: -1.55rem;
+  top: 0;
+}
+
+@media (max-width: 1160px), (max-height: 605px) {
+  .travala-container {
+    width: 170px;
+    height: 340px;
+  }
+  .travala-banner {
+    width: 140px;
+    flex-direction: column;
+  }
+  .palm-image {
+    height: 220px;
+    width: 120%;
+  }
+  .travala-title {
+    font-size: 0.95rem;
+  }
+  .travala-btn-text {
+    color: #bbc0cf;
+    font-size: 0.9rem;
+  }
+  .travala-btn {
+    width: 7.5rem;
+    height: 2.25rem;
+  }
+}
+@media (min-height: 756px) {
+  @media (max-width: 1025px) {
+    .travala-container {
+      position: relative;
+      margin-top: 0;
+      width: 100%;
+      height: 80px;
+      right: unset;
+      display: flex;
+      justify-content: center;
+    }
+    .travala-banner {
+      position: relative;
+      width: 600px;
+      height: 80px;
+      flex-direction: row;
+      justify-content: flex-start;
+    }
+    .faMinusSquare-travala {
+      left: 0;
+      top: -1.25rem;
+    }
+    .image-with-button-travala {
+      justify-content: flex-start;
+      border-radius: 140px 20px 20px 0;
+    }
+    .travala-btn-logo {
+      margin-left: 1.45rem;
+      margin-bottom: 0.25rem;
+    }
+    .travala-logo {
+      width: 90px;
+      height: 12px;
+    }
+    .travala-btn {
+      border: 1px solid #707070;
+    }
+
+    .faLongArrowAltRight {
+      display: none;
+    }
+    .palm-image {
+      margin-top: 1px;
+      margin-bottom: 1px;
+      display: none;
+    }
+    .travala-smaller-image {
+      height: 100px;
+      width: 450px;
+      bottom: -15px;
+      right: -80px;
+      display: unset;
+      position: absolute;
+    }
+
+    .travala-title {
+      font-size: 0.9rem;
+    }
+    .travala-title-div {
+      flex-wrap: wrap;
+      flex-direction: row;
+      margin-left: 1rem;
+
+      margin-top: 7px;
+      margin-bottom: 0;
+    }
+    .save-up-to {
+      display: flex;
+      align-items: center;
+    }
+    .trava1::after {
+      content: " HOTELS";
+      white-space: pre;
+      order: 2;
+    }
+    .trava2 {
+      color: #bbc0cf;
+    }
+
+    .trava2::after {
+      content: "BOOK";
+    }
+    .trava3::after {
+      content: " WITH CRYPTO";
+      white-space: pre;
+    }
+    .trava4a::after {
+      content: "AND SAVE UP TO";
+    }
+    .trava4b::after {
+      content: " 40%";
+      white-space: pre;
+    }
+    .trava2 {
+      order: 1;
+    }
+    .trava1 {
+      order: 2;
+    }
+    .trava3 {
+      order: 3;
+    }
+    .save-up-to {
+      order: 4;
+    }
+  }
+}
+@media (max-width: 910px) {
+  .travala-container {
+    position: relative;
+    margin-top: 0;
+    width: 100%;
+    height: 80px;
+    right: unset;
+    display: flex;
+    justify-content: center;
+  }
+  .travala-banner {
+    position: relative;
+    width: 600px;
+    height: 80px;
+    flex-direction: row;
+    justify-content: flex-start;
+  }
+  .faMinusSquare-travala {
+    left: 0;
+    top: -1.25rem;
+  }
+  .image-with-button-travala {
+    justify-content: flex-start;
+    border-radius: 140px 20px 20px 0;
+  }
+  .travala-btn-logo {
+    margin-left: 1.45rem;
+    margin-bottom: 0.25rem;
+  }
+  .travala-logo {
+    width: 90px;
+    height: 12px;
+  }
+  .travala-btn {
+    border: 1px solid #707070;
+  }
+
+  .faLongArrowAltRight {
+    display: none;
+  }
+  .palm-image {
+    margin-top: 1px;
+    margin-bottom: 1px;
+    display: none;
+  }
+  .travala-smaller-image {
+    height: 100px;
+    width: 450px;
+    bottom: -15px;
+    right: -80px;
+    display: unset;
+    position: absolute;
+  }
+
+  .travala-title {
+    font-size: 0.9rem;
+  }
+  .travala-title-div {
+    flex-wrap: wrap;
+    flex-direction: row;
+    margin-left: 1rem;
+
+    margin-top: 7px;
+    margin-bottom: 0;
+  }
+  .save-up-to {
+    display: flex;
+    align-items: center;
+  }
+  .trava1::after {
+    content: " HOTELS";
+    white-space: pre;
+    order: 2;
+  }
+  .trava2 {
+    color: #bbc0cf;
+  }
+
+  .trava2::after {
+    content: "BOOK";
+  }
+  .trava3::after {
+    content: " WITH CRYPTO";
+    white-space: pre;
+  }
+  .trava4a::after {
+    content: "AND SAVE UP TO";
+  }
+  .trava4b::after {
+    content: " 40%";
+    white-space: pre;
+  }
+  .trava2 {
+    order: 1;
+  }
+  .trava1 {
+    order: 2;
+  }
+  .trava3 {
+    order: 3;
+  }
+  .save-up-to {
+    order: 4;
+  }
+  @media (max-height: 680px) {
+    .travala-container {
+      height: 50px;
+    }
+    .travala-banner {
+      height: 50px;
+    }
+    .travala-title {
+      font-size: 0.75rem;
+    }
+    .travala-smaller-image {
+      display: none;
+    }
+    .only-ocean {
+      display: unset;
+      height: 81px;
+      width: 450px;
+      transform: rotate(0.25deg);
+      position: absolute;
+    }
+    .image-with-button-travala {
+      justify-content: center;
+      align-items: center;
+      height: 100%;
+    }
+    .travala-btn-logo {
+      width: 100%;
+      flex-direction: row;
+      align-items: center;
+      justify-content: space-between;
+      margin: 0 1rem 0 1rem;
+    }
+    .travala-btn {
+      margin: 0;
+    }
+  }
+}
+@media (max-width: 610px) {
+  .travala-banner {
+    width: 500px;
+  }
+  .travala-title {
+    font-size: 0.8rem;
+  }
+  .travala-smaller-image {
+    right: -150px;
+  }
+}
+@media (max-width: 505px) {
+  .travala-container {
+    height: 50px;
+  }
+  .travala-banner {
+    width: 400px;
+    height: 50px;
+  }
+  .travala-title {
+    font-size: 0.67rem;
+  }
+  .travala-smaller-image {
+    display: none;
+  }
+  .only-ocean {
+    display: unset;
+    height: 81px;
+    width: 450px;
+    transform: rotate(0.25deg);
+    position: absolute;
+  }
+  .image-with-button-travala {
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+  }
+  .travala-btn-logo {
+    width: 100%;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    margin: 0 0.5rem 0 1rem;
+  }
+  .travala-btn {
+    margin: 0;
+    width: 6rem;
+    height: 2rem;
+  }
+}
+@media (max-width: 410px) {
+  .travala-banner {
+    width: 350px;
+  }
+  .travala-title {
+    font-size: 0.65rem;
+  }
+  .travala-logo {
+    width: 80px;
+    height: 11px;
+  }
+  .travala-btn-text {
+    font-size: 0.8rem;
+  }
+  .travala-btn {
+    width: 5.25rem;
+    height: 1.85rem;
+  }
+  .travala-btn-logo {
+    margin: 0 0.25rem 0 0.5rem;
+  }
+  .image-with-button-travala {
+    width: 19rem;
+  }
+}
+@media (max-width: 355px) {
+  .travala-banner {
+    width: 330px;
+    height: 40px;
+  }
+  .travala-btn-text {
+    font-size: 0.75rem;
+  }
+  .travala-logo {
+    width: 70px;
+    height: 9.45px;
+  }
+  .travala-btn {
+    width: 5rem;
+    height: 1.75rem;
+  }
+  .only-ocean {
+    bottom: -25px;
+  }
+  .travala-title {
+    font-size: 0.6rem;
+  }
+  .travala-title-div {
+    margin-left: 0.45rem;
+  }
+}
+@media (max-width: 335px) {
+  .travala-banner {
+    width: 310px;
+  }
+  .travala-title {
+    font-size: 0.55rem;
+  }
+}
+@media (max-width: 311px) {
+  .travala-banner {
+    width: 300px;
+  }
+  .image-with-button-travala {
+    width: 18rem;
+  }
+  .travala-title {
+    font-size: 0.54rem;
+  }
+}
+@media (max-width: 293px) {
+  .travala-banner {
+    width: 290px;
+  }
+  .travala-btn {
+    width: 4.55rem;
+    height: 1.75rem;
+  }
+  .travala-btn-text {
+    font-size: 0.7rem;
+  }
+  .image-with-button-travala {
+    width: 17rem;
+  }
+}

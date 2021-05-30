@@ -13,7 +13,7 @@
   flex-direction: row;
   justify-content: center;
   height: 100%;
-  min-height: 31rem;
+  min-height: 29.5rem;
   align-content: flex-start;
   padding-top: 5rem;
   flex-wrap: wrap;
@@ -95,7 +95,7 @@
     height: 4.25rem;
   }
   .homepage {
-    padding-top: 3.25rem;
+    padding-top: 2.25rem;
   }
   .title h1 {
     margin-top: 2rem;
@@ -147,8 +147,11 @@
   .logo-title {
     margin-left: 0.25rem;
   }
+  .homepage {
+    min-height: 29.5rem;
+  }
 }
-@media (max-width: 360px) {
+@media (max-width: 375px) {
   .search-list-container {
     margin-bottom: 0.3rem;
   }
@@ -166,7 +169,7 @@
   }
   .homepage {
     padding-top: 1.5rem;
-    min-height: 28rem;
+    min-height: 24.5rem;
   }
   .title h1 {
     font-size: 1.3rem;
@@ -176,6 +179,6 @@
 }
 @media (max-width: 330px) {
   .homepage {
-    min-height: 22rem;
+    min-height: 24.5rem;
   }
 }

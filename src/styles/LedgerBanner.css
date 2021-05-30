@@ -105,12 +105,12 @@
   .ledger-container {
     width: 170px;
     height: 410px;
-    z-index: 0;
   }
   .ledger-banner {
     width: 140px;
     height: 370px;
   }
+
   .ledger-logo {
     width: 117px;
     height: 30px;
@@ -132,6 +132,7 @@
     width: 122px;
     height: 154px;
   }
+
   .voucher-span {
     font-size: 0.8rem;
   }

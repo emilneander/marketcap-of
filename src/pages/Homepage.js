@@ -21,6 +21,7 @@ import SelectedCoin from "../components/SelectedCoin";
 import Swap from "../components/Swap";
 import CurrencySelector from "../components/CurrencySelector";
 import LedgerBanner from "../components/LedgerBanner";
+import TravalaBanner from "../components/TravalaBanner";
 import AddSupply from "../components/AddSupply";
 
 //hooks
@@ -53,6 +54,9 @@ const Homepage = () => {
   const [supplyAvailable, setSupplyAvailable] = useState(true);
   const [coinNoSupply, setCoinNoSupply] = useState({});
   const [coinNoSupplyOnHold, setCoinNoSupplyOnHold] = useState({});
+  const [randomNumber, setRandomNumber] = useState(() => {
+    return Math.floor(Math.random() * 2);
+  });
 
   //fetch all coins
   useEffect(() => {
@@ -298,11 +302,7 @@ const Homepage = () => {
               )}
             </div>
           </div>
-          <LedgerBanner
-            styleName="desktop"
-            title="Don't lose your cryptos,
- use a hardware wallet!"
-          />
+          {randomNumber === 0 ? <LedgerBanner /> : <TravalaBanner />}
           <Footer
             selectACoin={selectACoin}
             selectBCoin={selectBCoin}
