@@ -50,12 +50,13 @@ const Search = ({
         getCoinById(filteredCoins[nr].id, selectCurrency.code).then(
           (result) => {
             //if we get a result from fetch
-            if (result) {
+            if (result && result[0].current_price !== null) {
               setSearch("");
               setDisplay(false);
               inputRef.current.blur();
               setSelectCoin(result[0]);
-              if (result[0].market_cap === 0) {
+              //if supply is missing
+              if (result[0].circulating_supply === 0) {
                 //if there already is an object with no supply, put it on hold
                 if (!supplyAvailable) {
                   setCoinNoSupplyOnHold(result[0]);
@@ -66,9 +67,9 @@ const Search = ({
               }
             } else {
               alert(
-                "Sorry " +
-                  filteredCoins[nr].name +
-                  " got some issues loading from coingecko. Tag me on Twitter and tell me what coin, I will fix it within 24h"
+                "Sorry, the price of " +
+                  result[0].name +
+                  " is not verified. Tag me on Twitter and tell me what coin!"
               );
             }
           }

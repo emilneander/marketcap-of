@@ -1,4 +1,4 @@
-import React, { useEffect } from "react";
+import React from "react";
 import "../styles/Coin.css";
 import { getCoinById } from "../api";
 
@@ -38,12 +38,12 @@ const Coin = ({
       } else if (extendSearch) {
         getCoinById(coinElement.id, selectCurrency.code).then((result) => {
           //if we get a result from fetch
-          if (result) {
+          if (result && result[0].current_price !== null) {
             setSearch("");
             setDisplay(false);
             setSelectCoin(result[0]);
             //if supply is 0
-            if (result[0].market_cap === 0) {
+            if (result[0].circulating_supply === 0) {
               //if there already is an object with no supply, put it on hold
               if (!supplyAvailable) {
                 setCoinNoSupplyOnHold(result[0]);
@@ -54,9 +54,9 @@ const Coin = ({
             }
           } else {
             alert(
-              "Sorry " +
-                coinElement.name +
-                " got some issues loading from coingecko. Tag me on Twitter and tell me what coin, I will fix it within 24h"
+              "Sorry, the price of " +
+                result[0].name +
+                " is not verified. Tag me on Twitter and tell me what coin!"
             );
           }
         });
