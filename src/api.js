@@ -76,11 +76,10 @@ export const getCoinById = (id, currency) => {
 };
 
 export const getExtendedCoins = () => {
-  console.log("loading");
   return axios
     .get(`https://api.coingecko.com/api/v3/coins/list?include_platform=false`)
     .then((res) => {
-      return res;
+      return res.data;
     })
     .catch((error) => {
       console.log(error);

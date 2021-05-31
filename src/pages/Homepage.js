@@ -60,7 +60,7 @@ const Homepage = () => {
 
   //fetch all coins
   useEffect(() => {
-    //get top 250 coins with correct usd
+    //get top 250 coins with correct currency
     getDefaultCoins(selectCurrency.code).then((res) => {
       //add the donation info to the data
       addDonationToData(res.data);
@@ -76,14 +76,14 @@ const Homepage = () => {
       setSelectDonationCoin(canDonateTo[0]);
     });
     //adding extended coins
-    getExtendedCoins().then((res) => {
-      const extendedCoins = res.data;
+    getExtendedCoins().then((data) => {
+      const extendedCoins = data;
       //filter away stable coins and set coins if extend search
       filterStableCoins(extendedCoins).then((filteredData) => {
         setExtendedCoins(filteredData);
       });
     });
-  }, []);
+  }, [selectCurrency]);
 
   useEffect(() => {
     if (!extendSearch) {

@@ -11,7 +11,9 @@
   position: relative;
   cursor: pointer;
 }
-
+.donation-coin-selected-container:hover {
+  background-color: #76689e91;
+}
 .fa-down {
   background: transparent;
   color: #e0e1e3;
@@ -28,6 +30,7 @@
   margin-right: 18.4px;
   color: #e0e1e3;
   font-weight: lighter;
+  font-size: 1rem;
 }
 @media (min-height: 640px) {
   .donation-coin-selected-container {
@@ -35,7 +38,7 @@
     margin-top: 1rem;
   }
   .donation-coin-selected-title {
-    font-size: 1.5rem;
+    font-size: 1.25rem;
     font-weight: normal;
   }
 }

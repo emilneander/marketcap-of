@@ -22,9 +22,6 @@ const CoinsList = ({
   keyPress,
   mouseMove,
   setMouseMove,
-  donationList,
-  donationCoinStyle,
-  selectedDonationCoinStyle,
   setExtendSearch,
   extendSearch,
   inputRef,
@@ -137,7 +134,7 @@ const CoinsList = ({
   };
 
   return (
-    <div className={"coins-container " + donationList} ref={refCurrentCoin}>
+    <div className="coins-container" ref={refCurrentCoin}>
       {/* if we get any coins we start to map them out (therefore "coins.length ?") */}
       {coins.length ? (
         filteredCoins.map((coin, index) => {
@@ -158,8 +155,6 @@ const CoinsList = ({
                 image={coin.image}
                 symbol={coin.symbol.toString()}
                 index={index}
-                donationCoinStyle={donationCoinStyle}
-                selectedDonationCoinStyle={selectedDonationCoinStyle}
                 setExtendSearch={setExtendSearch}
                 extendSearch={extendSearch}
                 selectCurrency={selectCurrency}

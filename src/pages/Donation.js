@@ -89,8 +89,7 @@ const Donation = ({
               <h1 className="donation-title noSelect">Donate</h1>
               <p className="donation-description">
                 Your contribution is life changing to me. To be able to run this
-                alone and keep improving the site I need your help. Who likes
-                ads?
+                alone and keep improving the site I need your help. Thank you!
               </p>
             </header>
             <ul className="nav-donation noSelect">

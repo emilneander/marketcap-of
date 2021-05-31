@@ -1,6 +1,6 @@
 import React from "react";
 //components
-import CoinsList from "../components/CoinsList";
+import DonationDropdown from "../components/DonationDropdown";
 import DropdownSelected from "../components/DropdownSelected";
 //hook
 import useClickOutside from "../hooks/useClickOutside";
@@ -38,21 +38,11 @@ const DonationMethodBox = ({
           setNr={setNr}
         />
         {showDropDown ? (
-          <CoinsList
-            coins={filteredCoins}
+          <DonationDropdown
+            filteredCoins={filteredCoins}
             setSelectCoin={setSelectDonationCoin}
-            setDisplay={setShowDropDown}
-            display={showDropDown}
-            setFilteredCoins={setFilteredCoins}
-            setNr={setNr}
-            nr={nr}
-            mouseMove={mouseMove}
-            donationList="donation-list"
-            donationCoinStyle="donation-coin"
-            selectedDonationCoinStyle="selected-donation-coin"
-            setSearch={setSearch}
-            search={search}
-            showExtend={false}
+            setShowDropdown={setShowDropDown}
+            showDropdown={showDropDown}
           />
         ) : (
           ""

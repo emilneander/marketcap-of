@@ -71,6 +71,7 @@
 .coin-marketcap {
   width: 155px;
 }
+
 @media (max-width: 800px) {
   .coin-row {
     padding-right: 1.5rem;
