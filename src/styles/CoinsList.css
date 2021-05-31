@@ -104,4 +104,12 @@ h1 {
   .coins-container {
     width: 250px;
   }
+  .donation-list {
+    width: 17rem;
+  }
+}
+@media (max-width: 400px) {
+  .donation-list {
+    width: 13rem;
+  }
 }

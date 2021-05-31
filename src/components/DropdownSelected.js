@@ -26,7 +26,7 @@ const DropdownSelected = ({
       </h1>
 
       <FontAwesomeIcon
-        className={showDropDown ? "fa-down up" : "fa-down"}
+        className={showDropDown ? "fa-down-donation up" : "fa-down-donation"}
         icon={faCaretDown}
       />
     </div>

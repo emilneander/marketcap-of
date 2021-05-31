@@ -113,11 +113,13 @@ input::-webkit-inner-spin-button {
 }
 
 @media (min-height: 640px) {
-  .box-amount {
-    height: 15rem;
-  }
-  .amount-grid {
-    grid-template-columns: 8.5rem 8.5rem;
-    grid-template-rows: 3rem 3rem 3rem 3rem;
+  @media (min-width: 400px) {
+    .box-amount {
+      height: 15rem;
+    }
+    .amount-grid {
+      grid-template-columns: 8.5rem 8.5rem;
+      grid-template-rows: 3rem 3rem 3rem 3rem;
+    }
   }
 }
