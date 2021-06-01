@@ -32,7 +32,7 @@ const LedgerBanner = () => {
               onClick={handleClick}
             />
             <img className="ledger-logo" src={LedgerLogo} alt="ledger-logo" />
-            <h1 className="ledger-title"></h1>
+            <h1 aria-hidden="true" className="ledger-title"></h1>
             <div className="ledger-desc-div">
               <p className="ledger-description desc-one" />
               <p className="voucher-span desc-two" />

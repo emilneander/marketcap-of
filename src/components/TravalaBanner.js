@@ -35,12 +35,21 @@ const TravalaBanner = () => {
               onClick={handleClick}
             />
             <div className="travala-title-div">
-              <h2 className="travala-title trava-p trava1"></h2>
-              <h2 className="travala-title trava-p trava2"></h2>
-              <h2 className="travala-title trava3"></h2>
+              <h2
+                aria-hidden="true"
+                className="travala-title trava-p trava1"
+              ></h2>
+              <h2
+                aria-hidden="true"
+                className="travala-title trava-p trava2"
+              ></h2>
+              <h2 aria-hidden="true" className="travala-title trava3"></h2>
               <div className="save-up-to">
-                <h2 className="travala-title trava4a"></h2>
-                <h2 className="travala-title trava-p trava4b"></h2>
+                <h2 aria-hidden="true" className="travala-title trava4a"></h2>
+                <h2
+                  aria-hidden="true"
+                  className="travala-title trava-p trava4b"
+                ></h2>
               </div>
             </div>
             <div className="image-with-button-travala">
