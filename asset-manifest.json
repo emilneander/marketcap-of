@@ -1,14 +1,14 @@
 {
   "files": {
-    "main.css": "/static/css/main.a47a4c44.chunk.css",
-    "main.js": "/static/js/main.c62b1373.chunk.js",
-    "main.js.map": "/static/js/main.c62b1373.chunk.js.map",
+    "main.css": "/static/css/main.cb70b35e.chunk.css",
+    "main.js": "/static/js/main.9c8905c5.chunk.js",
+    "main.js.map": "/static/js/main.9c8905c5.chunk.js.map",
     "runtime-main.js": "/static/js/runtime-main.97f13d69.js",
     "runtime-main.js.map": "/static/js/runtime-main.97f13d69.js.map",
     "static/js/2.4b24c6d4.chunk.js": "/static/js/2.4b24c6d4.chunk.js",
     "static/js/2.4b24c6d4.chunk.js.map": "/static/js/2.4b24c6d4.chunk.js.map",
     "index.html": "/index.html",
-    "static/css/main.a47a4c44.chunk.css.map": "/static/css/main.a47a4c44.chunk.css.map",
+    "static/css/main.cb70b35e.chunk.css.map": "/static/css/main.cb70b35e.chunk.css.map",
     "static/js/2.4b24c6d4.chunk.js.LICENSE.txt": "/static/js/2.4b24c6d4.chunk.js.LICENSE.txt",
     "static/media/Algorand-qr.50b3e11d.PNG": "/static/media/Algorand-qr.50b3e11d.PNG",
     "static/media/BinanceCoin-qr.fa8934af.PNG": "/static/media/BinanceCoin-qr.fa8934af.PNG",
@@ -34,14 +34,14 @@
     "static/media/ledger-starter-pack.058fdf49.png": "/static/media/ledger-starter-pack.058fdf49.png",
     "static/media/mco-logo.60103d23.png": "/static/media/mco-logo.60103d23.png",
     "static/media/only-ocean-min.87ccac6c.jpg": "/static/media/only-ocean-min.87ccac6c.jpg",
-    "static/media/palm-image.1f2b82c7.jpg": "/static/media/palm-image.1f2b82c7.jpg",
+    "static/media/palm-image.1ba54313.jpg": "/static/media/palm-image.1ba54313.jpg",
     "static/media/smaller-image.6c26a3dd.jpg": "/static/media/smaller-image.6c26a3dd.jpg",
     "static/media/travala-logo.53ff3d18.png": "/static/media/travala-logo.53ff3d18.png"
   },
   "entrypoints": [
     "static/js/runtime-main.97f13d69.js",
     "static/js/2.4b24c6d4.chunk.js",
-    "static/css/main.a47a4c44.chunk.css",
-    "static/js/main.c62b1373.chunk.js"
+    "static/css/main.cb70b35e.chunk.css",
+    "static/js/main.9c8905c5.chunk.js"
   ]
 }
