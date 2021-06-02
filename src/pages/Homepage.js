@@ -54,9 +54,7 @@ const Homepage = () => {
   const [supplyAvailable, setSupplyAvailable] = useState(true);
   const [coinNoSupply, setCoinNoSupply] = useState({});
   const [coinNoSupplyOnHold, setCoinNoSupplyOnHold] = useState({});
-  const [randomNumber, setRandomNumber] = useState(() => {
-    return Math.floor(Math.random() * 2);
-  });
+  const [bannerOrder, setBannerOrder] = useState(0);
 
   //fetch all coins
   useEffect(() => {
@@ -94,6 +92,19 @@ const Homepage = () => {
     }
     // }, 4000);
   }, [topCoins, extendedCoins, extendSearch, selectCurrency]);
+
+  //to change banner
+  useEffect(() => {
+    // let randomNum = () => {
+    //   return Math.floor(Math.random() * 2);
+    // };
+    // setBannerOrder(randomNum);
+    const interval = setInterval(
+      () => setBannerOrder(bannerOrder === 0 ? 1 : 0),
+      12000
+    );
+    return () => clearInterval(interval);
+  });
 
   //refs
   const aRef = useClickOutside(() => {
@@ -302,7 +313,7 @@ const Homepage = () => {
               )}
             </div>
           </div>
-          {randomNumber === 0 ? <LedgerBanner /> : <TravalaBanner />}
+          {bannerOrder === 0 ? <LedgerBanner /> : <TravalaBanner />}
           <Footer
             selectACoin={selectACoin}
             selectBCoin={selectBCoin}

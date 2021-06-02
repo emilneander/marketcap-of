@@ -1,4 +1,5 @@
 @import url("https://fonts.googleapis.com/css2?family=Nunito&display=swap");
+
 .homepage-container {
   height: 100%;
   display: flex;
@@ -19,6 +20,7 @@
   flex-wrap: wrap;
   position: relative;
 }
+
 .mco-div {
   position: absolute;
   height: 5rem;

@@ -1,3 +1,12 @@
+@keyframes rotate3d {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
 .ledger-container {
   position: absolute;
   margin-top: 6.5rem;
@@ -7,6 +16,10 @@
   background-color: transparent;
   z-index: 0;
   display: flex;
+  animation-name: rotate3d;
+  animation-duration: 2.5s;
+  animation-timing-function: ease-out;
+  animation-direction: alternate;
 }
 
 .ledger-container > a {
@@ -144,7 +157,70 @@
   }
 } */
 
-@media (max-width: 1060px), (max-height: 585px) {
+@media (max-width: 1060px) {
+  @media (min-height: 756px) {
+    .ledger-container {
+      position: relative;
+      margin-top: 0;
+      width: 100%;
+      height: 80px;
+      right: unset;
+      display: flex;
+      justify-content: center;
+    }
+    .ledger-banner {
+      position: relative;
+      width: 600px;
+      height: 80px;
+      flex-direction: row;
+    }
+    .ledger-logo {
+      width: 117px;
+      height: 30px;
+      margin: 0;
+      margin-left: 0.75rem;
+    }
+    .ledger-title {
+      font-size: 1rem;
+      margin: 0;
+      width: 17rem;
+      margin-left: 0.5rem;
+    }
+    .ledger-title::after {
+      content: "Be smart, secure your crypto!";
+    }
+    .ledger-description {
+      font-size: 0.8rem;
+      margin: 0;
+    }
+    .voucher-span {
+      font-size: 0.7rem;
+    }
+    .ledger-desc-div {
+      margin: 0;
+      width: unset;
+    }
+    .desc-three::after {
+      content: "voucher";
+    }
+    .ledger-btn {
+      width: 10rem;
+      height: 2rem;
+      margin: 0 1rem 0 1rem;
+    }
+    .ledger-btn-text {
+      font-size: 0.85rem;
+    }
+    .ledger-starter-pack {
+      display: none;
+    }
+    .faMinusSquare {
+      left: 0;
+      top: -1.25rem;
+    }
+  }
+}
+@media (max-width: 910px) {
   .ledger-container {
     position: relative;
     margin-top: 0;
@@ -207,7 +283,7 @@
 }
 
 @media (max-width: 1060px) {
-  @media (max-height: 790px) {
+  @media (min-height: 790px) {
     .ledger-container {
       margin-top: 0.5rem;
       height: 60px;
