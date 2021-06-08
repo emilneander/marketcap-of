@@ -5,13 +5,7 @@ import InfoBox from "./InfoBox";
 import "../styles/SelectedCoin.css";
 import { calculatePrice, calculatePercentage } from "../calculatePrice";
 
-const SelectedCoin = ({
-  selectACoin,
-  selectBCoin,
-  selectCurrency,
-  setSupplyAvailable,
-  supplyAvailable,
-}) => {
+const SelectedCoin = ({ selectACoin, selectBCoin, selectCurrency }) => {
   const price = calculatePrice(selectACoin, selectBCoin);
   const percentage = calculatePercentage(price, selectACoin.current_price);
   const a = selectACoin;

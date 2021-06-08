@@ -4,8 +4,6 @@ const Currency = ({
   currency,
   name,
   code,
-  symbol,
-  icon,
   setSelectCurrency,
   setShowCurrencyDropDown,
 }) => {

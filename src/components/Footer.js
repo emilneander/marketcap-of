@@ -1,6 +1,6 @@
 import React from "react";
 //route for Donation page
-import { BrowserRouter as Router, Link, Route, Switch } from "react-router-dom";
+import { Link, Route } from "react-router-dom";
 //components
 import BuyCoinButton from "../components/BuyCoinButton";
 import iconHand from "../img/hand.svg";
@@ -9,7 +9,6 @@ import Donation from "../pages/Donation";
 import "../styles/Footer.css";
 //icons
 import { faTwitter } from "@fortawesome/free-brands-svg-icons";
-import { faLongArrowAltLeft } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 
 const Footer = ({
@@ -36,6 +35,7 @@ const Footer = ({
               href="https://twitter.com/MarketCapOf"
               target="_blank"
               rel="noreferrer"
+              aria-label="Twitter"
             >
               <FontAwesomeIcon className="fa twitter" icon={faTwitter} />
             </a>
@@ -78,13 +78,6 @@ const Footer = ({
                 <p className="donate-text">Donate</p>
               </button>
             </Link>
-            {/* <div className="ad-free-text">
-              <FontAwesomeIcon
-                className="faLongArrowAltLeft"
-                icon={faLongArrowAltLeft}
-              />
-              <p>Keep me ad free</p>
-            </div> */}
           </li>
         </ul>
       </div>

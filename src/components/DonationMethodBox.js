@@ -10,18 +10,12 @@ import "../styles/CoinsList.css";
 import "../styles/Coin.css";
 
 const DonationMethodBox = ({
-  mouseMove,
   selectDonationCoin,
   setSelectDonationCoin,
   filteredCoins,
   setShowDropDown,
   showDropDown,
   setNr,
-  nr,
-  setFilteredCoins,
-  setDonationForm,
-  setSearch,
-  search,
 }) => {
   const ref = useClickOutside(() => {
     setShowDropDown(false);

@@ -12,7 +12,6 @@ const CoinsList = ({
   search,
   coins,
   setSelectCoin,
-  selectCoin,
   setDisplay,
   display,
   setSearch,

@@ -1,8 +1,7 @@
 import React, { useEffect, useState, useRef } from "react";
 //add props
-import { addDonationToData, addImgToData } from "../addPropsToData";
-//checker
-import { canDonateTo } from "../checker";
+import { addDonationToData } from "../addPropsToData";
+
 //api
 import { getDefaultCoins, getExtendedCoins } from "../api";
 import CoinsList from "../components/CoinsList";
@@ -11,8 +10,7 @@ import Footer from "../components/Footer";
 import mcoLogo from "../img/mco-logo.png";
 //filter stablecoins
 import filterStableCoins from "../filterStableCoins";
-//coins from json
-import unhandledCoins from "../coins.json";
+
 //currencies from json
 import currencies from "../currencies.json";
 //components

@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import { BrowserRouter as Router, Link, Route, Switch } from "react-router-dom";
+import { Link, Route } from "react-router-dom";
 //ticker api
 import { GetCoinTickerById } from "../api";
 //page

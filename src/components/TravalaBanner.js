@@ -26,7 +26,8 @@ const TravalaBanner = () => {
         <a
           href="https://www.travala.com?ref=marketcapof"
           target="_blank"
-          rel="nofollow"
+          rel="nofollow noopener"
+          aria-label="Travala"
         >
           <div className="ledger-banner travala-banner">
             <FontAwesomeIcon

@@ -23,7 +23,8 @@ const LedgerBanner = () => {
         <a
           href="https://shop.ledger.com/products/crypto-starter-pack?r=b22d433db482"
           target="_blank"
-          rel="nofollow"
+          rel="nofollow noopener"
+          aria-label="Ledger"
         >
           <div className="ledger-banner">
             <FontAwesomeIcon
