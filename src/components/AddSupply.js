@@ -16,7 +16,7 @@ const AddSupply = ({
   setCoinNoSupplyOnHold,
   inputRefSupply,
 }) => {
-  const [supply, setSupply] = useState("");
+  const [supply, setSupply] = useState(coinNoSupply.total_supply);
   //formating high number to e.g "k", "m"
   let o = Intl.NumberFormat("en", { notation: "compact" });
   const totalSupply = o.format(coinNoSupply.total_supply);
@@ -77,7 +77,7 @@ const AddSupply = ({
           <div className="supply-input-div">
             {coinNoSupply.total_supply ? (
               <p className="supply-max-text" onClick={handleClick}>
-                MAX
+                TOT.
               </p>
             ) : (
               ""
@@ -96,13 +96,13 @@ const AddSupply = ({
               value={supply}
               onChange={handleChange}
               // min="1" need to fix this 1.1 does not work
-              max={coinNoSupply.total_supply ? coinNoSupply.total_supply : ""}
+              // max={coinNoSupply.total_supply ? coinNoSupply.total_supply : ""}
               maxLength="26"
               autoFocus
             />
           </div>
           {coinNoSupply.total_supply ? (
-            <p className="under-supply-input">total supply: {totalSupply}</p>
+            <p className="under-supply-input">Total supply: {totalSupply}</p>
           ) : (
             ""
           )}
