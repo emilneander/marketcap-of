@@ -16,7 +16,9 @@ const AddSupply = ({
   setCoinNoSupplyOnHold,
   inputRefSupply,
 }) => {
-  const [supply, setSupply] = useState(coinNoSupply.total_supply);
+  const [supply, setSupply] = useState(
+    coinNoSupply.total_supply ? coinNoSupply.total_supply : ""
+  );
   //formating high number to e.g "k", "m"
   let o = Intl.NumberFormat("en", { notation: "compact" });
   const totalSupply = o.format(coinNoSupply.total_supply);
