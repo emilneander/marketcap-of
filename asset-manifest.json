@@ -1,15 +1,15 @@
 {
   "files": {
-    "main.css": "/static/css/main.cb70b35e.chunk.css",
-    "main.js": "/static/js/main.836dcd06.chunk.js",
-    "main.js.map": "/static/js/main.836dcd06.chunk.js.map",
+    "main.css": "/static/css/main.b62d1c26.chunk.css",
+    "main.js": "/static/js/main.dd8d4670.chunk.js",
+    "main.js.map": "/static/js/main.dd8d4670.chunk.js.map",
     "runtime-main.js": "/static/js/runtime-main.97f13d69.js",
     "runtime-main.js.map": "/static/js/runtime-main.97f13d69.js.map",
-    "static/js/2.250e0ec2.chunk.js": "/static/js/2.250e0ec2.chunk.js",
-    "static/js/2.250e0ec2.chunk.js.map": "/static/js/2.250e0ec2.chunk.js.map",
+    "static/js/2.9d15db9d.chunk.js": "/static/js/2.9d15db9d.chunk.js",
+    "static/js/2.9d15db9d.chunk.js.map": "/static/js/2.9d15db9d.chunk.js.map",
     "index.html": "/index.html",
-    "static/css/main.cb70b35e.chunk.css.map": "/static/css/main.cb70b35e.chunk.css.map",
-    "static/js/2.250e0ec2.chunk.js.LICENSE.txt": "/static/js/2.250e0ec2.chunk.js.LICENSE.txt",
+    "static/css/main.b62d1c26.chunk.css.map": "/static/css/main.b62d1c26.chunk.css.map",
+    "static/js/2.9d15db9d.chunk.js.LICENSE.txt": "/static/js/2.9d15db9d.chunk.js.LICENSE.txt",
     "static/media/Algorand-qr.50b3e11d.PNG": "/static/media/Algorand-qr.50b3e11d.PNG",
     "static/media/BinanceCoin-qr.fa8934af.PNG": "/static/media/BinanceCoin-qr.fa8934af.PNG",
     "static/media/Bitcoin-qr.b3f81fbc.PNG": "/static/media/Bitcoin-qr.b3f81fbc.PNG",
@@ -31,6 +31,10 @@
     "static/media/VeThor-qr.0df4ad4e.PNG": "/static/media/VeThor-qr.0df4ad4e.PNG",
     "static/media/XRP-qr.1d391d2e.PNG": "/static/media/XRP-qr.1d391d2e.PNG",
     "static/media/hand.60c48d49.svg": "/static/media/hand.60c48d49.svg",
+    "static/media/koinly-large.c9dbac6d.svg": "/static/media/koinly-large.c9dbac6d.svg",
+    "static/media/koinly-largest.d14a9ad0.svg": "/static/media/koinly-largest.d14a9ad0.svg",
+    "static/media/koinly-small.a52fa4e5.svg": "/static/media/koinly-small.a52fa4e5.svg",
+    "static/media/koinly-smaller.16339062.svg": "/static/media/koinly-smaller.16339062.svg",
     "static/media/ledger-starter-pack.058fdf49.png": "/static/media/ledger-starter-pack.058fdf49.png",
     "static/media/mco-logo.8eae8179.png": "/static/media/mco-logo.8eae8179.png",
     "static/media/only-ocean-min.d8f52c08.jpg": "/static/media/only-ocean-min.d8f52c08.jpg",
@@ -40,8 +44,8 @@
   },
   "entrypoints": [
     "static/js/runtime-main.97f13d69.js",
-    "static/js/2.250e0ec2.chunk.js",
-    "static/css/main.cb70b35e.chunk.css",
-    "static/js/main.836dcd06.chunk.js"
+    "static/js/2.9d15db9d.chunk.js",
+    "static/css/main.b62d1c26.chunk.css",
+    "static/js/main.dd8d4670.chunk.js"
   ]
 }
