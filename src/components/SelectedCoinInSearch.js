@@ -48,7 +48,11 @@ const SelectedCoinInSearch = ({
   return (
     <div className="coin-in-search-container">
       <img src={selectCoin.image} alt="img-a" />
-      <h4 className="symbol">{selectCoin.symbol.toUpperCase()}</h4>
+      <h4 className="symbol">
+        {selectCoin.symbol.length > 8
+          ? selectCoin.symbol.substring(0, 8).toUpperCase() + "..."
+          : selectCoin.symbol.toUpperCase()}
+      </h4>
       <h4 className={symbolClass}>{selectCurrency.symbol}</h4>
       {Object.keys(selectCoin).length ? (
         <h4 className="price">

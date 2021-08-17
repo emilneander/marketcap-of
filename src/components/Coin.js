@@ -89,8 +89,16 @@ const Coin = ({
             className={image ? "coin-img img-visible" : "coin-img img-hidden"}
             alt="crypto"
           />
-          <h1>{name}</h1>
-          <p className="coin-symbol">{symbol}</p>
+          <h1 className={name.length > 15 ? "smaller-fonts" : ""}>
+            {name.length > 20 ? name.substring(0, 20) + "..." : name}
+          </h1>
+          <p
+            className={
+              symbol.length > 10 ? "coin-symbol smaller-fonts" : "coin-symbol"
+            }
+          >
+            {symbol}
+          </p>
         </div>
       </div>
     </div>

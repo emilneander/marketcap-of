@@ -7,7 +7,7 @@
   margin-bottom: 20px;
   width: 320px;
   position: absolute;
-  z-index: 1;
+  z-index: 2;
   /* To make all text unselectable */
   -webkit-touch-callout: none; /* iOS Safari */
   -webkit-user-select: none; /* Safari */
@@ -100,7 +100,7 @@ h1 {
   font-size: 0.9rem;
   margin: 0.5rem;
 }
-@media (max-width: 800px) {
+@media (max-width: 800px), (max-height: 755px) {
   .coins-container {
     width: 250px;
   }

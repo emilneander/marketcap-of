@@ -71,6 +71,9 @@
 .coin-marketcap {
   width: 155px;
 }
+.coin > .smaller-fonts {
+  font-size: 75%;
+}
 
 @media (max-width: 800px) {
   .coin-row {
