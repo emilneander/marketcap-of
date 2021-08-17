@@ -1,0 +1,43 @@
+.svg-ad-div {
+  position: absolute;
+  right: 0;
+  margin-top: 6.5rem;
+  margin-right: 0.5rem;
+  display: flex;
+  justify-content: flex-end;
+}
+.svg-ad-img {
+  height: 100%;
+  width: 100%;
+  margin: 0;
+}
+
+@media (min-width: 1400px) {
+  picture {
+    height: 25rem;
+  }
+}
+@media (max-width: 1130px) {
+  picture {
+    height: 80%;
+    width: 80%;
+  }
+}
+@media (max-width: 1029px) {
+  .svg-ad-div {
+    position: relative;
+    margin: 0;
+    padding: 0 0.75rem 0 0.75rem;
+    width: 100%;
+    height: 80px;
+    right: unset;
+    display: flex;
+    justify-content: center;
+    align-items: flex-end;
+  }
+  .faMinusSquare-koinly {
+    left: 0;
+    top: 0;
+    position: relative;
+  }
+}

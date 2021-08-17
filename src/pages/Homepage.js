@@ -20,6 +20,7 @@ import Swap from "../components/Swap";
 import CurrencySelector from "../components/CurrencySelector";
 import LedgerBanner from "../components/LedgerBanner";
 import TravalaBanner from "../components/TravalaBanner";
+import KoinlyBanner from "../components/KoinlyBanner";
 import AddSupply from "../components/AddSupply";
 
 //hooks
@@ -93,10 +94,6 @@ const Homepage = () => {
 
   //to change banner
   useEffect(() => {
-    // let randomNum = () => {
-    //   return Math.floor(Math.random() * 2);
-    // };
-    // setBannerOrder(randomNum);
     const interval = setInterval(
       () => setBannerOrder(bannerOrder === 0 ? 1 : 0),
       12000
@@ -311,7 +308,8 @@ const Homepage = () => {
               )}
             </div>
           </div>
-          {bannerOrder === 0 ? <LedgerBanner /> : <TravalaBanner />}
+          {bannerOrder === 0 ? <KoinlyBanner /> : <LedgerBanner />}
+
           <Footer
             selectACoin={selectACoin}
             selectBCoin={selectBCoin}
