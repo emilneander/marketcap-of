@@ -1,7 +1,7 @@
 .swap {
   background-color: transparent;
   position: absolute;
-  top: 16.75rem;
+  top: 13.7rem;
   cursor: pointer;
   /* To make all text unselectable */
   -webkit-touch-callout: none; /* iOS Safari */
@@ -20,23 +20,23 @@
 @media (min-width: 1000px) {
   @media (max-height: 755px) {
     .swap {
-      top: 16.15rem;
+      top: 13.15rem;
     }
   }
 }
 @media (max-width: 1000px) {
   .swap {
-    top: 15.1rem;
+    top: 12.2rem;
   }
   @media (max-height: 755px) {
     .swap {
-      top: 14.45rem;
+      top: 11.7rem;
     }
   }
 }
 @media (max-width: 800px) {
   .swap {
-    top: 11.65rem;
+    top: 11.45rem;
   }
   .icon {
     font-size: 1.85rem;
@@ -52,14 +52,14 @@
     }
   }
 } */
-@media (max-width: 555px) {
+@media (max-width: 581px) {
   .icon {
     transform: scaleX(0.8);
   }
   .swap {
     right: 0rem;
     margin-right: 7rem;
-    top: 13.45rem;
+    top: 11.65rem;
     transform: rotate(90deg);
   }
 }
@@ -70,7 +70,7 @@
 }
 @media (max-width: 375px) {
   .swap {
-    top: 11.65rem;
+    top: 10.15rem;
     margin-right: 2rem;
   }
 }

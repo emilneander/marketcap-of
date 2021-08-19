@@ -14,8 +14,8 @@
   -webkit-tap-highlight-color: transparent; /*android chrome*/
 }
 .coin-text {
-  font-size: 1.65rem;
-  margin-bottom: 0.3rem;
+  font-size: 1.3rem;
+  margin-bottom: 0.1rem;
   text-align: center;
   color: white;
 }
@@ -60,17 +60,22 @@
 
 @media (max-width: 800px), (max-height: 755px) {
   .coin-text {
-    font-size: 1.4rem;
+    font-size: 1.1rem;
   }
   .coin-input {
     width: 250px;
     height: 40px;
+    font-size: 0.9rem;
+  }
+  .search-form {
+    margin-bottom: 0.4rem;
   }
 }
 
-@media (max-width: 555px) {
+@media (max-width: 581px) {
   .coin-text {
-    font-size: 1.25rem;
+    align-self: flex-start;
+    font-size: 0.85rem;
   }
   .coin-input {
     width: 250px;

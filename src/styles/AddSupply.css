@@ -9,9 +9,10 @@
   flex-direction: column;
   align-items: center;
   justify-content: flex-start;
-  border: 1px solid #707070;
+  border: 1px solid #cfc3ff5e;
   background-color: #18142d;
   border-radius: 10px;
+  box-shadow: -5px -5px 10px #211c3e, 5px 5px 10px #31285c;
   z-index: 1;
 }
 .supply-text-div {

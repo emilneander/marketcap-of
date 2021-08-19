@@ -75,7 +75,7 @@
 }
 
 .grid-symbol {
-  font-size: 2rem;
+  font-size: 1.75rem;
 }
 
 .coin-prices {
@@ -132,7 +132,7 @@
 }
 h2 {
   color: rgb(203, 200, 226);
-  font-size: 2rem;
+  font-size: 1.75rem;
 }
 
 @media (max-width: 800px) {
@@ -151,15 +151,15 @@ h2 {
   }
 }
 
-@media (max-width: 555px), (max-height: 755px) {
+@media (max-width: 581px), (max-height: 755px) {
   .selectedCoins-container {
     margin: 1rem 0rem 0 0rem;
   }
   .coin-prices {
-    font-size: 2.25rem;
+    font-size: 1.6rem;
   }
   .percent {
-    font-size: 1.25rem;
+    font-size: 1.1rem;
   }
 
   .a-img {
@@ -173,11 +173,8 @@ h2 {
   .text-div {
     margin-top: 1.5rem;
   }
-  h2 {
-    font-size: 1.5rem;
-  }
-  .firstafter-text > h2 {
-    font-size: 1.5rem;
+  .text-div h2 {
+    font-size: 1.2rem;
   }
 }
 @media (max-width: 375px) {
@@ -185,16 +182,16 @@ h2 {
     margin-top: 1rem;
   }
   .text-div h2 {
-    font-size: 1.15rem;
+    font-size: 1.05rem;
   }
   .coin-prices {
-    font-size: 1.7rem;
+    font-size: 1.35rem;
   }
   .a-img {
     width: 2rem;
     height: 2rem;
   }
   .percent {
-    font-size: 1rem;
+    font-size: 0.9rem;
   }
 }
