@@ -1,6 +1,6 @@
 {
   "files": {
-    "main.css": "/static/css/main.7a8bf0c6.chunk.css",
+    "main.css": "/static/css/main.14c56da3.chunk.css",
     "main.js": "/static/js/main.342501ca.chunk.js",
     "main.js.map": "/static/js/main.342501ca.chunk.js.map",
     "runtime-main.js": "/static/js/runtime-main.97f13d69.js",
@@ -8,7 +8,7 @@
     "static/js/2.9d15db9d.chunk.js": "/static/js/2.9d15db9d.chunk.js",
     "static/js/2.9d15db9d.chunk.js.map": "/static/js/2.9d15db9d.chunk.js.map",
     "index.html": "/index.html",
-    "static/css/main.7a8bf0c6.chunk.css.map": "/static/css/main.7a8bf0c6.chunk.css.map",
+    "static/css/main.14c56da3.chunk.css.map": "/static/css/main.14c56da3.chunk.css.map",
     "static/js/2.9d15db9d.chunk.js.LICENSE.txt": "/static/js/2.9d15db9d.chunk.js.LICENSE.txt",
     "static/media/Algorand-qr.50b3e11d.PNG": "/static/media/Algorand-qr.50b3e11d.PNG",
     "static/media/BinanceCoin-qr.fa8934af.PNG": "/static/media/BinanceCoin-qr.fa8934af.PNG",
@@ -45,7 +45,7 @@
   "entrypoints": [
     "static/js/runtime-main.97f13d69.js",
     "static/js/2.9d15db9d.chunk.js",
-    "static/css/main.7a8bf0c6.chunk.css",
+    "static/css/main.14c56da3.chunk.css",
     "static/js/main.342501ca.chunk.js"
   ]
 }
