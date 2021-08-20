@@ -61,7 +61,7 @@ img {
   color: rgb(207, 195, 255);
 }
 
-@media (max-width: 800px) {
+@media (max-width: 800px), (max-height: 755px) {
   h4 {
     font-size: 0.9rem;
   }

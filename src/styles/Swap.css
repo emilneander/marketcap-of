@@ -55,11 +55,12 @@
 @media (max-width: 581px) {
   .icon {
     transform: scaleX(0.8);
+    font-size: 1.6rem;
   }
   .swap {
     right: 0rem;
     margin-right: 7rem;
-    top: 11.65rem;
+    top: 11.75rem;
     transform: rotate(90deg);
   }
 }
@@ -70,8 +71,11 @@
 }
 @media (max-width: 375px) {
   .swap {
-    top: 10.15rem;
+    top: 10.3rem;
     margin-right: 2rem;
+  }
+  .icon {
+    font-size: 1.5rem;
   }
 }
 @media (max-width: 243px) {
