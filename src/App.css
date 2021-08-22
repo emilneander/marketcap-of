@@ -30,4 +30,5 @@ body {
 }
 a {
   z-index: 1;
+  text-decoration: none;
 }

@@ -156,71 +156,70 @@ hr {
   animation: anim-from-right 3s ease-out 3s both;
   opacity: 1;
 }
-.ad-free-text > p {
+/* .ad-free-text > p {
   color: #a4aabb;
   font-weight: bold;
-}
+} */
 .faLongArrowAltLeft {
   color: #a4aabb;
   font-size: 1.75rem;
   margin: 0 0.25rem 0 0.5rem;
 }
 @media (max-width: 555px) {
-  .ad-free-text {
+  /* .ad-free-text {
     margin-top: 0.5rem;
     flex-direction: column-reverse;
-  }
-  .ad-free-text > p {
+  } */
+  /* .ad-free-text > p {
     font-size: 0.65rem;
     font-weight: bold;
     margin-left: 0.25rem;
-  }
-  .faLongArrowAltLeft {
+  } */
+  /* .faLongArrowAltLeft {
     font-size: 1.25rem;
-  }
+  } */
 }
-@media (max-width: 388px) {
-  .ad-free-text {
+
+@media (max-width: 390px) {
+  /* .ad-free-text {
     margin-top: 0.2rem;
-  }
-  .ad-free-text > p {
+  } */
+  /* .ad-free-text > p {
     font-size: 0.45rem;
     font-weight: bold;
     margin-left: 0.25rem;
-  }
-}
-@media (max-width: 390px) {
+  } */
   hr {
-    margin: 0.5rem 0 0.75rem 0;
+    margin: 0.35rem 0 0.25rem 0;
   }
   .btn {
-    height: 2.5rem;
+    height: 2.15rem;
   }
   .donate-text {
-    font-size: 1rem;
+    font-size: 0.8rem;
   }
   .icon-hand {
-    width: 2rem;
-    height: 1.1rem;
-  }
-  .coin-over-hand {
-    width: 1rem;
-    height: 1rem;
+    width: 1.6rem;
+    height: 0.88rem;
   }
   .btn-hand {
-    width: 7rem;
+    width: 6rem;
+  }
+  .coin-over-hand {
+    width: 0.85rem;
+    height: 0.85rem;
   }
   .btn-buy {
-    width: 5.25rem;
+    width: 4.75rem;
   }
   .btn-twitter {
-    width: 2.5rem;
+    width: 2.15rem;
   }
   .fa {
-    font-size: 1.35rem;
+    font-size: 1.25rem;
   }
   .copyright-text {
     font-size: 0.8rem;
-    margin: 0.5rem 0 0.25rem 0;
+    margin: 0.15rem 0 0.25rem 0;
   }
 }

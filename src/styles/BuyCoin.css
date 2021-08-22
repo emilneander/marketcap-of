@@ -25,11 +25,7 @@
   animation-duration: 0.5s;
   animation-timing-function: ease-in;
 }
-@media (max-width: 360px) {
-  .buy-text {
-    font-size: 0.9rem;
-  }
-}
+
 /* popup */
 .buy-coin-overlay {
   height: 100%;
@@ -123,4 +119,10 @@
   font-size: 0.8rem;
   right: 0.7rem;
   position: absolute;
+}
+
+@media (max-width: 390px) {
+  .buy-text {
+    font-size: 0.75rem;
+  }
 }

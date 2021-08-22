@@ -82,7 +82,7 @@ const SelectedCoin = ({ selectACoin, selectBCoin, selectCurrency }) => {
             <div className="text-div">
               <h2 className="market-cap-title">
                 Market cap
-                <InfoBox selectACoin={selectACoin} />
+                {/* <InfoBox selectACoin={selectACoin} /> */}
               </h2>
               {/* <h2 className="first-text">{a.symbol.toUpperCase()}: </h2> */}
               <div className="firstafter-text first-text">

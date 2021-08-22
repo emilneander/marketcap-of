@@ -72,7 +72,10 @@
   grid-column: 1/5;
   grid-row: 1/2;
   text-align: center;
-  margin-bottom: 0.5rem;
+  margin-bottom: 0.3rem;
+  /* text-decoration: underline;
+  text-decoration-color: rgba(203, 200, 226, 0.644);
+  text-decoration-thickness: 1px; */
 }
 .a-img {
   width: 2.5rem;
@@ -182,7 +185,8 @@ h2 {
   font-size: 0.85rem;
   color: #eddfff;
   background-color: transparent;
-  padding-top: 0.5rem;
+  padding-top: 0.75rem;
+  margin: 0 0.25rem 0 0.25rem;
 }
 .url-text {
   font-size: 0.8rem;
@@ -194,65 +198,136 @@ h2 {
 }
 @media (max-width: 800px) {
   .coin-prices {
-    font-size: 2.5rem;
+    font-size: 2.25rem;
   }
   .a-img {
-    width: 3rem;
-    height: 3rem;
+    width: 2.25rem;
+    height: 2.25rem;
   }
   h2 {
-    font-size: 1.75rem;
+    font-size: 1.15rem;
   }
   .firstafter-text > h2 {
-    font-size: 1.75rem;
+    font-size: 1.05rem;
+  }
+  .market-cap-title {
+    margin-bottom: 0.25rem;
+  }
+  .url-text {
+    font-size: 0.7rem;
+    bottom: 0.1rem;
+    right: 1.25rem;
+  }
+  .percent {
+    font-size: 1.4rem;
+  }
+  .b-img {
+    width: 1.05rem;
+    height: 1.05rem;
+  }
+  .img-price {
+    padding-top: 0.6rem;
+  }
+  .text-div {
+    padding-bottom: 0.8rem;
   }
 }
 
 @media (max-width: 581px), (max-height: 755px) {
   .selectedCoins-container {
-    margin: 1rem 0rem 0 0rem;
+    margin: 0.5rem 0rem 0 0rem;
   }
   .coin-prices {
-    font-size: 1.6rem;
+    font-size: 1.75rem;
+  }
+  .a-img {
+    width: 1.85rem;
+    height: 1.85rem;
+  }
+  h2 {
+    font-size: 1.15rem;
+  }
+  .firstafter-text > h2 {
+    font-size: 0.85rem;
+  }
+  .market-cap-title {
+    margin-bottom: 0.25rem;
+    font-size: 0.9rem;
+  }
+  .url-text {
+    font-size: 0.55rem;
+    bottom: 0.1rem;
+    right: 1.25rem;
   }
   .percent {
     font-size: 1.1rem;
-  }
-
-  .a-img {
-    width: 2.5rem;
-    height: 2.5rem;
+    margin-left: 0.25rem;
   }
   .b-img {
-    width: 1rem;
-    height: 1rem;
+    width: 0.85rem;
+    height: 0.85rem;
+  }
+  .img-price {
+    padding-top: 0.4rem;
+    padding-bottom: 0.25rem;
   }
   .text-div {
-    margin-top: 1.5rem;
+    padding-bottom: 0.85rem;
   }
-  .text-div h2 {
-    font-size: 1.2rem;
+  .card-desc {
+    font-size: 0.7rem;
+    padding-top: 0.45rem;
+  }
+  .fa-chevron-down {
+    font-size: 1.25rem;
+    margin-bottom: 0.15rem;
   }
 }
 @media (max-width: 375px) {
-  .text-div {
-    margin-top: 0.65rem;
-  }
-  .text-div h2 {
-    font-size: 0.95rem;
+  .selectedCoins-container {
+    margin-top: 0.25rem;
   }
   .coin-prices {
-    font-size: 1.35rem;
+    font-size: 1.5rem;
   }
   .a-img {
     width: 1.5rem;
     height: 1.5rem;
   }
+
+  .firstafter-text > h2 {
+    font-size: 0.85rem;
+  }
+  .market-cap-title {
+    margin-bottom: 0.05rem;
+    font-size: 0.85rem;
+  }
+  .url-text {
+    font-size: 0.5rem;
+    bottom: 0.1rem;
+    right: 0.9rem;
+  }
   .percent {
     font-size: 0.9rem;
+    margin-left: 0.15rem;
   }
   .b-img {
-    width: 0.8rem;
-    height: 0.8rem;
+    width: 0.7rem;
+    height: 0.7rem;
+  }
+  .img-price {
+    padding-top: 0.25rem;
+    padding-bottom: 0.2rem;
+  }
+  .text-div {
+    padding-bottom: 0.75rem;
+  }
+  .card-desc {
+    font-size: 0.6rem;
+    padding-top: 0.4rem;
+  }
+  .fa-chevron-down {
+    font-size: 1.2rem;
+    margin-bottom: 0.1rem;
   }
 }
