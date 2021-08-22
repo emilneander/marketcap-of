@@ -28,3 +28,6 @@ body {
   user-select: none;
   -webkit-tap-highlight-color: transparent;
 }
+a {
+  z-index: 1;
+}

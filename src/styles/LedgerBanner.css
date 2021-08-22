@@ -14,7 +14,7 @@
   width: 230px;
   height: 490px;
   background-color: transparent;
-  z-index: 0;
+  z-index: 1;
   display: flex;
   animation-name: rotate3d;
   animation-duration: 2.5s;

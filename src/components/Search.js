@@ -67,9 +67,7 @@ const Search = ({
               }
             } else {
               alert(
-                "Sorry, the price of " +
-                  result[0].name +
-                  " is not verified. Tag me on Twitter and tell me what coin!"
+                "Sorry, the price of is not verified. Tag me on Twitter and tell me what coin!"
               );
             }
           }

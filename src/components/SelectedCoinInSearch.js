@@ -3,6 +3,8 @@ import "../styles/SelectedCoinInSearch.css";
 //icons
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faTimesCircle } from "@fortawesome/free-solid-svg-icons";
+//functions
+import { vibrate } from "../vibrate";
 
 const SelectedCoinInSearch = ({
   selectCoin,
@@ -30,6 +32,7 @@ const SelectedCoinInSearch = ({
     }
     //remove the coin
     setSelectCoin({});
+    vibrate(10);
   };
   //classname for symbol
   let symbolClass = "price";

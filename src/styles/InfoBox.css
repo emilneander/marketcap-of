@@ -34,7 +34,7 @@
   padding: 0.5rem;
 }
 .question-icon {
-  font-size: 1.5rem;
+  font-size: 1.25rem;
   color: #cfc3ff;
   text-align: center;
   margin-left: 0.25rem;
@@ -66,7 +66,7 @@
     font-size: 1rem;
   }
   .question-icon {
-    font-size: 1.25rem;
+    font-size: 1rem;
   }
 }
 @media (max-width: 360px) {
@@ -76,5 +76,8 @@
   }
   .content > p {
     font-size: 0.9rem;
+  }
+  .question-icon {
+    font-size: 0.8rem;
   }
 }
