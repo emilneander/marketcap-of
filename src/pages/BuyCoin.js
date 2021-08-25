@@ -10,16 +10,26 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { Link } from "react-router-dom";
 
 const BuyCoin = ({ markets, coinName }) => {
-  coinName = coinName.toUpperCase();
+  coinName = coinName ? coinName.toUpperCase() : coinName;
   return (
     <div className="buy-coin-overlay">
       <div className="buy-popup">
         <header>
-          <h1 className="donation-title noSelect">Buy {coinName}</h1>
-          <p className="donation-description">
-            Buying {coinName} is super simple. All you have to do is pick an
-            exchange bellow and sign up. You will figure out the rest!
-          </p>
+          {coinName ? (
+            <h1 className="donation-title noSelect">Buy {coinName}</h1>
+          ) : (
+            <h1 className="donation-title noSelect">Oops!</h1>
+          )}
+          {coinName ? (
+            <p className="donation-description">
+              Buying {coinName} is super simple. All you have to do is pick an
+              exchange bellow and sign up. You will figure out the rest!
+            </p>
+          ) : (
+            <p className="donation-description">
+              Something went wrong, go back and select another coin.
+            </p>
+          )}
         </header>
         {markets.includes("kraken") ? (
           <ExchangeBox

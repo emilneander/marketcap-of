@@ -1,0 +1,126 @@
+.toggle-container {
+  position: relative;
+  width: 7rem;
+  height: 2.5rem;
+  background: #26283d;
+  border-radius: 5px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  cursor: pointer;
+}
+.toggle-container:hover {
+  background: #363957;
+}
+.toggle-container > div,
+.toggle-left-span,
+.toggle-right-span {
+  transition: all 0.2s ease;
+}
+
+.toggle {
+  position: absolute;
+  width: 45%;
+  border-radius: 5px;
+  height: 80%;
+  background: white;
+  margin: 3px;
+}
+.toggle-false {
+  transform: translateX(100%);
+}
+.toggle-true {
+  transform: translateX(0%);
+}
+
+.toggle-left-span {
+  position: absolute;
+  color: white;
+  font-size: 1.25rem;
+  left: 19.5px;
+}
+.toggle-right-span {
+  position: absolute;
+  color: #4c5079;
+  font-size: 1.25rem;
+  right: 26.5px;
+}
+.toggle-right-true {
+  color: white;
+}
+.toggle-left-true {
+  color: #4c5079;
+}
+
+.vibration-span .toggle-right-span {
+  font-size: 1rem;
+  right: 22px;
+}
+.vibration-span .toggle-left-span {
+  font-size: 1rem;
+  left: 12px;
+}
+@media (max-width: 1000px) {
+  .toggle-container {
+    width: 6rem;
+    height: 2rem;
+  }
+  .toggle-left-span {
+    left: 17.5px;
+    font-size: 1.15rem;
+  }
+  .toggle-right-span {
+    right: 22.5px;
+    font-size: 1.15rem;
+  }
+  .vibration-span .toggle-right-span {
+    font-size: 0.85rem;
+    right: 18px;
+  }
+  .vibration-span .toggle-left-span {
+    font-size: 0.8rem;
+    left: 12px;
+  }
+}
+
+@media (max-width: 555px) {
+  .toggle-container {
+    width: 5rem;
+  }
+  .toggle-left-span {
+    left: 14.5px;
+    font-size: 1rem;
+  }
+  .toggle-right-span {
+    right: 17.5px;
+    font-size: 1rem;
+  }
+  .vibration-span .toggle-right-span {
+    font-size: 0.7rem;
+    right: 15px;
+  }
+  .vibration-span .toggle-left-span {
+    font-size: 0.7rem;
+    left: 10px;
+  }
+}
+@media (max-width: 360px) {
+  .toggle-container {
+    width: 4rem;
+    height: 1.85rem;
+  }
+  .toggle-left-span {
+    left: 10.5px;
+  }
+  .toggle-right-span {
+    right: 12px;
+  }
+  .vibration-span .toggle-right-span {
+    font-size: 0.7rem;
+    right: 10px;
+  }
+  .vibration-span .toggle-left-span {
+    font-size: 0.7rem;
+    left: 6px;
+  }
+}

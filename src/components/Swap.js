@@ -7,12 +7,18 @@ import { faExchangeAlt } from "@fortawesome/free-solid-svg-icons";
 //func
 import { vibrate } from "../vibrate";
 
-const Swap = ({ setSelectACoin, setSelectBCoin, selectACoin, selectBCoin }) => {
+const Swap = ({
+  setSelectACoin,
+  setSelectBCoin,
+  selectACoin,
+  selectBCoin,
+  vibrateState,
+}) => {
   const handleClick = () => {
     if (Object.keys(selectACoin).length || Object.keys(selectBCoin).length) {
       setSelectACoin(selectBCoin);
       setSelectBCoin(selectACoin);
-      vibrate(10);
+      !vibrateState ? vibrate(10) : vibrate(0);
     }
   };
   return (

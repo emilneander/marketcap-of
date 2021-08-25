@@ -1,7 +1,6 @@
 import React, { useEffect, useState, useRef } from "react";
 //add props
 import { addDonationToData } from "../addPropsToData";
-
 //api
 import { getDefaultCoins, getExtendedCoins } from "../api";
 import CoinsList from "../components/CoinsList";
@@ -10,7 +9,9 @@ import Footer from "../components/Footer";
 import mcoLogo from "../img/mco-logo.png";
 //filter stablecoins
 import filterStableCoins from "../filterStableCoins";
-
+//icons
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faBars } from "@fortawesome/free-solid-svg-icons";
 //currencies from json
 import currencies from "../currencies.json";
 //components
@@ -22,13 +23,15 @@ import LedgerBanner from "../components/LedgerBanner";
 import TravalaBanner from "../components/TravalaBanner";
 import KoinlyBanner from "../components/KoinlyBanner";
 import AddSupply from "../components/AddSupply";
-
+import HamburgerMenu from "../components/HamburgerMenu";
 //hooks
 import useClickOutside from "../hooks/useClickOutside";
 //style
 import "../styles/Homepage.css";
+import "../styles/HamburgerMenu.css";
 //route link for logo
 import { BrowserRouter as Router, Link, Route } from "react-router-dom";
+import { vibrate } from "../vibrate";
 
 const Homepage = () => {
   // const [api, setApi] = useState(apiUrl);
@@ -54,6 +57,9 @@ const Homepage = () => {
   const [coinNoSupply, setCoinNoSupply] = useState({});
   const [coinNoSupplyOnHold, setCoinNoSupplyOnHold] = useState({});
   const [bannerOrder, setBannerOrder] = useState(0);
+  const [hamburgerActive, setHamburgerActive] = useState(false);
+  const [usePercent, setUsePercent] = useState(false);
+  const [vibrateState, setVibrateState] = useState(false);
 
   //fetch all coins
   useEffect(() => {
@@ -124,7 +130,7 @@ const Homepage = () => {
     <Router>
       <Route path="/">
         <div className="homepage-container">
-          <div className="mco-div">
+          <div className="mco-div noSelect">
             <Link to="/" className="link">
               <div className="logo-title">
                 <img className="mco-logo" src={mcoLogo} alt="logo" />
@@ -132,16 +138,40 @@ const Homepage = () => {
               </div>
               <hr className="hr-under-logo" />
             </Link>
-            <CurrencySelector
-              setSelectCurrency={setSelectCurrency}
-              selectCurrency={selectCurrency}
-              selectACoin={selectACoin}
-              setSelectACoin={setSelectACoin}
-              selectBCoin={selectBCoin}
-              setSelectBCoin={setSelectBCoin}
-            />
+            <div
+              className="hamburger-icon-container"
+              onClick={() => setHamburgerActive(!hamburgerActive)}
+            >
+              <div
+                className={
+                  hamburgerActive
+                    ? "hamburger-icon noSelect hamburger-active"
+                    : "hamburger-icon noSelect"
+                }
+              >
+                <span></span>
+                <span></span>
+                <span></span>
+              </div>
+            </div>
           </div>
           <div className="homepage" onMouseMove={handleMouseMove}>
+            {hamburgerActive ? (
+              <HamburgerMenu
+                setSelectCurrency={setSelectCurrency}
+                selectCurrency={selectCurrency}
+                selectACoin={selectACoin}
+                setSelectACoin={setSelectACoin}
+                selectBCoin={selectBCoin}
+                setSelectBCoin={setSelectBCoin}
+                usePercent={usePercent}
+                setUsePercent={setUsePercent}
+                setVibrateState={setVibrateState}
+                vibrateState={vibrateState}
+              />
+            ) : (
+              ""
+            )}
             <div className="title">
               <h1>
                 Show the value of <span className="span-A">A</span> <br />
@@ -213,6 +243,7 @@ const Homepage = () => {
               setSelectBCoin={setSelectBCoin}
               selectACoin={selectACoin}
               selectBCoin={selectBCoin}
+              vibrateState={vibrateState}
             />
             {/* B - SEARCH/LIST */}
             <div className="search-list-container" ref={bRef}>
@@ -302,13 +333,23 @@ const Homepage = () => {
                   selectCurrency={selectCurrency}
                   supplyAvailable={supplyAvailable}
                   setSupplyAvailable={setSupplyAvailable}
+                  usePercent={usePercent}
+                  vibrateState={vibrateState}
                 />
               ) : (
                 ""
               )}
             </div>
           </div>
-          {bannerOrder === 0 ? <KoinlyBanner /> : <LedgerBanner />}
+          {!hamburgerActive ? (
+            bannerOrder === 0 ? (
+              <KoinlyBanner />
+            ) : (
+              <LedgerBanner />
+            )
+          ) : (
+            ""
+          )}
 
           <Footer
             selectACoin={selectACoin}

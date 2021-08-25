@@ -11,6 +11,7 @@
   overflow: scroll;
   overflow-x: hidden;
   box-shadow: rgb(0 0 0 / 10%) 0px 2px 10px 0px;
+  z-index: 1;
 }
 .currency-dropdown::-webkit-scrollbar {
   width: 10px;

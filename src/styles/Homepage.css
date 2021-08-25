@@ -14,22 +14,21 @@
   flex-direction: row;
   justify-content: center;
   height: 100%;
+  width: 100%;
   min-height: 29.5rem;
   align-content: flex-start;
-  padding-top: 5rem;
   flex-wrap: wrap;
   position: relative;
 }
 
 .mco-div {
-  position: absolute;
+  position: relative;
   height: 5rem;
   width: 100%;
-  top: 0;
+  padding: 0.5rem 0 0.5rem 0;
   display: flex;
   justify-content: space-between;
   align-items: center;
-  background-color: #161727;
   z-index: 1;
 }
 .logo-title {
@@ -84,8 +83,9 @@
 }
 .selectedCoin-div {
   flex-basis: 100%;
-  z-index: 1;
+  z-index: 0;
 }
+
 @media (max-width: 1000px) {
   .mco-logo {
     width: 3rem;
@@ -97,11 +97,9 @@
   .mco-div {
     height: 4.25rem;
   }
-  .homepage {
-    padding-top: 2.25rem;
-  }
+
   .title h1 {
-    margin-top: 2.5rem;
+    margin-top: 1.4rem;
     font-size: 1.5rem;
   }
 }
@@ -121,8 +119,8 @@
   }
   .title h1 {
     font-size: 1.4rem;
-    margin-bottom: 2rem;
-    margin-top: 2rem;
+    margin-bottom: 1.5rem;
+    margin-top: 1.25rem;
   }
   .search-list-container {
     margin: 0 3.5% 0 3.5%;
@@ -135,7 +133,7 @@
   .title h1 {
     font-size: 1.1rem;
     margin-bottom: 1.3rem;
-    margin-top: 1.5rem;
+    margin-top: 1.2rem;
   }
   .mco-logo {
     width: 2rem;
@@ -172,17 +170,16 @@
     font-size: 1rem;
   }
   .homepage {
-    padding-top: 1.5rem;
     min-height: 24.5rem;
   }
   .title h1 {
     font-size: 1rem;
-    margin-bottom: 1rem;
-    margin-top: 1.75rem;
+    margin-bottom: 0.75rem;
+    margin-top: 0.65rem;
   }
 }
 @media (max-width: 330px) {
   .homepage {
-    min-height: 24.5rem;
+    min-height: 22.5rem;
   }
 }

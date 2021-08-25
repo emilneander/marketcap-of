@@ -1,0 +1,148 @@
+/* HAMBURGER ICON---- */
+.hamburger-icon-container {
+  padding-left: 2rem;
+  cursor: pointer;
+}
+.hamburger-icon {
+  position: relative;
+  margin-right: 1.5rem;
+  margin-top: 2.25rem;
+  width: 40px;
+  height: 40px;
+}
+.hamburger-icon span {
+  position: absolute;
+  width: 100%;
+  height: 4px;
+  border-radius: 3px;
+  background: #eaddfd;
+  transition: all 0.3s ease;
+}
+.hamburger-icon :first-child {
+  top: -11px;
+}
+
+.hamburger-icon :last-child {
+  top: 11px;
+}
+.hamburger-active span:first-child {
+  top: 0;
+  transform: rotate(45deg);
+}
+.hamburger-active span:nth-child(2) {
+  opacity: 0;
+}
+.hamburger-active span:last-child {
+  top: 0;
+  transform: rotate(-45deg);
+}
+/* -------------- */
+
+/* MENU */
+@keyframes slide {
+  0% {
+    transform: scale(0.1);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+
+.hamburger-menu-container {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background: rgb(23, 24, 37);
+  z-index: 1;
+  right: 0;
+  /* animation: slide 0.2s ease-out; */
+}
+
+.hamburger-menu-item-container {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.hamburger-menu-item {
+  max-width: 40rem;
+  width: 80%;
+  height: 4.25rem;
+  border-bottom: 1px solid #6d6d755e;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.hamburger-menu-item h1 {
+  font-size: 1.5rem;
+}
+
+@media (max-width: 1000px) {
+  .hamburger-menu-item h1 {
+    font-size: 1.35rem;
+  }
+  .hamburger-menu-item {
+    height: 4rem;
+  }
+}
+@media (max-width: 800px) {
+  .hamburger-icon {
+    width: 35px;
+    height: 35px;
+    margin-top: 2rem;
+    margin-right: 1.25rem;
+  }
+  .hamburger-icon span {
+    height: 3px;
+  }
+}
+@media (max-width: 581px) {
+  .hamburger-icon {
+    width: 30px;
+    height: 30px;
+    margin-top: 1.75rem;
+    margin-right: 1.15rem;
+  }
+  .hamburger-icon :first-child {
+    top: -9px;
+  }
+
+  .hamburger-icon :last-child {
+    top: 9px;
+  }
+}
+@media (max-width: 375px) {
+  .hamburger-icon {
+    width: 25px;
+    height: 25px;
+    margin-top: 1.5rem;
+    margin-right: 0.75rem;
+  }
+  .hamburger-icon span {
+    height: 3px;
+  }
+  .hamburger-icon :first-child {
+    top: -8px;
+  }
+
+  .hamburger-icon :last-child {
+    top: 8px;
+  }
+}
+@media (max-width: 555px) {
+  .hamburger-menu-item h1 {
+    font-size: 1.25rem;
+  }
+  .hamburger-menu-item {
+    height: 3.75rem;
+  }
+}
+@media (max-width: 360px) {
+  .hamburger-menu-item h1 {
+    font-size: 1.15rem;
+  }
+  .hamburger-menu-item {
+    height: 3.25rem;
+  }
+}

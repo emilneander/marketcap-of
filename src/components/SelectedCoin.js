@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 //component
 import InfoBox from "./InfoBox";
 //styles
@@ -12,11 +12,22 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 //functions
 import { vibrate } from "../vibrate";
 
-const SelectedCoin = ({ selectACoin, selectBCoin, selectCurrency }) => {
+const SelectedCoin = ({
+  selectACoin,
+  selectBCoin,
+  selectCurrency,
+  usePercent,
+  vibrateState,
+}) => {
   const [openCard, setOpenCard] = useState(false);
 
+  // useEffect(() => {
+  //   effect
+
+  // }, [usePercent])
+
   const price = calculatePrice(selectACoin, selectBCoin);
-  // const percentage = calculatePercentage(price, selectACoin.current_price);
+  const percentage = calculatePercentage(price, selectACoin.current_price);
   const multiplicative = price / selectACoin.current_price;
   const a = selectACoin;
   const b = selectBCoin;
@@ -52,7 +63,7 @@ const SelectedCoin = ({ selectACoin, selectBCoin, selectCurrency }) => {
           className="selectedCoins-container noSelect"
           onClick={() => {
             setOpenCard(!openCard);
-            vibrate(10);
+            !vibrateState ? vibrate(10) : vibrate(0);
           }}
         >
           <p className="card-desc">
@@ -73,8 +84,20 @@ const SelectedCoin = ({ selectACoin, selectBCoin, selectCurrency }) => {
                 multiplicative >= 1 ? "percent positive" : "percent negative"
               }
             >
-              ({formatMultiplier(multiplicative)}
-              <span className="percent span-multiply">x</span>)
+              (
+              {usePercent
+                ? formatMultiplier(percentage)
+                : formatMultiplier(multiplicative)}
+              <span
+                className={
+                  usePercent
+                    ? "percent span-multiply span-percent"
+                    : "percent span-multiply"
+                }
+              >
+                {usePercent ? "%" : "x"}
+              </span>
+              )
             </span>
           </div>
           {/* here is the grid of market caps */}

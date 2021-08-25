@@ -176,6 +176,10 @@ h2 {
   margin-left: 1px;
   color: inherit;
 }
+.span-percent {
+  margin-left: 0px;
+  font-weight: unset;
+}
 .fa-chevron-down {
   color: #9f96c1;
   font-size: 1.5rem;

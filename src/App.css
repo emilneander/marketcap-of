@@ -10,7 +10,7 @@ html,
 body {
   height: 100%;
   overflow-x: hidden;
-  background-color: rgb(23, 24, 37);
+  background: rgb(23, 24, 37);
 }
 
 #root {
@@ -29,6 +29,5 @@ body {
   -webkit-tap-highlight-color: transparent;
 }
 a {
-  z-index: 1;
   text-decoration: none;
 }

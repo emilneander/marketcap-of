@@ -9,7 +9,6 @@ import DonationSendBox from "../components/DonationSendBox";
 import emailjs from "emailjs-com";
 //route for going back page
 import { Link } from "react-router-dom";
-
 //styles
 import "../styles/Donation.css";
 import "../styles/BuyCoin.css";
