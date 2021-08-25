@@ -12,7 +12,8 @@
   height: 60px;
   width: 100%;
   padding: 0 1rem 0 1rem;
-  background-color: rgb(41, 43, 66);
+  box-shadow: var(--lighter-shadow);
+  background-color: var(--coin-row-color);
   border-bottom: solid 1px gray;
   cursor: pointer;
 }
@@ -25,7 +26,7 @@
 }
 
 .selected-dropdown {
-  background-color: rgb(62, 65, 99);
+  background-color: var(--coin-row-select-color);
 }
 .selected-donation-coin {
   background-color: #292b42;

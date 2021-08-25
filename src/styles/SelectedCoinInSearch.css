@@ -4,7 +4,9 @@
   position: relative;
   border-radius: 6px;
   padding: 0.5rem;
-  background: #212436e0;
+  background: var(--selected-insearch-color);
+  box-shadow: var(--shadow);
+  color: var(--alt-color);
   display: flex;
   align-items: center;
   border: 1px solid #cfc3ff5e;
@@ -22,10 +24,8 @@
 h4 {
   background: transparent;
   margin-right: 0.35rem;
-  color: rgb(237, 223, 255);
 }
 .price {
-  color: rgb(237, 223, 255);
   margin-right: 0.05rem;
 }
 .input-after-symbol {
@@ -58,7 +58,7 @@ img {
   font-size: 1.7rem;
   cursor: pointer;
   right: 0.85rem;
-  color: rgb(207, 195, 255);
+  color: var(--mco-title);
 }
 
 @media (max-width: 800px), (max-height: 755px) {

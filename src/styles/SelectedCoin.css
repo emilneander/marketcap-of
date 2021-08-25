@@ -35,13 +35,10 @@
   justify-content: center;
   /* flex-wrap: wrap; */
   position: relative;
+  box-shadow: var(--light-black-shadow);
   cursor: pointer;
   border: 1.5px solid transparent;
-  background: linear-gradient(
-    180deg,
-    rgb(29, 30, 46) 30%,
-    rgba(41, 34, 77, 1) 120%
-  );
+  background: var(--selected-linnear);
   background-clip: padding-box;
   border-radius: 20px;
   /* border-image: linear-gradient(-45deg, #9b76cd, #639ce7) 1; */
@@ -53,7 +50,7 @@
   bottom: -1.5px;
   left: -1.5px;
   right: -1.5px;
-  background: linear-gradient(-45deg, #9b76cd, #639ce7);
+  background: var(--selected-border-linnear);
   content: "";
   z-index: -1;
   border-radius: 20px;
@@ -165,7 +162,7 @@
   color: #ea3943;
 }
 h2 {
-  color: rgb(203, 200, 226);
+  color: var(--mc-text-color);
   font-size: 1.3rem;
 }
 .grid-symbol {
@@ -187,7 +184,7 @@ h2 {
 }
 .card-desc {
   font-size: 0.85rem;
-  color: #eddfff;
+  color: var(--alt-color);
   background-color: transparent;
   padding-top: 0.75rem;
   margin: 0 0.25rem 0 0.25rem;

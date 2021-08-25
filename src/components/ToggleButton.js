@@ -1,13 +1,16 @@
 import React from "react";
 //style
 import "../styles/ToggleButton.css";
-
+//icon
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 const ToggleButton = ({
   text1,
   text2,
   toggleState,
   setToggleState,
   classText,
+  icon1,
+  icon2,
 }) => {
   const clickHandler = () => {
     setToggleState(!toggleState);
@@ -29,7 +32,7 @@ const ToggleButton = ({
               : "toggle-left-span"
           }
         >
-          {text1}
+          {text1 ? text1 : <FontAwesomeIcon icon={icon1} />}
         </span>
         <span
           className={
@@ -38,7 +41,7 @@ const ToggleButton = ({
               : "toggle-right-span"
           }
         >
-          {text2}
+          {text2 ? text2 : <FontAwesomeIcon icon={icon2} />}
         </span>
       </div>
     </div>

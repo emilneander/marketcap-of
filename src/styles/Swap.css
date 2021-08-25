@@ -15,7 +15,7 @@
 .icon {
   background-color: transparent;
   font-size: 2rem;
-  color: #cfc3ff;
+  color: var(--mco-title);
 }
 @media (min-width: 1000px) {
   @media (max-height: 755px) {

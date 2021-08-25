@@ -48,10 +48,10 @@
   height: 12px;
 }
 ::-webkit-scrollbar-track {
-  background: #2e283d;
+  background: var(--scroll-track-color);
 }
 ::-webkit-scrollbar-thumb {
-  background: #7717f3;
+  background: var(--scroll-thumb-color);
 }
 .fa-clone {
   grid-area: "logo";

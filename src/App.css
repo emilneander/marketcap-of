@@ -11,8 +11,80 @@ body {
   height: 100%;
   overflow-x: hidden;
   background: rgb(23, 24, 37);
+  color: white;
+  --background: rgb(23, 24, 37);
+  --btn-border: none;
+  --btn-color: #26283d;
+  --btn-hover-color: #363957;
+  --coin-row-color: rgb(41, 43, 66);
+  --coin-row-select-color: rgb(62, 65, 99);
+  --mco-title: #eaddfd;
+  --footer-text: #b9b9bd;
+  --selected-linnear: linear-gradient(
+    180deg,
+    rgb(29, 30, 46) 30%,
+    rgba(41, 34, 77, 1) 120%
+  );
+  --selected-border-linnear: linear-gradient(-45deg, #9b76cd, #639ce7);
+  --shadow: none;
+  --light-black-shadow: none;
+  --light-shadow: none;
+  --lighter-shadow: none;
+  --selected-insearch-color: #212436e0;
+  --alt-color: rgb(243 234 255);
+  --mc-text-color: rgb(203, 200, 226);
+  --searchbar-background: linear-gradient(
+    -225deg,
+    #ac32e4 0%,
+    #7918f2 48%,
+    #4801ff 100%
+  );
+  --line-color: #eaddfd;
+  --hover-button-color: ;
+  --scroll-thumb-color: #7717f3;
+  --scroll-track-color: #2e283d;
+  --toggle-color: linear-gradient(-45deg, #594474, #314c70);
+  --toggle-hover-color: linear-gradient(-45deg, #4d3b64, #29415f);
 }
-
+body.day {
+  color: #2e006a;
+  background: white;
+  --background: white;
+  --mco-title: #7918c1;
+  --main-text-color: white;
+  --btn-color: #efefef;
+  --btn-hover-color: #eaeafb;
+  --coin-row-color: rgb(244 244 255);
+  --coin-row-select-color: rgb(222 222 255);
+  --btn-border: 1px solid rgb(161, 161, 161);
+  --footer-text: #696969;
+  --selected-linnear: linear-gradient(
+    180deg,
+    rgb(244, 245, 255) 30%,
+    rgba(215, 209, 243) 120%
+  );
+  --shadow: black 1px 1px 3px 0px;
+  --light-black-shadow: #a0a0a0a6 0px 0px 5px 1px;
+  --light-shadow: #cfc3ff 0px 0px 10px 1px;
+  --lighter-shadow: #cfc3ff 0px 0px 5px 1px;
+  --selected-insearch-color: #f4f2ff;
+  --alt-color: rgb(26 0 60);
+  --mc-text-color: rgb(95 71 125);
+  --searchbar-background: linear-gradient(
+    -225deg,
+    #c28eda 0%,
+    #9850f1 48%,
+    #7747f5 100%
+  );
+  --line-color: #2b2b2b;
+  --scroll-thumb-color: #7d4dbb;
+  --scroll-track-color: #f0f0ff;
+  --toggle-color: linear-gradient(-45deg, #9b76cd, #639ce7);
+  --toggle-hover-color: linear-gradient(-45deg, #8e6bbb, #5d91d6);
+}
+button {
+  color: white;
+}
 #root {
   height: 100%;
 }

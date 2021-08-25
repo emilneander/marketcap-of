@@ -2,7 +2,7 @@
   position: relative;
   width: 7rem;
   height: 2.5rem;
-  background: #26283d;
+  background: var(--toggle-color);
   border-radius: 5px;
   display: flex;
   justify-content: space-between;
@@ -10,7 +10,7 @@
   cursor: pointer;
 }
 .toggle-container:hover {
-  background: #363957;
+  background: var(--toggle-hover-color);
 }
 .toggle-container > div,
 .toggle-left-span,
@@ -60,6 +60,12 @@
   font-size: 1rem;
   left: 12px;
 }
+.theme-span .toggle-right-span {
+  right: 23px;
+}
+.theme-span .toggle-left-span {
+  left: 17px;
+}
 @media (max-width: 1000px) {
   .toggle-container {
     width: 6rem;
@@ -80,6 +86,12 @@
   .vibration-span .toggle-left-span {
     font-size: 0.8rem;
     left: 12px;
+  }
+  .theme-span .toggle-right-span {
+    right: 19px;
+  }
+  .theme-span .toggle-left-span {
+    left: 14px;
   }
 }
 
@@ -103,6 +115,12 @@
     font-size: 0.7rem;
     left: 10px;
   }
+  .theme-span .toggle-right-span {
+    right: 15px;
+  }
+  .theme-span .toggle-left-span {
+    left: 12.5px;
+  }
 }
 @media (max-width: 360px) {
   .toggle-container {
@@ -122,5 +140,11 @@
   .vibration-span .toggle-left-span {
     font-size: 0.7rem;
     left: 6px;
+  }
+  .theme-span .toggle-right-span {
+    right: 9px;
+  }
+  .theme-span .toggle-left-span {
+    left: 9.5px;
   }
 }

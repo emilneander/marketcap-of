@@ -49,7 +49,7 @@ hr {
 }
 .copyright-text {
   margin: 1rem 0 1rem 0;
-  color: #b9b9bd;
+  color: var(--footer-text);
 }
 .social-icon-row {
   width: 100%;
@@ -74,7 +74,6 @@ hr {
   z-index: 0;
 }
 .btn {
-  background: #26283d;
   padding: 0.5rem;
   border-radius: 50%;
   width: 3rem;
@@ -84,14 +83,14 @@ hr {
   justify-content: center;
 }
 .btn:hover {
-  background: #363957;
+  background: var(--btn-hover-color);
 }
 
 .btn-hand {
   display: grid;
   grid-template-columns: 40% 60%;
   grid-template-rows: 50% 50%;
-  border: none;
+  border: var(--btn-border);
   width: 8rem;
   border-radius: 10px;
   padding: 0;
@@ -106,7 +105,7 @@ hr {
   border-radius: 10px;
 }
 .fa {
-  color: #979ca9;
+  color: var(--footer-text);
   background-color: transparent;
   font-size: 1.5rem;
 }
@@ -147,7 +146,7 @@ hr {
   justify-self: start;
   align-self: center;
   font-size: 1rem;
-  color: #a4aabb;
+  color: var(--footer-text);
   font-weight: bold;
 }
 .link {

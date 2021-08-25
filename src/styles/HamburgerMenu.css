@@ -15,7 +15,7 @@
   width: 100%;
   height: 4px;
   border-radius: 3px;
-  background: #eaddfd;
+  background: var(--alt-color);
   transition: all 0.3s ease;
 }
 .hamburger-icon :first-child {
@@ -52,10 +52,10 @@
   position: absolute;
   width: 100%;
   height: 100%;
-  background: rgb(23, 24, 37);
   z-index: 1;
   right: 0;
   /* animation: slide 0.2s ease-out; */
+  background: var(--background);
 }
 
 .hamburger-menu-item-container {

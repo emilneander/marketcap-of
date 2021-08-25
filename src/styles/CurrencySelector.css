@@ -1,12 +1,19 @@
 .currency-opener {
   width: 7rem;
   height: 2.5rem;
-  color: white;
   border-radius: 5px;
   outline: transparent;
   border: transparent;
   position: relative;
   cursor: pointer;
+  background: var(--toggle-color);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0.5rem;
+}
+.currency-opener:hover {
+  background: var(--toggle-hover-color);
 }
 .currency-opener > p {
   font-size: 1rem;

@@ -60,6 +60,7 @@ const Homepage = () => {
   const [hamburgerActive, setHamburgerActive] = useState(false);
   const [usePercent, setUsePercent] = useState(false);
   const [vibrateState, setVibrateState] = useState(false);
+  const [themeState, setThemeState] = useState(false);
 
   //fetch all coins
   useEffect(() => {
@@ -168,6 +169,8 @@ const Homepage = () => {
                 setUsePercent={setUsePercent}
                 setVibrateState={setVibrateState}
                 vibrateState={vibrateState}
+                themeState={themeState}
+                setThemeState={setThemeState}
               />
             ) : (
               ""

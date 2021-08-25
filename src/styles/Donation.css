@@ -1,7 +1,7 @@
 @import url("https://fonts.googleapis.com/css2?family=Inter:wght@400&display=swap");
 h1 {
   font-size: 1.25rem;
-  color: #e0e1e3;
+  /* color: #e0e1e3; */
 }
 
 .donation-box > h3 {

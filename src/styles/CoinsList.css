@@ -16,7 +16,7 @@
   -ms-user-select: none; /* Internet Explorer/Edge */
   user-select: none; /* Non-prefixed version, currently*/
   -webkit-tap-highlight-color: transparent; /*android chrome*/
-  background-color: #171825;
+  background-color: var(--background);
 }
 .donation-list {
   width: 17rem;
@@ -41,11 +41,11 @@
 }
 p {
   text-align: center;
-  color: white;
+  /* color: white; */
 }
-h1 {
+/* h1 {
   color: white;
-}
+} */
 .icon-div {
   position: sticky;
   bottom: 0;
@@ -59,13 +59,12 @@ h1 {
   align-items: center;
   justify-content: center;
   flex-wrap: wrap;
-  background-color: #171825;
+  background-color: var(--background);
 }
 .extend-search > p {
   flex-basis: 100%;
   margin-bottom: 0.25rem;
   z-index: 1;
-  background-color: #171825;
 }
 .extend-search > button {
   background-color: #26283d;
