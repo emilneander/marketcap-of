@@ -73,7 +73,7 @@ const SelectedCoinInSearch = ({
         ""
       )}
       <FontAwesomeIcon
-        className="fa-times"
+        className="fa-times-circle"
         icon={faTimesCircle}
         onClick={handleClick}
       />

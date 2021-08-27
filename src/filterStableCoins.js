@@ -6,6 +6,7 @@ const filterStableCoins = (data) => {
       //quickfix to get away the stable coins that aren't tagged as one
       !coin.name.toString().toLowerCase().includes("usd") &&
       !coin.symbol.toString().toLowerCase().includes("usd") &&
+      !coin.symbol.toString().toLowerCase().includes("realtoken") &&
       coin.current_price !== null &&
       //remove long/short tokens
       !/x\-long|x\-short/.test(coin.id)

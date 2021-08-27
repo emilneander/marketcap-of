@@ -19,13 +19,6 @@ const HamburgerMenu = ({
   themeState,
   setThemeState,
 }) => {
-  useEffect(() => {
-    if (themeState) {
-      document.body.className = "day";
-    } else {
-      document.body.className = "";
-    }
-  }, [themeState]);
   return (
     <div className="hamburger-menu-container">
       <div className="hamburger-menu-item-container">
@@ -38,6 +31,7 @@ const HamburgerMenu = ({
             setSelectACoin={setSelectACoin}
             selectBCoin={selectBCoin}
             setSelectBCoin={setSelectBCoin}
+            cookieName="currency"
           />
         </div>
         <div className="hamburger-menu-item">
@@ -48,6 +42,7 @@ const HamburgerMenu = ({
             classText="priceChanges-span"
             toggleState={usePercent}
             setToggleState={setUsePercent}
+            cookieName="priceChange"
           />
         </div>
         <div className="hamburger-menu-item">
@@ -58,6 +53,7 @@ const HamburgerMenu = ({
             setToggleState={setThemeState}
             icon1={faSun}
             icon2={faMoon}
+            cookieName="theme"
           />
         </div>
         <div className="hamburger-menu-item">
@@ -68,6 +64,7 @@ const HamburgerMenu = ({
             classText="vibration-span"
             toggleState={vibrateState}
             setToggleState={setVibrateState}
+            cookieName="vibrate"
           />
         </div>
       </div>

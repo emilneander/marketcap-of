@@ -191,7 +191,7 @@ h2 {
 }
 .url-text {
   font-size: 0.8rem;
-  color: #eddfff44;
+  color: var(--mc-text-color);
   background: transparent;
   position: absolute;
   bottom: 0.15rem;
@@ -230,7 +230,7 @@ h2 {
     padding-top: 0.6rem;
   }
   .text-div {
-    padding-bottom: 0.8rem;
+    padding-bottom: 1rem;
   }
 }
 

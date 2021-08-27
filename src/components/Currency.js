@@ -1,4 +1,5 @@
 import React from "react";
+import { useCookies } from "react-cookie";
 
 const Currency = ({
   currency,
@@ -7,8 +8,11 @@ const Currency = ({
   setSelectCurrency,
   setShowCurrencyDropDown,
 }) => {
+  const [cookie, setCookie] = useCookies(["currency"]);
+
   //handlers
   const handleClick = () => {
+    setCookie("currency", currency);
     setSelectCurrency(currency);
     setShowCurrencyDropDown(false);
   };

@@ -9,6 +9,7 @@ import Donation from "../pages/Donation";
 import "../styles/Footer.css";
 //icons
 import { faTwitter } from "@fortawesome/free-brands-svg-icons";
+import { faTimes } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 
 const Footer = ({
@@ -23,6 +24,8 @@ const Footer = ({
   selectDonationCoin,
   setSelectDonationCoin,
   coins,
+  setShowCookieBanner,
+  showCookieBanner,
 }) => {
   return (
     <footer className="footer">
@@ -81,6 +84,24 @@ const Footer = ({
           </li>
         </ul>
       </div>
+      {showCookieBanner ? (
+        <div className="cookie-banner">
+          <p>
+            We use cookies to be able to save your preferences for a more
+            personalized website. If you continue to use this site, you consent
+            to our use of cookies.
+          </p>
+          <FontAwesomeIcon
+            className="fa-times-banner"
+            icon={faTimes}
+            onClick={() => {
+              setShowCookieBanner(false);
+            }}
+          />
+        </div>
+      ) : (
+        ""
+      )}
       <div className="text-row">
         <p className="copyright-text">
           &copy; {new Date().getFullYear()} MarketCapOf. All Rights Reserved.

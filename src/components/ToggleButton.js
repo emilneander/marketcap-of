@@ -3,6 +3,9 @@ import React from "react";
 import "../styles/ToggleButton.css";
 //icon
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+//cookies
+import { Cookies, useCookies } from "react-cookie";
+
 const ToggleButton = ({
   text1,
   text2,
@@ -11,10 +14,13 @@ const ToggleButton = ({
   classText,
   icon1,
   icon2,
+  cookieName,
 }) => {
+  const [Cookie, setCookie] = useCookies([cookieName]);
   const clickHandler = () => {
+    //set cookies
     setToggleState(!toggleState);
-    console.log(toggleState);
+    setCookie(cookieName, !toggleState, { path: "/" });
   };
   return (
     <div>

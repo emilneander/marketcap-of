@@ -1,4 +1,5 @@
 import React, { useEffect, useState, useRef } from "react";
+import { useCookies } from "react-cookie";
 //add props
 import { addDonationToData } from "../addPropsToData";
 //api
@@ -34,7 +35,12 @@ import { BrowserRouter as Router, Link, Route } from "react-router-dom";
 import { vibrate } from "../vibrate";
 
 const Homepage = () => {
-  // const [api, setApi] = useState(apiUrl);
+  const [themeCookie] = useCookies(["theme"]);
+  const [currencyCookie] = useCookies(["currency"]);
+  const [priceChangeCookie] = useCookies(["priceChange"]);
+  const [vibrateCookie] = useCookies(["vibrate"]);
+  const [cookieBanner, setCookieBanner] = useCookies(["cookiebanner"]);
+
   const [coins, setCoins] = useState([]);
   const [extendedCoins, setExtendedCoins] = useState([]);
   const [topCoins, setTopCoins] = useState([]);
@@ -52,15 +58,28 @@ const Homepage = () => {
   const [donateCoins, setDonateCoins] = useState([]);
   const [selectDonationCoin, setSelectDonationCoin] = useState({});
   const [extendSearch, setExtendSearch] = useState(false);
-  const [selectCurrency, setSelectCurrency] = useState(currencies[0]);
   const [supplyAvailable, setSupplyAvailable] = useState(true);
   const [coinNoSupply, setCoinNoSupply] = useState({});
   const [coinNoSupplyOnHold, setCoinNoSupplyOnHold] = useState({});
   const [bannerOrder, setBannerOrder] = useState(0);
   const [hamburgerActive, setHamburgerActive] = useState(false);
-  const [usePercent, setUsePercent] = useState(false);
-  const [vibrateState, setVibrateState] = useState(false);
-  const [themeState, setThemeState] = useState(false);
+  const [showCookieBanner, setShowCookieBanner] = useState(
+    cookieBanner.cookiebanner ? JSON.parse(cookieBanner.cookiebanner) : true
+  );
+  const [selectCurrency, setSelectCurrency] = useState(
+    currencyCookie.currency ? currencyCookie.currency : currencies[0]
+  );
+  const [usePercent, setUsePercent] = useState(
+    priceChangeCookie.priceChange
+      ? JSON.parse(priceChangeCookie.priceChange)
+      : false
+  );
+  const [vibrateState, setVibrateState] = useState(
+    vibrateCookie.vibrate ? JSON.parse(vibrateCookie.vibrate) : false
+  );
+  const [themeState, setThemeState] = useState(
+    themeCookie.theme ? JSON.parse(themeCookie.theme) : false
+  );
 
   //fetch all coins
   useEffect(() => {
@@ -107,6 +126,15 @@ const Homepage = () => {
     );
     return () => clearInterval(interval);
   });
+  //set theme and activate first visit
+  useEffect(() => {
+    setCookieBanner("cookiebanner", false);
+    if (themeState) {
+      document.body.className = "day";
+    } else {
+      document.body.className = "";
+    }
+  }, [themeState, []]);
 
   //refs
   const aRef = useClickOutside(() => {
@@ -367,6 +395,8 @@ const Homepage = () => {
             donateCoins={donateCoins}
             selectDonationCoin={selectDonationCoin}
             setSelectDonationCoin={setSelectDonationCoin}
+            setShowCookieBanner={setShowCookieBanner}
+            showCookieBanner={showCookieBanner}
           />
         </div>
       </Route>
